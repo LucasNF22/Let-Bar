@@ -17,3 +17,19 @@ Quienes integran este equipo son:
 - https://www.galpondebebidas.com.ar/
 
 Elegimos estamos páginas porque de todas ellas nos gustaron cosas que podiamos tener en cuenta para armar nuestros propios wireframes.
+
+En nuestros wireframes usamos la siguiente paleta de colores: 
+
+Blanco: #FFFFFF
+
+Gris 1: #F1F1F1
+
+Gris 2: #3A3A3A
+
+Azul: #000057
+
+Celeste: #41C1F0
+
+Rosa: #EB609F
+
+Usamos la tipografía Roboto Mono normal y bold.
