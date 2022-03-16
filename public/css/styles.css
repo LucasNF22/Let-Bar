@@ -1,0 +1,210 @@
+* {
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto Mono', monospace;
+ 
+}
+
+/* ///////////////////
+
+           HEADER
+
+    ///////////////// */
+
+
+.encabezado{
+    
+    height: 80vw;
+    background: url("/img/fondo-inicio-cel.jpg");
+    background-size: cover;
+    margin: auto;
+    object-fit: contain;
+}
+
+palabra-rosa{
+    color: #EB609F;
+}
+palabra-celeste{
+    color: #41C1F0;
+}
+
+.iconos{
+    filter: drop-shadow(-4px 4px 4px rgba(255, 255, 255, 0.25));
+}
+
+.navegacion{
+    display: flex;
+    height: 20%;
+    border: rgb(255, 0, 221) dashed 3px;
+    justify-content: space-between;
+
+}
+
+.nav-izq{
+    display: flex;
+    text-align: center;
+    border: rgb(0, 255, 21) dashed 3px;
+    padding-left: 5%;
+    width: 30%;
+       
+}
+
+.nav-cent{
+    display: flex;
+    border: rgb(25, 0, 255) dashed 3px;
+    width: 30%;
+    justify-content: center;
+
+}
+
+.nav-der{
+    display: flex;
+    border: rgb(217, 255, 0) dashed 3px;
+    width: 30%;
+    justify-content: right;
+    padding-right: 5%;
+}
+
+.caja-slogan{
+    display: flex;
+    border: rgb(31, 208, 221) dashed 3px;
+    justify-content: center;
+    margin-top: 10%;
+}
+.slogan{
+    
+    text-align: center;
+    color: white;
+    font-size: 30px;
+    text-shadow: -10px 10px 20px rgba(255, 255, 255, 0.4);
+    font-weight: bold;
+}
+
+
+.barra-de-busqueda{
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    text-align: center;
+    height: 20px;
+    width: 70%;
+    background-color: white;
+    border: red dashed 1px;
+    
+    
+}
+
+/* ///////////////////
+
+        DESTACADOS
+
+    ///////////////// */
+
+
+
+
+.productos-destacados{
+    text-align: center;
+    margin-bottom: 50px;
+    margin-top: 20px;
+}
+
+.galeria-destacados{
+    display: flex;
+    justify-content: space-around;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.tarjeta-destacado{
+    height: 200px;
+    max-height: 330px;
+    width: 160px;
+    max-width: 255px;
+    border: solid black 2px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+.productos-destacados h3{
+    background-color: #F1F1F1;
+    color: #000057;
+    display: inline-block;
+    padding: 2px 30px;
+    font-weight: bold;
+    font-size: 30px;
+    margin-left: 0px;
+    
+}
+
+.tarjeta-destacados{
+    display: flex;
+
+}
+
+.boton-ver-mas{
+    width: 150px;
+    height: 50px;
+    left: 595px;
+    background: #F1F1F1;
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.25);
+    border-radius: 45px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 20px;
+    
+}
+
+.ofertas{
+    display: flex;
+    border: solid 3px red;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+    
+}
+
+.tarjeta-oferta{
+    display: inline-block;
+    border: 2px dashed black;
+    border-radius: 1.5em;
+    width: 90vw;
+    height: 30vw;
+    justify-content: center;
+    align-items: center;
+    background: url("/img/oferta-01.jpg");
+    background-size: cover;
+    
+}
+
+footer{
+    
+    background: #000057;
+}
+
+.caja-footer{
+    height: 200px;
+}
+
+
+.caja-disclaimer{
+    font-size: 16px;
+    display: flex;
+    
+    color: white;
+    background-color: #3A3A3A;
+    padding-left: 2%;
+    align-items: center;
+    margin: auto;
+
+}

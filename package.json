@@ -1,0 +1,22 @@
+{
+  "name": "proyecto-integrador",
+  "version": "1.0.0",
+  "description": "Nuestro servicio se basa en la venta online de bebidas con y sin alcohol, la cual esta dirigida a cualquier persona, indistinta de su sexo y que sea mayor de 18 años.\r Quienes integran este equipo son:",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucasNF22/grupo_3_Let-Bar.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucasNF22/grupo_3_Let-Bar/issues"
+  },
+  "homepage": "https://github.com/LucasNF22/grupo_3_Let-Bar#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
