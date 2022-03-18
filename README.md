@@ -22,9 +22,9 @@ En nuestros wireframes usamos la siguiente paleta de colores:
 
 Blanco: #FFFFFF
 
-Gris 1: #F1F1F1
+Gris claro: #F1F1F1
 
-Gris 2: #3A3A3A
+Gris oscuro: #3A3A3A
 
 Azul: #000057
 
