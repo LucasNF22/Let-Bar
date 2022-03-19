@@ -1,5 +1,6 @@
 * {
     box-sizing: border-box;
+    margin: 0;
 }
 
 body{
@@ -34,13 +35,14 @@ palabra-celeste{
 }
 
 .iconos{
-    filter: drop-shadow(-4px 4px 4px rgba(255, 255, 255, 0.25));
+    filter: drop-shadow(-2px 2px 3px rgba(65, 193, 240, 0.8));
 }
 
 .navegacion{
     display: flex;
-    height: 15%;
-    border: rgb(255, 0, 221) dashed 3px;
+    height: 19%;
+    max-height: 90px;
+    margin-top: 2%;
     justify-content: space-between;
 
 }
@@ -48,7 +50,7 @@ palabra-celeste{
 .nav-izq{
     display: flex;
     text-align: center;
-    border: rgb(0, 255, 21) dashed 3px;
+    
     padding-left: 5%;
     width: 30%;
        
@@ -56,7 +58,7 @@ palabra-celeste{
 
 .nav-cent{
     display: flex;
-    border: rgb(25, 0, 255) dashed 3px;
+    
     width: 30%;
     justify-content: center;
 
@@ -64,7 +66,7 @@ palabra-celeste{
 
 .nav-der{
     display: flex;
-    border: rgb(217, 255, 0) dashed 3px;
+    
     width: 30%;
     justify-content: right;
     padding-right: 5%;
@@ -72,7 +74,7 @@ palabra-celeste{
 
 .caja-slogan{
     display: flex;
-    border: rgb(31, 208, 221) dashed 3px;
+    
     justify-content: center;
     height: 40%;
     align-items: center;
@@ -81,7 +83,7 @@ palabra-celeste{
     
     text-align: center;
     color: white;
-    font-size: 2rem;
+    font-size: 6vw;
     text-shadow: -10px 10px 20px rgba(255, 255, 255, 0.4);
     font-weight: bold;
     
@@ -173,6 +175,7 @@ palabra-celeste{
     margin-top: 20px;
 }
 
+
 .galeria-destacados{
     display: flex;
     justify-content: space-around;
@@ -181,6 +184,7 @@ palabra-celeste{
     margin-right: auto;
     margin-top: 20px;
     flex-wrap: wrap;
+    width: 90%;
 }
 
 .caja-articulos{
@@ -195,7 +199,7 @@ palabra-celeste{
     width: 47%;
     border-radius: 20px;
     background: #ffffff;
-    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.3);
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -275,7 +279,7 @@ palabra-celeste{
     display: inline-block;
     padding: 2px 30px;
     font-weight: bold;
-    font-size: 30px;
+    font-size: 4.5vw;
     margin-left: 0px;
     
 }
@@ -287,7 +291,7 @@ palabra-celeste{
 
 .boton-ver-mas{
 
-    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.25);
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
     margin-left: auto;
     margin-right: auto;
     max-width: 150px;
@@ -306,7 +310,7 @@ palabra-celeste{
 
 .ofertas{
     display: flex;
-    border: solid 3px red;
+    
     justify-content: center;
     margin-left: auto;
     margin-right: auto;
@@ -316,7 +320,7 @@ palabra-celeste{
 
 .tarjeta-oferta{
     display: inline-block;
-    border: 2px dashed black;
+    
     border-radius: 1.5em;
     width: 90vw;
     height: 35vw;
@@ -334,11 +338,19 @@ palabra-celeste{
     ///////////////// */
 
 
+
 footer{
+    display: flex;
+    flex-direction: column;
     
+    justify-content: space-between;
+    
+    height: 30vw;
+    width: 100%;
     background: #000057;
     color: white;
     font-size: 12px;
+    
 }
 
 .iconos-footer{
@@ -346,15 +358,17 @@ footer{
 }
 
 .caja-footer{
-    height: 150px;
-    display: flex;
+    height: 70%;
+    display: flex;    
+    margin-top: auto;
+    margin-bottom: auto;
+    
     
 }
 
 .footer-izq{
     width: 35%;
-    display: flex;
-    border: #41C1F0 2px dashed;
+    display: flex;    
     flex-direction: column;
     justify-content: left;
     padding-left: 2%;
@@ -363,25 +377,23 @@ footer{
 
 .footer-izq-sup{
     display: flex;
-    width: 100%;
-    border: #41C1F0 2px dashed;
+    width: 100%;    
     height: 50%;
 }
 
 .footer-izq-inf{
     width: 100%;
-    border: #41C1F0 2px dashed;
+    
 }
 
 .footer-cent{
     width: 35%;
-    display: flex;
-    border: #f06a41 2px dashed;
+    display: flex;    
     flex-direction: column;
     justify-content: center;
-    align-items: left;
-    
+    align-items: left;   
     padding-left: 10px;
+    
 }
 
 .footer-cent div{
@@ -401,11 +413,9 @@ footer{
 
 .footer-der{
     width: 40%;
-    display: flex;
-    border: #41f067 2px dashed;
+    display: flex;    
     flex-direction: column;
-    align-items: left;
-    margin: auto;
+    justify-content: left;
     padding-left: 10px;
     
 }
@@ -421,13 +431,228 @@ footer{
 
 
 .caja-disclaimer{
-    font-size: 12px;
+    font-size: 1.8vw;
     display: flex;
-    
     color: white;
     background-color: #3A3A3A;
-    padding-left: 2%;
+    padding: 3% 2% 3% 2%;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    max-height: 20px;
+
+}
+
+   /* ///////////////////
+
+    Carrito desplegable
+
+   /////////////////// */
+
+.carrito-body{
+    height: 100vh;
+    background-color: #da2f2f;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     margin: auto;
+    flex-direction: column;
+}
 
+.carrito-encabezado{
+    background-color: white;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    width: 100%;
+    max-height: 150px;
+    padding: 5% 0%;
+    position: relative;
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carrito-encabezado-cerrar{
+    
+    position: absolute;
+    right: 5%;
+}
+
+.carrito-cuerpo{
+    background-color: #F1F1F1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    
+}
+
+.carrito-producto{
+    background-color: white;
+    display: flex;
+    width: 95vw;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 4% auto 0px auto;
+    border-radius: 10px;
+    height: 30vw;
+    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
+
+}
+
+.carr-caj-izq{
+    background-color: #3A3A3A;
+    display: flex;
+    justify-content: center;
+    height: 24vw;
+    width: 24vw;
+    
+    margin-left: 3vw;
+    
+}
+
+
+.carr-caj-der{
+    display: flex;
+    justify-content: space-between;
+    
+    width: 62vw;
+    padding-left: 3vw;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 24vw;
+    font-size: 12px;
+}
+
+.carr-caj-der-sup-nomb{
+    background-color: #F1F1F1;
+    width: 60vw;
+    margin-bottom: 1vw;
+    padding: 2px 5px 2px 5px;
+    font-family: 'Roboto Mono', monospace;
+    
+    
+}
+
+.carr-caj-der-sup-prec{
+    
+    background-color: #F1F1F1;
+    margin-bottom: 1vw;
+    padding: 2px 5px 2px 5px;
+    font-family: 'Roboto Mono', monospace;
+    
+    
+    
+}
+
+.carr-caj-der-inf{
+    display: flex;
+    
+    align-items: center;
+    justify-content: space-between;
+    width: 60vw;
+}
+
+.carr-caj-der-inf-cant{
+    background-color: #F1F1F1;
+    padding: 3px 10px 3px 10px;
+    font-family: 'Roboto Mono', monospace;
+    
+    border-radius: 15px;
+    align-items: center;
+}
+
+.carr-caj-der-inf-borrar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    width: 8vW;
+    height: 8vw;
+    border-radius: 50%;
+    background-color: #000057;
+    
+}
+
+.carr-caj-der-inf-borrar i{
+    margin: auto;
+    font-size: 5vW;
+    color: white;
+    
+    
+}
+
+.carrito-footer{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    box-shadow: 0px -10px 10px rgba(0, 0, 0, 0.2);
+    justify-content: flex-end;
+    width: 100%;
+}
+
+
+.carrito-resumen{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    padding: 3%;
+    
+    
+}
+
+
+.carrito-res-izq{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+}
+
+.carrito-res-der{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+    align-items: flex-end;
+    
+}
+
+.carrito-res-der div, .carrito-res-izq div, .carrito-pago-der div, .carrito-pago-izq div{
+    background-color: #F1F1F1;
+    margin-bottom: 1vw;
+    margin-top: 1vw;
+    padding: 2px 5px 2px 5px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.carrito-pago{
+    display: flex;
+    background-color: white;
+    width: 100%;
+    padding: 3%;
+    border-top: #F1F1F1 solid 3px;
+   
+
+}
+
+.carrito-pago-izq{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+    align-items: flex-start;
+    
+}
+
+.carrito-pago-der{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: space-between;
+    align-items: flex-end;
+    
 }
