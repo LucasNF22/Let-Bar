@@ -968,3 +968,29 @@ footer{
     }
     
 }
+
+
+/* ///////////////////
+
+       REGISTRO
+
+    ///////////////// */
+
+    .logo-registro{
+        padding-left: 47%;
+        background-color: #F1F1F1;
+    
+
+    }
+
+    .formulario{
+        padding: 20px 15px;
+        background-color: lightgray;
+        text-align: center;
+    
+  }
+
+  .control-formulario{
+    margin-bottom: 45px; 
+    margin-left: 10%;
+  }
