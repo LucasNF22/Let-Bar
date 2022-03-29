@@ -32,3 +32,6 @@ app.get ("/register", (req, res) =>{
     res.sendFile(path.resolve(__dirname, "./views/register.html"));
 });
 
+app.get ("/check-out", (req, res) =>{
+    res.sendFile(path.resolve(__dirname, "./views/check-out.html"));
+});

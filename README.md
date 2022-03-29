@@ -33,3 +33,6 @@ Celeste: #41C1F0
 Rosa: #EB609F
 
 Usamos la tipografía Roboto Mono normal y bold.
+
+
+Tablero de trabajo en Trello: https://trello.com/b/rTCK8gRC/sprint-2
