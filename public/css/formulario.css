@@ -14,21 +14,202 @@ body{
 
 }
 
+
+.navegacion{
+    display: flex;
+    max-height: 90px;
+    margin-top: 2%;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    width: 100%;
+}
+
+.nav-izq{
+    display: flex;
+    text-align: center; 
+    padding-left: 5%;
+    width: 30%;
+       
+}
+
+.nav-cent{
+    display: flex;   
+    width: 30%;
+    justify-content: center;
+    
+}
+
+.nav-der{
+    display: flex;    
+    width: 30%;
+    justify-content: right;
+    padding-right: 5%;
+}
+
+.encabezado .navegacion .nav-der{
+    justify-content: right;
+}
+
+
+
 .logo-registro{
     padding-left: 47%;
-    background-color: #F1F1F1;
+    
 
 
 }
+
+
 
 .formulario{
-    padding: 20px 15px;
     background-color: lightgray;
+    width: 400px;
+    padding: 30px;
+    margin:auto;
+    margin-top: 20px;
+    border-radius: 4px;
+    font-family: 'roboto';
+
+}
+
+.formulario h4{
+    font-size: 22px;
+    margin-bottom: 20px;
+    margin-left: 30%;
+
+}
+
+.control{
+         width: 100%;
+         padding: 10px;
+         border-radius: 4px;
+         margin-bottom: 16px;
+         border: solid 1.5px #000057 ;
+         font-family: 'roboto';
+
+}
+
+.boton-formulario{
+    width: 70%;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+
+
+
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    background: #000057;
+    color: white;
+    font-size: 11px;
+    margin-top: 20px;
+    
+}
+
+.iconos-footer{
+    max-width: 20px;
+}
+
+.caja-footer{
+    width: 90%;
+    display: flex;    
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; 
+    padding: 10px 0px;   
+    
+}
+
+.caja-footer-izq{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    
+}
+
+.caja-footer-izq-sup{
+    width: 100%;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+.caja-footer-izq-sup-izq{
+    display: flex;
+    width: 50%;
+    justify-content: right;
+    padding-right: 6px;
+    align-items: center;
+    
+}
+
+.caja-footer-izq-sup-der{
+    width: 50%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    
+}
+.caja-footer-izq-sup-der div{
+    max-width: 60px;
+}
+
+.caja-footer-izq-inf{
+    display: flex;
+    width: 80%;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5px 0px;
+    max-width: 130px;
+
+}
+
+
+
+.caja-footer-der{
+    width: 90%;
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.caja-footer-der a{
+    color: white;
+    text-decoration: none;
+    padding: 4px 0px;
+    font-size: 11px;
+    text-decoration: underline;
+    font-weight: 100;
     text-align: center;
+}
+
+
+.caja-disclaimer{
+    font-size: 1.8vw;
+    display: flex;
+    color: white;
+    background-color: #3A3A3A;
+    padding: 3% 2% 3% 2%;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    max-height: 20px;
 
 }
 
-.control-formulario{
-margin-bottom: 45px; 
-margin-left: 10%;
+.logo{
+    max-width: 80px;
+    max-height: 80px;
 }
+
