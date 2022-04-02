@@ -53,12 +53,16 @@ body{
 
 
 .logo-registro{
-    padding-left: 47%;
-    
+    display: flex;
+    justify-content: center;
 
 
 }
 
+.logo-registro img{
+    width: 300px;
+    height:300px;
+}
 
 
 .formulario{
