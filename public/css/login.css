@@ -392,11 +392,12 @@ footer{
 
 .fa {
     padding: 20px;
-    font-size: 30px;
-    width: 50%;
+    font-size: 25px;
+    width: 20%;
     text-align: center;
     text-decoration: none;
-    margin: auto;
+    margin-left: 10px;
+    border-radius: 50%;
   }
   
   .fa:hover {
