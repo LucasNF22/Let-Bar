@@ -14,6 +14,14 @@ body{
 
 }
 
+.wallpaper {
+    background: url("/img/rm251-mind-11-g.jpg");
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .logo-registro{
     display: flex;
@@ -102,7 +110,6 @@ body{
 .encabezado{
     width: 100%;
     height: 80vw;
-    background: url("/img/fondo-inicio-cel.jpg");
     background-size: cover;
     margin: auto;
     object-fit: contain;
@@ -406,9 +413,17 @@ footer{
   .fa-facebook {
     background: #3B5998;
     color: white;
+    width: 50%;
   }
 
   .fa-google {
     background: #dd4b39;
     color: white;
+    width: 50%;
+  }
+
+  .logo-redes{
+      display: flex;
+      width: 400px;
+
   }
