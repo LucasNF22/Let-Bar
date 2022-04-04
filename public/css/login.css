@@ -10,6 +10,7 @@ body{
     height: auto;   
     display: flex;
     flex-direction: column;
+    background: url("/img/fondo-inicio-cel.jpg");
     
 
 }
@@ -101,21 +102,12 @@ body{
 
 .encabezado{
     width: 100%;
-    height: 80vw;
-    background: url("/img/fondo-inicio-cel.jpg");
     background-size: cover;
     margin: auto;
     object-fit: contain;
     display: flex;
     flex-direction: column;
     align-items: center;
-}
-
-palabra-rosa{
-    color: #EB609F;
-}
-palabra-celeste{
-    color: #41C1F0;
 }
 
 .iconos{
