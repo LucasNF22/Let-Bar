@@ -37,7 +37,7 @@ body{
 }
 
 .opcion-crear-cuenta{
-    background-color: rgba(160, 12, 177, 0.652);
+    background-color: #41C1F0;
     color: aliceblue;
     width: 400px;
     padding: 30px;
@@ -56,7 +56,7 @@ body{
 }
 
 .formulario{
-    background-color: rgba(160, 12, 177, 0.652);
+    background-color: #41C1F0;
     color: aliceblue;
     width: 400px;
     padding: 30px;
