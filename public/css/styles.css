@@ -876,7 +876,35 @@ footer{
     overflow: hidden;
 }
 
+.menu-inicio{
+    display: flex;
+    align-items: center;
+    padding: 5px 5px 5px 5px;
+    justify-content: flex-start;
+    background-color: #000057;
+    width: 100%;
+}
 
+.menu-inicio .iconos {
+    height: 35px;
+    width: 35px;
+}
+
+.menu-inicio .nav-izq{
+    width: max-content;
+    padding-right: 2%;
+    
+}
+
+
+.menu-inicio .nav-cent{
+    justify-content: left;
+    flex-wrap: wrap;
+    color: white;
+    font-size: 10px;
+    width: 45%;
+
+}
 .menu-inicio .nav-der{
     justify-self: right;
     width: max-content;
