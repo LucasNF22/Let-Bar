@@ -6,6 +6,7 @@ app.set("view engine","ejs");
 
 let routesMain=require("./src/routes/main.js");
 let routesProductos = require("./src/routes/productos.js");
+let routesUsers= require ("./src/routes/users.js")
 
 
 const publicPath = path.resolve(__dirname, "./public");
@@ -19,20 +20,13 @@ app.listen(3000, () =>{
 
 app.use ("/", routesMain);
 app.use("/productos", routesProductos);
+app.use("/users", routesUsers);
 
 
 
 
 app.get ("/carrito", (req, res) =>{
     res.sendFile(path.resolve(__dirname, "./views/carrito-desplegable.html"));
-});
-
-app.get ("/register", (req, res) =>{
-    res.sendFile(path.resolve(__dirname, "./views/register.html"));
-});
-
-app.get ("/login", (req, res) =>{
-    res.sendFile(path.resolve(__dirname, "./views/login.html"));
 });
 
 app.get ("/check-out", (req, res) =>{
