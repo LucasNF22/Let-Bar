@@ -3,7 +3,7 @@ const mainController = {
     homeLogueado:(req, res) => {
         res.render(path.join(__dirname,"../views/Home-logueado"));
     },
-    home:(reg, res) => {
+    home:(req, res) => {
         res.render(path.join(__dirname,"../views/Home-sin-loguear"));
 
     },
