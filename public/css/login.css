@@ -10,19 +10,12 @@ body{
     height: auto;   
     display: flex;
     flex-direction: column;
-    background: url("/img/fondo-inicio-cel.jpg");
+    background: url("/img/fondo-inicio.jpg");
     
 
 }
 
-.wallpaper {
-    background: url("/img/rm251-mind-11-g.jpg");
-    background-size: cover;
-    display: flex;
-    height: 100vh;
-    flex-direction: column;
-    justify-content: space-between;
-}
+
 
 .logo-registro{
     display: flex;
@@ -109,10 +102,8 @@ body{
 }
 
 
-.menu-inicio .iconos {
-    height: 35px;
-    width: 35px;
-}
+
+
 
 .menu-inicio .nav-izq{
     width: max-content;
