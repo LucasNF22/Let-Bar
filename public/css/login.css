@@ -37,40 +37,36 @@ body{
 }
 
 .opcion-crear-cuenta{
-    background-color: #41C1F0;
-    color: aliceblue;
+    background-color: #F1F1F1;
     width: 400px;
     padding: 30px;
     margin:auto;
     margin-top: 20px;
     border-radius: 4px;
-    font-family: 'roboto';
 
 }
 
-.opcion-crear-cuenta h5{
-    font-size: 22px;
-    color: aliceblue;
+.opcion-crear-cuenta h3{
+    font-size: 18px;
     text-align: center;
+    
 
 }
 
 .formulario{
-    background-color: #41C1F0;
-    color: aliceblue;
+    background-color:#F1F1F1 ;
     width: 400px;
     padding: 30px;
     margin:auto;
     margin-top: 20px;
     border-radius: 4px;
-    font-family: 'roboto';
 
 }
 
 .formulario h4{
     font-size: 22px;
     margin-bottom: 20px;
-    margin-left: 30%;
+    margin-left: 26%;
 
 }
 
@@ -92,7 +88,6 @@ body{
          border-radius: 4px;
          margin-bottom: 16px;
          border: solid 1.5px #000057 ;
-         font-family: 'roboto';
 
 }
 
