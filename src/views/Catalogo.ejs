@@ -1,62 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home sin loguear</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Mono&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/596c39a353.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/styles.css">
-
-
-</head>
+<!--Head-->
+<%- include("../views/partials/head") %>
 
 <body>
-    <header class="encabezado">
-
-        <nav class="navegacion">
-
-            <div class="nav-izq">
-                <img src="/img/logo-letbar-sin-fondo.png" alt="" class="iconos">
-            </div>
-
-            <nav class="nav-cent">
-
-                <img src="/img/icono-lupa.png" alt="" class="iconos">
-
-
-            </nav>
-
-            <div class="nav-der">
-                <img class="iconos" src="/img/icono-perfil.png" alt="">
-            </div>
-
-
-        </nav>
-
-        <div class="caja-slogan">
-            <p class="slogan">DE LA PUERTA DEL <palabra-rosa> BAR </palabra-rosa><br> A TU <palabra-celeste>CASA
-                </palabra-celeste>
-            </p>
-        </div>
-
-
-
-        <div class="caja-barra">
-            <form class="busq" action="#" method="get">
-                <input type="text" name="barra-busqueda" id="barra-busqueda" placeholder="Ingresá aqui tu dirección..."
-                    class="barra-input">
-                <i><img src="/img/icono-mapa.png" alt="Ver mapa"></i>
-            </form>
-            <input type="button" value="Buscar" class="boton-barra">
-
-        </div>
-
-
-
-    </header>
+    <%- include("../views/partials/headerGeneral") %>
 
     <section class="productos-destacados">
 
