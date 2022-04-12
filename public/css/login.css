@@ -10,12 +10,14 @@ body{
     height: auto;   
     display: flex;
     flex-direction: column;
-    background: url("/img/fondo-inicio.jpg");
+    
     
 
 }
 
-
+.fondo{
+    background: url("/img/fondo-inicio.jpg");
+}
 
 .logo-registro{
     display: flex;

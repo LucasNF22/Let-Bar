@@ -17,7 +17,10 @@ body{
     
 }
 
-
+a {
+    text-decoration: none; 
+    width: max-content;
+ }
 
 /* ///////////////////
 
@@ -558,6 +561,7 @@ footer{
     align-items: center;
     margin: auto;
     flex-direction: column;
+    
 }
 
 .carrito-encabezado{
@@ -571,6 +575,7 @@ footer{
     position: relative;
     box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
     position: fixed;
+    
 }
 
 .carrito-encabezado-cerrar{
@@ -591,6 +596,7 @@ footer{
     margin-bottom: 160px;
     overflow-y: scroll;
     height: 100%;
+    
 }
 
 .carrito-producto{
@@ -604,6 +610,7 @@ footer{
     height: 30vw;
     box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
     padding: 3vw;
+    
 
 }
 
@@ -629,6 +636,7 @@ footer{
     align-items: flex-start;
     height: 24vw;
     font-size: 12px;
+    
 }
 
 .carr-caj-der-sup-nomb{
@@ -1225,6 +1233,7 @@ input #file-upload-button{
     
     
 }
+
 
 
 @media (min-width: 361px){
