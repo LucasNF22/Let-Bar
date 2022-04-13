@@ -6,6 +6,10 @@ const usersControllers = {
 
     login: (req, res) => {
         res.render (path.join (__dirname, "../views/login"))
+    },
+
+    control: (req, res) => {
+        res.render(path.join(__dirname, "../views/control"))
     }
 }
 
