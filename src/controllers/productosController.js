@@ -1,4 +1,9 @@
 const path = require("path");
+const fs = require('fs');
+
+const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+
 
 const productosController = {
 
@@ -7,7 +12,9 @@ const productosController = {
     },
 
     detalleProducto: (req, res) => {
-        res.render(path.join(__dirname, "../views/detalle-producto"));
+        let idProd = req.params.id;
+		let detProd = products.find(producto=> producto.id == idProd);
+		res.render(path.join(__dirname, "../views/detalle-producto"), {producto : detProd});
     },
 
     agregarProducto: (req, res) => {
@@ -17,6 +24,14 @@ const productosController = {
     editarProducto: (req, res) => {
         res.render(path.join(__dirname, "../views/editar-producto"));
     },
+    
+    categoriaProducto: (req, res) => {
+        
+        let categoria = products.filter(producto=> producto.category == "cervezas");
+        
+        res.render(path.join(__dirname, "../views/categoriaProducto"), {producto: categoria});
+    },
+
 }
 
 module.exports = productosController;

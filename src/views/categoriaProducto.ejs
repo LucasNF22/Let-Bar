@@ -1,0 +1,69 @@
+<!--Head-->
+<%- include("../views/partials/head") %>
+
+    <body class="centrado">
+        <%- include("../views/partials/headerGeneral") %>
+            <main class="centrado">
+
+                <section class="menu-categorias">
+                    <a href="#" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/cervezas.png" alt="">
+                    </a>
+                    <a href="#" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/vinos.png" alt="">
+                    </a>
+                    <a href="#" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/sinAlcohol.png" alt="">
+                    </a>
+                    <a href="#" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/destilados.png" alt="">
+                    </a>
+                    <a href="#" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/espumantes.png" alt="">
+                    </a>
+                    <a href="#" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/snacks.png" alt="">
+                    </a>
+
+                </section>
+
+
+                <section class="grillaProductos">
+                    <% producto.forEach(producto => { %>
+
+                    
+                    <!--CAJA ARTICULO -->
+                    <article class="tarjeta-destacado">
+                        <div class="sombra-bi">
+                        </div>
+                        <div class="caja-art-sup">
+                            <a href="/productos/detalle-producto/<%= producto.id %>"><img class="caja-art-sup" src="/img/products/<%= producto.image %>" alt="<%= producto.name %>"></a>
+                        </div>
+                        <div class="caja-art-inf">
+                            <div class="caja-art-inf-izq">
+                                <div class="art-nombre">
+                                    <p class="overflow"><%= producto.name %></p>
+                                </div>
+                                <div class="art-precio">
+                                    $<%= producto.priceUnit %>
+                                </div>
+                            </div>
+                            <div class="caja-art-inf-der">
+                                <i class="fa-solid fa-circle-plus"></i>
+                            </div>
+                        </div>
+                    </article>
+                    <!--CAJA ARTICULO -->
+                <% }) %>
+
+                </section>
+
+
+
+
+            </main>
+            <!--Footer-->
+            <%- include("../views/partials/footer") %>
+    </body>
+
+    </html>

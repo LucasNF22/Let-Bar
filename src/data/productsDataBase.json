@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "Cerveza Andes Origen Rubia Lata",
+        "description": "Andes Origen Rubia es una cerveza mendocina, hecha con agua del deshielo de la cordillera y pura malta tostada a fuego lento, que ofrece colores y texturas bien distintivas. Esta cerveza tiene un aroma leve a lúpulo, cereal y toque de levadura. Debe servirse en copa para apreciar mejor sus aromas y resaltar así su color dorado brillante. Es una cerveza de deleite, pero refrescante a la vez.",
+        "image": "andes-rubia21.jpg",
+        "category": "cervezas",
+        "size":"473ml",
+        "priceUnit": 186,
+        "cantDisc": 6,
+        "priceCant": 125,
+        "valoration": 5,
+        "offer": true,
+        "graduation": "4.5%",
+        "years": ""
+    },
+    {
+        "id": 2,
+        "name": "Cerveza Andes Origen IPA Lata",
+        "description": "Andes Origen IPA Andina (473ml) es una cerveza con un intenso aroma a lúpulo, frutado y dulce, de apariencia dorado profundo, espuma blanca, sabor amargo balanceado con el dulzor de la uva. Esta cerveza está elaborada a partir de una receta mendocina que contiene mosto de uva, agua, malta y lúpulo de diferentes variedades. Ideal para maridar comidas picantonas, aromáticas y especiadas, como unas papas bravas, risottos, currys y quesos duros y fuertes.",
+        "image": "andes-ipa.jpg",
+        "category": "cervezas",
+        "size":"473ml",
+        "priceUnit": 213,
+        "cantDisc": 6,
+        "priceCant": 142,
+        "valoration": 4.2,
+        "offer": true,
+        "graduation": "4.5%",
+        "years": ""
+    },
+    {
+        "id": 3,
+        "name": "Cerveza Andes Origen Roja Lata",
+        "description": "La Andes Origen Roja, color ámbar cobrizo, es una cerveza de deleite. Su aroma a suave caramelo y leve lúpulo logran un balance perfecto. Esta cerveza posee un final seco y una leve acidez que la hacen muy versátil. Ideal para acompañar pescados o carnes rojas, elaborados con verduras frescas o grilladas, pastas rellenas o postres como crumble de manzana o de pera.",
+        "image": "andes-roja21.jpg",
+        "category": "cervezas",
+        "size":"473ml",
+        "priceUnit": 213,
+        "cantDisc": 6,
+        "priceCant": 142,
+        "valoration": 4.8,
+        "offer": true,
+        "graduation": "5.1%",
+        "years": ""
+    },
+    {
+        "id": 4,
+        "name": "Cerveza Andes Origen Negra Lata",
+        "description": "La Andes Orgien Negra es una cerveza elaborada con maltas tostadas que le otorgan su particular aroma. Destacada por su cuerpo y espuma cremosa, recuerda al sabor del chocolate y al amargor del café. Esta Andes, como cerveza de deleite, armoniza su leve acidez y amargor con un suave dulzor. Por las característicasd de esta cerveza es ideal para acompañar postres cremosos.",
+        "image": "andes-negra3.jpg",
+        "category": "cervezas",
+        "size":"473ml",
+        "priceUnit": 213,
+        "cantDisc": 6,
+        "priceCant": 142,
+        "valoration": 4.8,
+        "offer": true,
+        "graduation": "5.3%",
+        "years": ""
+
+
+    }
+    
+]
