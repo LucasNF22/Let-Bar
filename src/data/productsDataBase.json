@@ -166,7 +166,7 @@
     {
         "id": 11,
         "name": "Cerveza Quilmes 'Bajo Cero'",
-        "description": "",
+        "description": "Quilmes Bajo Cero es una cerveza ligera que se destaca por su suavidad única y su extrema refrescancia. Ofrece una alternativa diferente a Quilmes Cristal pensada para aquellos consumidores que prefieren una cerveza suave",
         "image": "tarjeta-03.jpg",
         "category": "cervezas",
         "size":"1L",
@@ -183,7 +183,7 @@
     {
         "id": 12,
         "name": "Cerveza Patagonia Lager",
-        "description": "",
+        "description": "Patagonia Hoppy Lager una cerveza Lager lupulada. Elaborada con la técnica de Dry Hopping en frío, se caracteriza por mayor presencia de lúpulo en aroma y sabor, sin aportarle mayor amargor, logrando una cerveza de gran tomabilidad, como toda cerveza Lager.",
         "image": "tarjeta-04.jpg",
         "category": "cervezas",
         "size":"710ml",
@@ -234,7 +234,7 @@
     {
         "id": 15,
         "name": "Cerveza Corona",
-        "description": "",
+        "description": "Corona es una cerveza con cuerpo sin igual, aroma limpio y un refrescante sabor a cebada malteada y maltas especiales, se acompaña de una abundante y consistente espuma. Ofrece un carácter unico y un agradable balance entre suavidad y amargor",
         "image": "tarjeta-07.jpg",
         "category": "cervezas",
         "size":"710ml",
@@ -251,7 +251,7 @@
     {
         "id": 16,
         "name": "Cerveza Andes",
-        "description": "",
+        "description": "Cerveza rubia refrescante con cuerpo, balanceada y un suave amargor. Un típico ejemplo de cerveza tipo alemana adaptada al gusto de los mendocinos.",
         "image": "tarjeta-08.jpg",
         "category": "cervezas",
         "size":"1000ml",
@@ -268,7 +268,7 @@
     {
         "id": 17,
         "name": "Cerveza Quilmes 340ml",
-        "description": "",
+        "description": "Cerveza argentina, elaborada con ingredientes nacionales. Con equilibrio entre el suave amargor del lúpulo y el sabor del cereal. Color amarillo dorado brillante. Es una cerveza equilibrada, de gran refrescancia y cuerpo balanceado, que marida con platos más bien grasosos o pesados.",
         "image": "tarjeta-09.jpg",
         "category": "cervezas",
         "size":"340ml",
@@ -285,7 +285,7 @@
     {
         "id": 18,
         "name": "Cerveza Patagonia Kune",
-        "description": "",
+        "description": "Con una combinación de maltas especiales, que da lugar a una cerveza de color dorado bronce brillante de leve amargor y cuerpo medio. Cerveza muy balanceada y fácil de tomar.",
         "image": "tarjeta-10.jpg",
         "category": "cervezas",
         "size":"730ml",
@@ -302,7 +302,7 @@
     {
         "id": 19,
         "name": "Cerveza Andes Origen Miel Lata",
-        "description": "",
+        "description": "Andes Miel es la nueva cerveza elaborada por la empresa mendocina Andes Origen elaborada con agua de deshielo de la cordillera y pura malta tostada a fuego lento. Con sabor a malta, leve aroma a lúpulo y a cereal.",
         "image": "tarjeta-14.jpg",
         "category": "cervezas",
         "size":"473ml",
@@ -319,7 +319,7 @@
     {
         "id": 20,
         "name": "Cerveza Patagonia Amber Lager Lata",
-        "description": "",
+        "description": "Es una cerveza con una combinación de lúpulos patagónicos y un blend de finas maltas que generan su color rojizo, un delicado aroma y un amargor apacible que permite dar a luz a un tostado delicioso",
         "image": "tarjeta-16.jpg",
         "category": "cervezas",
         "size":"473ml",
@@ -336,7 +336,7 @@
     {
         "id": 21,
         "name": "Cerveza Quilmes Lata",
-        "description": "",
+        "description": "Cerveza argentina, elaborada con ingredientes nacionales. Con equilibrio entre el suave amargor del lúpulo y el sabor del cereal. Color amarillo dorado brillante. Es una cerveza equilibrada, de gran refrescancia y cuerpo balanceado, que marida con platos más bien grasosos o pesados.",
         "image": "tarjeta-17.jpg",
         "category": "cervezas",
         "size":"473ml",
