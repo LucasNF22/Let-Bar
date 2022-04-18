@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "first_name": "Devi",
+        "last_name": "Latour",
+        "email": "dlatour0@creativecommons.org",
+        "password": "KZEaNa8ojOF",
+        "category": "user",
+        "image": "user_1.jpg"
+    },
+    {
+        "id": 2,
+        "first_name": "Mel",
+        "last_name": "Richt",
+        "email": "mricht1@ucla.edu",
+        "password": "HkSBCp2Ab",
+        "category": "user",
+        "image": "user_2.jpg"
+    },
+    {
+        "id": 3,
+        "first_name": "Yevette",
+        "last_name": "Sunnucks",
+        "email": "ysunnucks2@cam.ac.uk",
+        "password": "mlrcr9n",
+        "category": "user",
+        "image": "user_3.jpg"
+    },
+    {
+        "id": 4,
+        "first_name": "Si",
+        "last_name": "Antonich",
+        "email": "santonich3@dmoz.org",
+        "password": "BVzbMbkPLJ",
+        "category": "user",
+        "image": "user_4.jpg"
+    },
+    {
+        "id": 5,
+        "first_name": "Perl",
+        "last_name": "Brimelow",
+        "email": "pbrimelow4@ovh.net",
+        "password": "itp9EvRyX2ZJ",
+        "category": "user",
+        "image": "user_5.jpg"
+    },
+    {
+        "id": 6,
+        "first_name": "Florrie",
+        "last_name": "Axon",
+        "email": "faxon5@epa.gov",
+        "password": "USGvKmXkQu20",
+        "category": "user",
+        "image": "user_6.jpg"
+    },
+    {
+        "id": 7,
+        "first_name": "George",
+        "last_name": "Ferrar",
+        "email": "gferrar6@mayoclinic.com",
+        "password": "wjv0F730MBx",
+        "category": "user",
+        "image": "user_7.jpg"
+    },
+    {
+        "id": 8,
+        "first_name": "Amii",
+        "last_name": "Village",
+        "email": "avillage7@tripadvisor.com",
+        "password": "4DOWAhe",
+        "category": "user",
+        "image": "user_8.jpg"
+    },
+    {
+        "id": 9,
+        "first_name": "Arlette",
+        "last_name": "Maxweell",
+        "email": "amaxweell8@ezinearticles.com",
+        "password": "j4vX81ZT",
+        "category": "user",
+        "image": "user_9.jpg"
+    },
+    {
+        "id": 10,
+        "first_name": "Kerr",
+        "last_name": "Coldwell",
+        "email": "kcoldwell9@gravatar.com",
+        "password": "wOzuYYW9gO",
+        "category": "user",
+        "image": "user_10.jpg"
+    },
+    {
+        "id": 11,
+        "first_name": "Hermy",
+        "last_name": "Leaver",
+        "email": "hleavera@home.pl",
+        "password": "EMVo0Bc1fn",
+        "category": "user",
+        "image": "user_11.jpg"
+    },
+    {
+        "id": 12,
+        "first_name": "Virge",
+        "last_name": "Terrelly",
+        "email": "vterrellyb@ifeng.com",
+        "password": "TDqN2Rs0",
+        "category": "user",
+        "image": "user_12.jpg"
+    },
+    {
+        "id": 13,
+        "first_name": "Myrtia",
+        "last_name": "Able",
+        "email": "mablec@bing.com",
+        "password": "5bBH10ZTlT5",
+        "category": "user",
+        "image": "user_13.jpg"
+    },
+    {
+        "id": 14,
+        "first_name": "Tedmund",
+        "last_name": "Brodeur",
+        "email": "tbrodeurd@nydailynews.com",
+        "password": "yEHzfIPTqAo9",
+        "category": "user",
+        "image": "user_14.jpg"
+    },
+    {
+        "id": 15,
+        "first_name": "Myra",
+        "last_name": "Hubble",
+        "email": "mhubblee@sfgate.com",
+        "password": "PA28LDi",
+        "category": "user",
+        "image": "user_15.jpg"
+    },
+    {
+        "id": 16,
+        "first_name": "Tanney",
+        "last_name": "Pedican",
+        "email": "tpedicanf@redcross.org",
+        "password": "UDECA7nAJYYA",
+        "category": "user",
+        "image": "user_16.jpg"
+    },
+    {
+        "id": 17,
+        "first_name": "Dov",
+        "last_name": "Farthing",
+        "email": "dfarthingg@mapy.cz",
+        "password": "P4GoMhr",
+        "category": "user",
+        "image": "user_17.jpg"
+    },
+    {
+        "id": 18,
+        "first_name": "Mattias",
+        "last_name": "Munkley",
+        "email": "mmunkleyh@sbwire.com",
+        "password": "1UycE8stnSfh",
+        "category": "user",
+        "image": "user_18.jpg"
+    },
+    {
+        "id": 19,
+        "first_name": "Aloise",
+        "last_name": "Varden",
+        "email": "avardeni@mayoclinic.com",
+        "password": "QZGHgr9R9H",
+        "category": "user",
+        "image": "user_19.jpg"
+    },
+    {
+        "id": 20,
+        "first_name": "Haze",
+        "last_name": "Cavanagh",
+        "email": "hcavanaghj@gmpg.org",
+        "password": "2kv6ewN6",
+        "category": "user",
+        "image": "user_20.jpg"
+    }
+]
