@@ -17,7 +17,7 @@
  
                 <h3>Agregar nuevo producto</h3>
                 
-                <form action="/" method="POST" class="FormCarga">
+                <form action="/productos" method="POST" class="FormCarga">
                     
                     <div>
                         <label>Categoría:</label>
@@ -32,24 +32,36 @@
                     </div>
                     <div>
                         <label>Nombre del producto:</label>
-                        <input type="text" name="nombre" placeholder="Nombre del producto..." class="imputForm">
+                        <input type="text" name="name" id= "name" placeholder="Nombre del producto..." class="imputForm">
                     </div>
                     <div>
                         <label>Tamaño del producto:</label>
-                        <input type="number" name="tamaño" placeholder="Tamaño en ml..." class="imputForm">
+                        <input type="number" name="size" placeholder="Tamaño en ml..." class="imputForm">
+                    </div>
+                    <div>
+                        <label>Cosecha:</label>
+                        <input type="number" name="years" placeholder="Año Cosecha..." class="imputForm">
                     </div>
                     <div>
                         <label>Precio por unidad:</label>
-                        <input type="number" name="Precio" placeholder="Precio por unidad..." class="imputForm">
+                        <input type="number" name="price" placeholder="Precio por unidad..." class="imputForm">
                     </div>
                     <div>
                         <label>Precio por cantidad:</label>
-                        <input type="number" name="precioCantidad" placeholder="Precio por cantidad..."
+                        <input type="number" name="priceCant" placeholder="Precio por cantidad..."
                             class="imputForm">
                     </div>
                     <div>
+                        <label>Unidades para descuento:</label>
+                        <input type="number" name="cantDisc" placeholder="Unidades para descuentos..." class="imputForm">
+                    </div>
+                    <div>
+                        <label>En oferta</label>
+                        <input type="boolean" name="offer" placeholder="Producto en oferta..." class="imputForm">
+                    </div>
+                    <div>
                         <label>Graduación alcoholica:</label>
-                        <input type="number" name="graduacionAlcoholica" placeholder="Graduacion alcoholica..."
+                        <input type="number" name="graduation" placeholder="Graduacion alcoholica..."
                             class="imputForm">
                     </div>
                     <div>
@@ -58,11 +70,11 @@
                     </div>
                     <div>
                         <label>Descripción:</label>
-                        <textarea rows="5" placeholder="Describe tu producto..." class="imputForm"></textarea>
+                        <textarea rows="5" name="descritption" placeholder="Describe tu producto..." class="imputForm"></textarea>
                     </div>
                     <div>
                         <label>Fotos del producto:</label>
-                        <input type="file" name="foto-producto" accept=".jpg" class="imputForm">
+                        <input type="file" name="image" accept=".jpg" class="imputForm">
                     </div>
                     <div class="caja-fotos-producto">
                         <div class="foto-producto"> <i class="fa-solid fa-plus"></i> </div>
@@ -72,7 +84,7 @@
                         <div class="foto-producto"> <i class="fa-solid fa-plus"></i> </div>
                     </div>
                     <div class="centrado">
-                        <a href="/users/panel-control" class="boton-ver-mas">Guardar</a>
+                        <button type="submit" class="boton-ver-mas">Agregar</button>
                     </div>
 
 
