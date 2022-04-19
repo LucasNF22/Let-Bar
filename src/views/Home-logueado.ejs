@@ -1,437 +1,100 @@
 <!--Head-->
 <%- include("../views/partials/head") %>
 
-<body>
-    <%- include("../views/partials/headerGeneral") %>
-    <main>
-        <section class="ofertas">
+    <body>
+        <%- include("../views/partials/headerGeneral") %>
+            <main class="backgris">
+                <section class="ofertas">
 
-            <div class="ofertas-slide">
-                <img src="/img/oferta-01.jpg" alt="">
-                <div class="slide-selector">
-                    <div>
-                        <i class="fa-solid fa-circle"></i>
-                        <i class="fa-solid fa-circle"></i>
-                        <i class="fa-solid fa-circle"></i>
-                        <i class="fa-solid fa-circle"></i>
+                    <div class="ofertas-slide">
+                        <img src="/img/oferta-01.jpg" alt="">
+                        <div class="slide-selector">
+                            <div>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-circle"></i>
+                                <i class="fa-solid fa-circle"></i>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section class="menu-categorias">
-            <a href="/productos/categoria/cervezas" class="boton-menu-cat">
-                <img src="/img/categoryIcons/cervezas.png" alt="">
-            </a>
-            <a href="/productos/categoria/vinos" class="boton-menu-cat">
-                <img src="/img/categoryIcons/vinos.png" alt="">
-            </a>
-            <a href="/productos/categoria/sinAlcohol" class="boton-menu-cat">
-                <img src="/img/categoryIcons/sinAlcohol.png" alt="">
-            </a>
-            <a href="/productos/categoria/destilados" class="boton-menu-cat">
-                <img src="/img/categoryIcons/destilados.png" alt="">
-            </a>
-            <a href="/productos/categoria/espumantes" class="boton-menu-cat">
-                <img src="/img/categoryIcons/espumantes.png" alt="">
-            </a>
-            <a href="/productos/categoria/snacks" class="boton-menu-cat">
-                <img src="/img/categoryIcons/snacks.png" alt="">
-            </a>
+                <section class="menu-categorias">
+                    <a href="/productos/categoria/cervezas" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/cervezas.png" alt="">
+                    </a>
+                    <a href="/productos/categoria/vinos" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/vinos.png" alt="">
+                    </a>
+                    <a href="/productos/categoria/sinAlcohol" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/sinAlcohol.png" alt="">
+                    </a>
+                    <a href="/productos/categoria/destilados" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/destilados.png" alt="">
+                    </a>
+                    <a href="/productos/categoria/espumantes" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/espumantes.png" alt="">
+                    </a>
+                    <a href="/productos/categoria/snacks" class="boton-menu-cat">
+                        <img src="/img/categoryIcons/snacks.png" alt="">
+                    </a>
 
-        </section>
+                </section>
 
-        <section class="tarjeta-categoria">
+                <% categorias.forEach(categoria=>{ %>
+                    <!--Tajeta de categoria-->
+                    <section class="tarjeta-categoria ">
 
-            <div class="tarj-cat-sup">
-                <div>Categoria 1</div>
-            </div>
 
-            <div class="tarj-cat-inf">
-
-                <div class="tarj-cat-inf-izq">
-
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <a href="/productos/detalle-producto" ><img src="/img/productos-21.jpg" alt=""></a>
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
+                        <div class="tarj-cat-sup padding20">
+                            <div>
+                                <%= categoria.name %>
                             </div>
                         </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
+                        <div class="tarj-cat-inf">
+                            <div class="tarj-cat-inf-izq padding20">
 
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
+                            <% productos.forEach(producto=>{ if(producto.category == categoria.category){ %>   
+                                <!--Tajeta de producto-->
+                                <article class="tarjeta-art-cat">
+                                    <div class="caja-art-cat-sup">
+                                        <a href="/productos/detalle-producto/<%= producto.id %>"><img src="/img/products/<%= producto.image %>"
+                                                alt=""></a>
+                                    </div>
+                                    <div class="caja-art-inf-cat">
 
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
+                                        <div class="caja-art-inf-izq">
+                                            <div class="art-nombre overflow">
+                                                <%= producto.name %>
+                                            </div>
+                                            <div class="art-precio">
+                                                $<%= producto.priceUnit %>
+                                            </div>
+                                        </div>
+                                        <div class="caja-art-inf-der-cat">
+                                            <i class="fa-solid fa-circle-plus"></i>
+                                        </div>
+                                    </div>
+                                </article>
+                                <% }}) %>
+
                             </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
+
+                            <div class="tarj-cat-inf-der">
+                                <i class="fa-solid fa-circle-chevron-right"></i>
                             </div>
                         </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
 
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
+                    </section>
+                    <!--Tajeta de categoria-->
+                    <% }) %>
+
+                        
 
 
-                </div>
+            </main>
+            <!--Footer-->
+            <%- include("../views/partials/footer") %>
+    </body>
 
-                <div class="tarj-cat-inf-der">
-                    <i class="fa-solid fa-circle-chevron-right"></i>
-                </div>
-            </div>
-
-        </section>
-
-        <section class="tarjeta-categoria">
-
-            <div class="tarj-cat-sup">
-                <div>Categoria 2</div>
-            </div>
-
-            <div class="tarj-cat-inf">
-
-                <div class="tarj-cat-inf-izq">
-
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-
-
-                </div>
-
-                <div class="tarj-cat-inf-der">
-                    <i class="fa-solid fa-circle-chevron-right"></i>
-                </div>
-            </div>
-
-        </section>
-        <section class="tarjeta-categoria">
-
-            <div class="tarj-cat-sup">
-                <div>Categoria 3</div>
-            </div>
-
-            <div class="tarj-cat-inf">
-
-                <div class="tarj-cat-inf-izq">
-
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-
-
-                </div>
-
-                <div class="tarj-cat-inf-der">
-                    <i class="fa-solid fa-circle-chevron-right"></i>
-                </div>
-            </div>
-
-        </section>
-        <section class="tarjeta-categoria">
-
-            <div class="tarj-cat-sup">
-                <div>Categoria 4</div>
-            </div>
-
-            <div class="tarj-cat-inf">
-
-                <div class="tarj-cat-inf-izq">
-
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-
-
-                </div>
-
-                <div class="tarj-cat-inf-der">
-                    <i class="fa-solid fa-circle-chevron-right"></i>
-                </div>
-            </div>
-
-        </section>
-
-
-
-    </main>
-    <!--Footer-->
-    <%- include("../views/partials/footer") %>
-</body>
-
-</html>
+    </html>

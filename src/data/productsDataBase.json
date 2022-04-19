@@ -117,7 +117,7 @@
         "name": "Coca Cola",
         "description": "Es un refresco azucarado de color marrón oscuro o negro debido al caramelo de su composición.",
         "image": "productos-21.jpg",
-        "category": "sin alcohol",
+        "category": "sinAlcohol",
         "size":"2250cc",
         "priceUnit": 213,
         "cantDisc": 6,

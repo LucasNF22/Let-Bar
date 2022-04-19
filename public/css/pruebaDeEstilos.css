@@ -1,0 +1,19 @@
+.card {
+    width: 190px;
+    height: 190px;
+    border-radius: 30px;
+    background: #e0e0e0;
+    box-shadow: 15px 15px 30px #bebebe,
+                -15px -15px 30px #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3A3A3A;
+    transition: all .3s;
+    font-family: 'Roboto Mono', monospace;
+   }
+
+   .card:hover{
+    background-color: #41C1F0;
+    border-radius: 8px;
+   }

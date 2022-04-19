@@ -1,0 +1,32 @@
+[
+    {
+        "category": "cervezas",
+        "name": "Cervezas",
+        "icon": "/img/categoryIcons/cervezas.png"
+    },
+    {
+        "category": "vinos",
+        "name": "Vinos",
+        "icon": "/img/categoryIcons/vinos.png"
+    }, 
+    {
+        "category": "sinAlcohol",
+        "name": "Sin alcohol",
+        "icon": "/img/categoryIcons/sinAlchol.png"
+    }, 
+    {
+        "category": "destilados",
+        "name": "Destilados",
+        "icon": "/img/categoryIcons/destilados.png"
+    }, 
+    {
+        "category": "espumantes",
+        "name": "Espumantes",
+        "icon": "/img/categoryIcons/espumantes.png"
+    }, 
+    {
+        "category": "snacks",
+        "name": "Snacks",
+        "icon": "/img/categoryIcons/snacks.png"
+    }    
+]
