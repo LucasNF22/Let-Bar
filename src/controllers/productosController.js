@@ -21,14 +21,13 @@ const productosController = {
         res.render(path.join(__dirname, "../views/agregar-producto"));
     },
 
-    editarProducto: (req, res) => {
+        editarProducto: (req, res) => {
         res.render(path.join(__dirname, "../views/editar-producto"));
     },
     
     categoriaProducto: (req, res) => {
-        
-        let categoria = products.filter(producto=> producto.category == "cervezas");
-        
+        let idCategoria = req.params.id
+        let categoria = products.filter(producto=> producto.category == idCategoria);
         res.render(path.join(__dirname, "../views/categoriaProducto"), {producto: categoria});
     },
 
