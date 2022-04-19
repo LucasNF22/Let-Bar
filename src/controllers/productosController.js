@@ -18,8 +18,18 @@ const productosController = {
     },
 
     agregarProducto: (req, res) => {
+        
         res.render(path.join(__dirname, "../views/agregar-producto"));
     },
+
+    guardarProducto: (req, res) => {
+      //  let productosOriginal=products;
+        console.log("///// Tamaño")
+      //  let nombre=req.body.name;
+       console.log(req.body);
+        res.send('sss');
+    },
+
 
     editarProducto: (req, res) => {
         res.render(path.join(__dirname, "../views/editar-producto"));
