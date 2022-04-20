@@ -3,6 +3,9 @@ const path = require("path");
 const app = express();
 const methodOverride =  require('method-override');
 
+app.use(express.urlencoded ({ extended: false}));
+app.use(express.json());
+
 
 app.set("view engine","ejs");
 
