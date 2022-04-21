@@ -795,7 +795,9 @@ footer{
     
     
 }
-.carrito-pago-inf input{
+.carrito-pago-inf div{
+    display: flex;
+    justify-content: center;
     width: 70vw;
     font-size: 16px;
     padding: 10px 5px 10px 5px;
@@ -1019,11 +1021,11 @@ footer{
     flex-direction: column;
     align-items: center;
     flex-wrap: wrap ;
-    width: 80%;
+    width: 95%; 
     background-color: #F1F1F1;
-    border-radius: 30px;
+    border-radius: 15px; 
     box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
-    margin-top: 25px;
+    margin-top: 30px;
     padding: 10px;
     height: 290px;
     margin-left: auto;
@@ -1097,7 +1099,7 @@ footer{
     align-items: flex-start;
     margin-right: 10px;
     height: 210px;
-    box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2);
+    /* box-shadow: -4px 4px 10px rgba(0, 0, 0, 0.2); */
 }
 .caja-art-inf-cat{    
     display: flex;
@@ -1259,8 +1261,6 @@ input #file-upload-button{
    /////////////////// */
 .body-control{
     display: flex;
-    
-    height: 100%;
     justify-content: space-between;
     align-items: center;
     background-color: #e8e8e8;

@@ -1,188 +1,209 @@
 <!--Head-->
 <%- include("../views/partials/head") %>
 
-<body>
-    <%- include("../views/partials/headerGeneral") %>
+    <body>
+        <%- include("../views/partials/headerGeneral") %>
 
-    <main>
-        <!--- <div class="det-macro"> -->
-        <section class="det-productos">
-            <div class="det-princ">
-                <a href="/home"><div class="det-atras"> Atras </div></a>
-                <div class="det-imgDet">
-                    <div class="det-img">
+            <main>
+                <!--- <div class="det-macro"> -->
+                <section class="det-productos">
+                    <div class="det-princ">
+                        <a href="/home">
+                            <div class="det-atras"> Atras </div>
+                        </a>
+                        <div class="det-imgDet">
+                            <div class="det-img">
 
-                        <img src="/img/products/<%= producto.image %>" alt="">
+                                <img src="/img/products/<%= producto.image %>" alt="">
 
-                    </div>
-
-
-
-
-                    <div class="det-caj-der">
-                        <div class="det-det-prod">
-                            <h3> Detalle de Producto </h3>
-                            <div class="det-caj-der-sup-nomb">
-                                <%= producto.name %>
                             </div>
+
+
+
+
+                            <div class="det-caj-der">
+                                <div class="det-det-prod">
+                                    <h3> Detalle de Producto </h3>
+                                    <div class="det-caj-der-sup-nomb">
+                                        <%= producto.name %>
+                                    </div>
+                                </div>
+
+                                <div class="det-caj-der-sup">
+
+
+                                    <div class="det-caj-der-sup-pre">
+                                        $<%= producto.priceUnit %>
+                                    </div>
+
+
+                                </div>
+
+                                <div class="det-caj-der-inf">
+                                    <div class="det-caj-der-inf-cant">
+                                        - Cantidad +
+                                    </div>
+                                    <div class="det-caj-der-inf-borrar">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+
+
+
                         </div>
-
-                        <div class="det-caj-der-sup">
-
+                        <br>
+                        <!--Visible solo para administradores-->
+                        <div class="">
+                            <button href="#" class="boton-admin naranja"> Editar </button>
                             
-                            <div class="det-caj-der-sup-pre">
-                                $<%= producto.priceUnit %>
-                            </div>
+                            <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="boton-admin rojo"> Eliminar </button> no tocar!!!!!!
+                            </form>
+                            
+                        </div>    
+                
+                    </section>
 
+
+
+
+                <section class="detalle-productos">
+                    <div class="det-art-sup">
+                        <div class="det-art-primera">
+                            <%= producto.name + " " + producto.size %>
+                        </div>
+                        <br>
+
+                        <div class="det-art-segunda">
+                            <p>
+                                <%= producto.description %>
+                            </p>
 
                         </div>
-
-                        <div class="det-caj-der-inf">
-                            <div class="det-caj-der-inf-cant">
-                                - Cantidad +
-                            </div>
-                            <div class="det-caj-der-inf-borrar">
-                                <i class="fa-solid fa-plus"></i>
-                            </div>
+                        <div class="det-art-tercera">
+                            Bodega, Años, Marca.
+                        </div>
+                        <div class="det-art-cuarta">
+                            Graduación: <%= producto.graduation %>
+                        </div>
+                        <br><br>
+                        <div class="det-art-quinta">
+                            Años: <%= producto.years %>
                         </div>
 
+                        <br>
+                        <div class="det-art-sexta">
+                            Valoración de los compradores: <%= producto.valoration %> <i class="fa-regular fa-star"></i>
+                        </div>
+                    </div>
+                </section>
 
 
+                <section class="tarjeta-categoria">
+
+                    <div class="det-tarj-cat-sup">
+                        <div>También te podría interesar </div>
                     </div>
 
+                    <div class="tarj-cat-inf ">
+
+                        <div class="tarj-cat-inf-izq padding20">
+
+                            <article class="tarjeta-art-cat">
+                                <div class="caja-art-cat-sup">
+                                    <img src="/img/productos-21.jpg" alt="">
+                                </div>
+                                <div class="caja-art-inf-cat">
+
+                                    <div class="caja-art-inf-izq">
+                                        <div class="art-nombre">
+                                            XXXXXXXXXX XX XX
+                                        </div>
+                                        <div class="art-precio">
+                                            $$$$$$
+                                        </div>
+                                    </div>
+                                    <div class="caja-art-inf-der-cat">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="tarjeta-art-cat">
+                                <div class="caja-art-cat-sup">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="caja-art-inf-cat">
+
+                                    <div class="caja-art-inf-izq">
+                                        <div class="art-nombre">
+                                            XXXXXXXXXX XX XX
+                                        </div>
+                                        <div class="art-precio">
+                                            $$$$$$
+                                        </div>
+                                    </div>
+                                    <div class="caja-art-inf-der-cat">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="tarjeta-art-cat">
+                                <div class="caja-art-cat-sup">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="caja-art-inf-cat">
+
+                                    <div class="caja-art-inf-izq">
+                                        <div class="art-nombre">
+                                            XXXXXXXXXX XX XX
+                                        </div>
+                                        <div class="art-precio">
+                                            $$$$$$
+                                        </div>
+                                    </div>
+                                    <div class="caja-art-inf-der-cat">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                </div>
+                            </article>
+                            <article class="tarjeta-art-cat">
+                                <div class="caja-art-cat-sup">
+                                    <img src="" alt="">
+                                </div>
+                                <div class="caja-art-inf-cat">
+
+                                    <div class="caja-art-inf-izq">
+                                        <div class="art-nombre">
+                                            XXXXXXXXXX XX XX
+                                        </div>
+                                        <div class="art-precio">
+                                            $$$$$$
+                                        </div>
+                                    </div>
+                                    <div class="caja-art-inf-der-cat">
+                                        <i class="fa-solid fa-circle-plus"></i>
+                                    </div>
+                                </div>
+                            </article>
+
+
+                        </div>
+
+                        <div class="tarj-cat-inf-der">
+                            <i class="fa-solid fa-circle-chevron-right"></i>
+                        </div>
+                    </div>
+
+                </section>
 
 
                 </div>
-        </section>
-        <section class="detalle-productos">
-            <div class="det-art-sup">
-                <div class="det-art-primera"> <%= producto.name + " " + producto.size %>  </div>
-                <br>
+            </main>
 
-                <div class="det-art-segunda">
-                    <p><%= producto.description %></p>
-
-                </div>
-                <div class="det-art-tercera">
-                    Bodega, Años, Marca.
-                </div>
-                <div class="det-art-cuarta">
-                    Graduación: <%= producto.graduation %>
-                </div>
-                <br><br>
-                <div class="det-art-quinta">
-                    Años: <%= producto.years %>
-                </div>
-
-                <br>
-                <div class="det-art-sexta">
-                    Valoración de los compradores: <%= producto.valoration %> <i class="fa-regular fa-star"></i>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="tarjeta-categoria">
-
-            <div class="det-tarj-cat-sup">
-                <div>También te podría interesar </div>
-            </div>
-
-            <div class="tarj-cat-inf ">
-
-                <div class="tarj-cat-inf-izq padding20">
-
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="/img/productos-21.jpg" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="tarjeta-art-cat">
-                        <div class="caja-art-cat-sup">
-                            <img src="" alt="">
-                        </div>
-                        <div class="caja-art-inf-cat">
-
-                            <div class="caja-art-inf-izq">
-                                <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
-                                </div>
-                                <div class="art-precio">
-                                    $$$$$$
-                                </div>
-                            </div>
-                            <div class="caja-art-inf-der-cat">
-                                <i class="fa-solid fa-circle-plus"></i>
-                            </div>
-                        </div>
-                    </article>
-
-
-                </div>
-
-                <div class="tarj-cat-inf-der">
-                    <i class="fa-solid fa-circle-chevron-right"></i>
-                </div>
-            </div>
-
-        </section>
-
-
-        </div>
-    </main>
-    
-    <!--Footer-->
-   <%- include("../views/partials/footer") %>
-    </section>
+            <!--Footer-->
+            <%- include("../views/partials/footer") %>
+                </section>

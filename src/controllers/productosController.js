@@ -45,6 +45,16 @@ const productosController = {
         res.render(path.join(__dirname, "../views/categoriaProducto"), {producto: categoria});
     },
 
+    eliminarProducto : (req, res) => {
+		let idAEliminar =  req.params.id;
+		console.log(idAEliminar);
+        let productosActualizados = products.filter(product => product.id != idAEliminar);
+		
+        fs.writeFileSync(productsFilePath,JSON.stringify(productosActualizados, null , ' '));
+        res.redirect("/home")
+    
+    }
+
 }
 
 module.exports = productosController;
