@@ -36,9 +36,17 @@ const productosController = {
 
 
     editarProducto: (req, res) => {
-        res.render(path.join(__dirname, "../views/editar-producto"));
+        let productoId = req.params.id
+        let productosEdit = products.find(producto => producto.id == productoId)
+        res.render ("editar-producto", {producto : productosEdit}) +
+        console.log (productosEdit)
     },
     
+    actualizarProducto:(req, res) =>{
+
+
+    },
+
     categoriaProducto: (req, res) => {
         let idCategoria = req.params.id
         let categoria = products.filter(producto=> producto.category == idCategoria);
