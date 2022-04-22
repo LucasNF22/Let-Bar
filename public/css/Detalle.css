@@ -98,12 +98,15 @@ body {
 }
 
 .det-caj-der-sup-nomb {
+        
     background-color: #F1F1F1;
-    width: max-content;
+    width: 100%;
     padding: 2px 8px 2px 8px;
     margin-top: 10px;
     font-family: 'Roboto Mono', monospace;
     color: #3A3A3A;
+
+       
 }
 
 .det-caj-der-sup-tam {
@@ -136,7 +139,7 @@ body {
 .det-atras {
     display: flex;
     width: max-content;
-    background-color: lightgray;
+    background-color: #F1F1F1;
     padding: 5px 10px 5px 10px;
     color: #3A3A3A;
 

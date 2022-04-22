@@ -27,11 +27,34 @@ const productosController = {
     },
 
     guardarProducto: (req, res) => {
-      //  let productosOriginal=products;
-        console.log("///// Tamaño")
-      //  let nombre=req.body.name;
-       console.log(req.body);
-        res.send('sss');
+
+       
+        let productosOriginales = products;
+        
+        let ultimoObjeto = (productosOriginales.length) - 1;
+		let ultimoId = productosOriginales[ultimoObjeto].id;
+		let nuevoId = ultimoId +1;
+      let nuevoProducto = {
+        "id": nuevoId,
+        "name":req.body.name,
+        "description": req.body.description,
+        "image": req.body.image,
+        "category": req.body.categoria,
+        "size":req.body.size,
+        "priceUnit": req.body.priceUnit,
+        "cantDisc": req.body.cantDisc,
+        "priceCant": req.body.priceCant,
+        "valoration": req.body.valoration,
+        "offer": req.body.offer,
+        "graduation": req.body.graduation,
+        "years": req.body.years,
+
+    } ;
+           productosOriginales.push (nuevoProducto);
+
+           fs.writeFileSync(productsFilePath,JSON.stringify(productosOriginales, null , ' '));
+		res.redirect("/Home")
+
     },
 
 
@@ -52,6 +75,16 @@ const productosController = {
         let categoria = products.filter(producto=> producto.category == idCategoria);
         res.render(path.join(__dirname, "../views/categoriaProducto"), {producto: categoria});
     },
+
+    eliminarProducto : (req, res) => {
+		let idAEliminar =  req.params.id;
+		console.log(idAEliminar);
+        let productosActualizados = products.filter(product => product.id != idAEliminar);
+		
+        fs.writeFileSync(productsFilePath,JSON.stringify(productosActualizados, null , ' '));
+        res.redirect("/home")
+    
+    }
 
 }
 
