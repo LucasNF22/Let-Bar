@@ -13,8 +13,8 @@ router.post("/", productosController.guardarProducto);
 
 router.get("/editar-producto/:id", productosController.editarProducto);
 
-router.put ("/:id", productosController.actualizarProducto
-)
+router.put ("/editar-producto/:id", productosController.actualizarProducto)
+
 router.get("/categoria/:id", productosController.categoriaProducto);
 
 

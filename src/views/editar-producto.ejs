@@ -15,13 +15,13 @@
                 <img src="/img/fondo-variable-01.png" alt="" class="wall-izq">
                 <img src="/img/fondo-variable-02.png" alt="" class="wall-der">
  
-                <h3>Agregar nuevo producto</h3>
+                <h3>Editar producto</h3>
                 
-                <form action="/productos" method="POST" class="FormCarga">
+                <form action="/productos/editar-producto/<%= producto.id %>?_method=PUT" method="POST" class="FormCarga">
                     
                     <div>
                         <label>Categoría:</label>
-                        <select name="categoria" class="imputForm">
+                        <select name="category" class="imputForm" value ="<%= producto.category %>" >
                             <option value="sinAlcohol">Sin alcohol</option>
                             <option value="cervezas">Cervezas</option>
                             <option value="snacks">Snacks</option>
@@ -32,49 +32,47 @@
                     </div>
                     <div>
                         <label>Nombre del producto:</label>
-                        <input type="text" name="name" id= "name" placeholder="Nombre del producto..." class="imputForm" >
+                        <input type="text" name="name" id= "name" placeholder="Nombre del producto..." class="imputForm" value="<%= producto.name %>">
                     </div>
                     <div>
                         <label>Tamaño del producto:</label>
-                        <input type="number" name="size" placeholder="Tamaño en ml..." class="imputForm">
+                        <input type="text" name="size" placeholder="Tamaño en ml..." class="imputForm" value="<%= producto.size %>">
                     </div>
                     <div>
                         <label>Cosecha:</label>
-                        <input type="number" name="years" placeholder="Año Cosecha..." class="imputForm">
+                        <input type="number" name="years" placeholder="Año Cosecha..." class="imputForm" value="<%= producto.years %>">
                     </div>
                     <div>
                         <label>Precio por unidad:</label>
-                        <input type="number" name="price" placeholder="Precio por unidad..." class="imputForm">
+                        <input type="number" name="priceUnit" placeholder="Precio por unidad..." class="imputForm" value="<%= producto.priceUnit %>">
                     </div>
                     <div>
                         <label>Precio por cantidad:</label>
-                        <input type="number" name="priceCant" placeholder="Precio por cantidad..."
-                            class="imputForm">
+                        <input type="number" name="priceCant" placeholder="Precio por cantidad..." class="imputForm" value="<%= producto.priceCant %>">
                     </div>
                     <div>
                         <label>Unidades para descuento:</label>
-                        <input type="number" name="cantDisc" placeholder="Unidades para descuentos..." class="imputForm">
+                        <input type="number" name="cantDisc" placeholder="Unidades para descuentos..." class="imputForm" value="<%= producto.cantDisc %>">
                     </div>
                     <div>
                         <label>En oferta</label>
-                        <input type="boolean" name="offer" placeholder="Producto en oferta..." class="imputForm">
+                        <input type="boolean" name="offer" placeholder="Producto en oferta..." class="imputForm" value="<%= producto.offer %>">
                     </div>
                     <div>
                         <label>Graduación alcoholica:</label>
-                        <input type="number" name="graduation" placeholder="Graduacion alcoholica..."
-                            class="imputForm">
+                        <input type="text" name="graduation" placeholder="Graduacion alcoholica..." class="imputForm" value="<%= producto.graduation %>">
                     </div>
                     <div>
                         <label>Stock:</label>
-                        <input type="number" name="stock" placeholder="Stock en unidades..." class="imputForm">
+                        <input type="number" name="stock" placeholder="Stock en unidades..." class="imputForm" value="<%= producto.stock %>">
                     </div>
                     <div>
                         <label>Descripción:</label>
-                        <textarea rows="5" name="descritption" placeholder="Describe tu producto..." class="imputForm"></textarea>
+                        <textarea rows="5" name="description" placeholder="Describe tu producto..." class="imputForm" >"<%= producto.description %>"</textarea>
                     </div>
                     <div>
                         <label>Fotos del producto:</label>
-                        <input type="file" name="image" accept=".jpg" class="imputForm">
+                        <input type="file" name="image" accept=".jpg" class="imputForm" value="<%= producto.image %>">
                     </div>
                     <div class="caja-fotos-producto">
                         <div class="foto-producto"> <i class="fa-solid fa-plus"></i> </div>
@@ -84,7 +82,7 @@
                         <div class="foto-producto"> <i class="fa-solid fa-plus"></i> </div>
                     </div>
                     <div class="centrado">
-                        <button type="submit" class="boton-ver-mas">Agregar</button>
+                        <button type="submit" class="boton-ver-mas">Editar</button>
                     </div>
 
 

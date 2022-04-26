@@ -61,14 +61,41 @@ const productosController = {
     editarProducto: (req, res) => {
         let productoId = req.params.id
         let productosEdit = products.find(producto => producto.id == productoId)
-        res.render ("editar-producto", {producto : productosEdit}) +
-        console.log (productosEdit)
+    
+        res.render (path.join (__dirname, "../views/editar-producto"), {producto : productosEdit}) 
+    
     },
     
     actualizarProducto:(req, res) =>{
+        let productoId = req.params.id
+        let productosOriginales = products
+        let productosActualizados = productosOriginales.forEach (producto => {if (producto.Id == productoId){
+        producto.Id = req.body.Id
 
-
+        producto.name = req.body.name;
+        producto.description = req.body.description;
+        producto.image = req.body.image;
+        producto.category = req.body.categoria;
+        producto.size = req.body.size;
+        producto.priceUnit = req.body.priceUnit;
+        producto.cantDisc = req.body.cantDisc;
+        producto.priceCant = req.body.priceCant;
+        producto.valoration = req.body.valoration;
+        producto.offer = req.body.offer;
+        producto.graduation = req.body.graduation;
+        producto.years = req.body.years;
+        }
+        
+    })
+     console.log (productosActualizados)
+    /**fs.writeFileSync(productsFilePath,JSON.stringify(productosOriginales, null , ' ')); */
+    res.redirect("/Home")
     },
+
+        
+        
+
+    
 
     categoriaProducto: (req, res) => {
         let idCategoria = req.params.id
