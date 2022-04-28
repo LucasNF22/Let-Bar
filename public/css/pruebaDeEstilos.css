@@ -4,24 +4,25 @@
     border-radius: 15px;
     background: #e0e0e0;
     box-shadow: 15px 15px 30px #bebebe,
-                -15px -15px 30px #ffffff;
+        -15px -15px 30px #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #3A3A3A;
     transition: all .15s;
     font-family: 'Roboto Mono', monospace;
-   }
+}
 
-   .card:hover{
+.card:hover {
     background-color: #41C1F0;
-    
-   }
-   .card:active {
+
+}
+
+.card:active {
     box-shadow: none;
 }
 
-   .boton-admin {
+.boton-admin {
     border: none;
     color: #090909;
     padding: 5px 10px;
@@ -31,112 +32,194 @@
     font-family: 'Roboto Mono', monospace;
     transition: all .15s;
     box-shadow: 6px 6px 12px #c5c5c5,
-                -6px -6px 12px #ffffff;
+        -6px -6px 12px #ffffff;
     margin-bottom: 10px;
-   }
-      
-   .boton-admin:active {
-        box-shadow: none;
-       }
+}
 
-   
-    .rojo:hover{
-        background-color: red;
-    }   
+.boton-admin:active {
+    box-shadow: none;
+}
 
-    .naranja:hover{
-        background-color: orange;
-    }
 
+.rojo:hover {
+    background-color: red;
+}
+
+.naranja:hover {
+    background-color: orange;
+}
+
+
+.boton5 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #7e97b8;
+    background-color: #e0e8ef;
+    border-style: solid;
+    border-width: 2px 2px 2px 2px;
+    border-color: rgba(255, 255, 255, 0.333);
+    border-radius: 50%;
+    transform: translate(0px, 0px) rotate(0deg);
+    transition: 0.2s;
+    box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+    height: 66px;
+    width: 66px;
+}
+
+
+
+.boton5:hover {
+    color: #516d91;
+    background-color: #E5EDF5;
+    box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
+}
+
+.boton5:active {
+    box-shadow: none;
+}
+
+
+
+
+
+
+
+/*Menù lateral*/
+#btn-menu {
+    display: none;
+}
+
+.container-menu {
+    position: fixed;
+    background: rgba(0, 0, 35, 0.7);
+    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    flex-direction: row-reverse;
+    z-index: 100;
+}
+
+#btn-menu:checked~.container-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.cont-menu {
+    width: 100%;
+    max-width: 400px;
+    background: #1c1c1c;
+    height: 100vh;
+    position: relative;
+    transition: all 500ms ease;
+    transform: translateX(100%);
+
+}
+
+#btn-menu:checked~.container-menu .cont-menu {
+    transform: translateX(0%);
+
+
+}
+
+.cont-menu label {
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+
+
+/*Fin de Menù lateral*/
+
+
+/* valoracion */
+
+.valoracion {
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-left: 25px;
+    color: #1c1c1c;
     
-    .boton5 {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        font-family: inherit;
-        font-size: 13px;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 0.4px;
-        color: #7e97b8;
-        background-color: #e0e8ef;
-        border-style: solid;
-        border-width: 2px 2px 2px 2px;
-        border-color: rgba(255, 255, 255, 0.333);
-        border-radius: 50%;
-        transform: translate(0px, 0px) rotate(0deg);
-        transition: 0.2s;
-        box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
-        height: 66px;
-        width: 66px;
-    }
-       
-       
+}
+.texto-valoracion{
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+    padding-top: 10px;
+    padding-left: 25px;
+    color: #1c1c1c;
+}
 
-       .boton5:hover {
-        color: #516d91;
-        background-color: #E5EDF5;
-        box-shadow: -2px -1px 8px 0px #ffffff, 2px 1px 8px 0px rgb(95 157 231 / 48%);
-       }
-       
-       .boton5:active {
-        box-shadow: none;
-       }
+.boton-valoracion{
+    margin-left: 8px;
+    box-shadow: -4px -2px 8px 0px #ffffff, 4px 2px 8px 0px rgb(95 157 231 / 48%);
+    padding: 8px 15px 8px 15px;
+    font-family: 'Roboto Mono', monospace;
+    border-radius: 20px;
+    color: #3A3A3A;
+    background-color: #e0e8ef;
+    border: none;
+    font-size: 14px;
+    transition: all 0.5s;
+}
 
+.boton-valoracion:hover{
+    color: white;
+    background-color: #41C1F0;
+    
+}
 
+.boton-valoracion:active{
+    box-shadow: none;
+}
 
+div.clasificacion {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    padding: 10px;
+}
 
+div.clasificacion input {
+    position: absolute;
+    top: -100px;
+}
 
+div.clasificacion label {
+    float: right;
+    color: #333;
+}
 
+div.clasificacion label:hover,
+div.clasificacion label:hover~label,
+div.clasificacion input:checked~label {
+    color: #EB609F;
+    
+    filter: drop-shadow(0px 0px 2px #EB609F);
+   
+    
+}
 
-	/*Menù lateral*/
-	#btn-menu{
-		display: none;
-	}
-	.container-menu{
-		position: fixed;
-		background: rgba(0, 0, 35, 0.7);
-		backdrop-filter: blur(10px);
-        width: 100%;
-		height: 100vh;
-		top: 0;
-        right: 0;
-		transition: all 500ms ease;
-		opacity: 0;
-		visibility: hidden;
-        display: flex;
-        flex-direction: row-reverse;
-        z-index: 100;
-	}
-	#btn-menu:checked ~ .container-menu{
-		opacity: 1;
-		visibility: visible;
-	}
-	.cont-menu{
-		width: 100%;
-		max-width: 400px;
-		background: #1c1c1c;
-		height: 100vh;
-		position: relative;
-		transition: all 500ms ease;
-		transform: translateX(100%);
-        
-	}
-	#btn-menu:checked ~ .container-menu .cont-menu{
-		transform: translateX(0%);
-        
-        
-	}
-    .cont-menu label{
-		position: absolute;
-		right: 5px;
-		top: 10px;
-		color: #fff;
-		cursor: pointer;
-		font-size: 18px;
-	}
-	
-	
-	
-	/*Fin de Menù lateral*/
+/* Fin valoracion */

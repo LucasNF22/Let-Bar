@@ -58,15 +58,16 @@
                         <br>
                         <!--Visible solo para administradores-->
                         <div class="">
-                            <button href="#" class="boton-admin naranja"> Editar </button>
-                            
+                            <a href="/productos/editar-producto/<%= producto.id %>"><button class="boton-admin naranja">
+                                    Editar </button></a>
+
                             <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
                                 <button type="submit" class="boton-admin rojo"> Eliminar </button> no tocar!!!!!!
                             </form>
-                            
-                        </div>    
-                
-                    </section>
+
+                        </div>
+
+                </section>
 
 
 
@@ -99,7 +100,30 @@
                         <div class="det-art-sexta">
                             Valoración de los compradores: <%= producto.valoration %> <i class="fa-regular fa-star"></i>
                         </div>
+                    
                     </div>
+                    
+                    <div class="texto-valoracion">Valora este producto:</div>
+                    <form action="/productos/valorar/<%= producto.id %>?_method=PUT" method="POST" class="valoracion">
+                        
+                        
+                        <div class="clasificacion">
+                            <input id="radio1" type="radio" name="estrellas" value="5">
+                            <label for="radio1"><i class="fa-regular fa-star"></i></label>
+                            <input id="radio2" type="radio" name="estrellas" value="4">
+                            <label for="radio2"><i class="fa-regular fa-star"></i></label>
+                            <input id="radio3" type="radio" name="estrellas" value="3">
+                            <label for="radio3"><i class="fa-regular fa-star"></i></label>
+                            <input id="radio4" type="radio" name="estrellas" value="2">
+                            <label for="radio4"><i class="fa-regular fa-star"></i></label>
+                            <input id="radio5" type="radio" name="estrellas" value="1">
+                            <label for="radio5"><i class="fa-regular fa-star"></i></label>
+                        </div>
+                        <button type="submit" class="boton-valoracion">Valorar</button>
+                    </form>
+                    
+
+
                 </section>
 
 

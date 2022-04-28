@@ -11,6 +11,7 @@ body{
     display: flex;
     flex-direction: column;
     
+    
 }
 
 .bodyCorto {
@@ -380,7 +381,7 @@ palabra-celeste{
     justify-content: center;
     align-items: center;
     width: 100%;
-    
+    padding-bottom: 20px;
     
 }
 
@@ -440,7 +441,7 @@ footer{
     background: #000057;
     color: white;
     font-size: 11px;
-    margin-top: 20px;
+    /*    margin-top: 20px; */
     
 }
 
@@ -1134,6 +1135,7 @@ carrito 2
 
 .backgris{
     background-color: #e8e8e8;
+    padding-bottom: 20px;
 }
 
 .caja-direc-izq{
@@ -1408,6 +1410,7 @@ carrito 2
     flex-direction: column;
     align-items: center;
     width: 100%;
+    padding-bottom: 20px;
 }
 
 .FormCarga {

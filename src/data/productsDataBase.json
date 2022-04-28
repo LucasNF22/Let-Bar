@@ -6,13 +6,16 @@
   "image": "andes-rubia21.jpg",
   "category": "cervezas",
   "size": "473ml",
-  "priceUnit": 186,
-  "cantDisc": 6,
-  "priceCant": 125,
-  "valoration": 5,
-  "offer": true,
+  "priceUnit": "200",
+  "cantDisc": "6",
+  "priceCant": "125",
+  "cantValoration": 12,
+  "acuValoration": 52,
+  "valoration": "4.3",
+  "offer": "true",
   "graduation": "4.5%",
-  "years": ""
+  "years": "",
+  "stock": 52
  },
  {
   "id": 2,
@@ -24,10 +27,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.2,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.5%",
-  "years": ""
+  "years": "",
+  "stock": 5
  },
  {
   "id": 3,
@@ -39,10 +45,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "5.1%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 4,
@@ -54,10 +63,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "5.3%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 5,
@@ -69,10 +81,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "13%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 6,
@@ -84,10 +99,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "40%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 7,
@@ -99,10 +117,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "39%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 8,
@@ -114,10 +135,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 9,
@@ -129,10 +153,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.8%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 10,
@@ -144,10 +171,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.9%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 11,
@@ -159,10 +189,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.5%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 12,
@@ -174,10 +207,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.5%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 13,
@@ -189,10 +225,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "5.3%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 14,
@@ -204,10 +243,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "5.3%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 15,
@@ -219,10 +261,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.5%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 16,
@@ -234,10 +279,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.8%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 17,
@@ -249,10 +297,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "5.3%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 18,
@@ -264,10 +315,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.5%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 19,
@@ -279,10 +333,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "5.1%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 20,
@@ -294,10 +351,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.5%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 21,
@@ -309,10 +369,13 @@
   "priceUnit": 213,
   "cantDisc": 6,
   "priceCant": 142,
-  "valoration": 4.8,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7",
   "offer": true,
   "graduation": "4.9%",
-  "years": ""
+  "years": "",
+  "stock": 0
  },
  {
   "id": 22,
@@ -326,20 +389,28 @@
   "priceCant": "30",
   "offer": "yes",
   "graduation": "9",
-  "years": "5"
+  "years": 5,
+  "stock": 0,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7"
  },
  {
   "id": 23,
   "name": "Snack1",
   "description": "Snack1",
   "image": "",
-  "category": "snacks",
+  "category": "sinAlcohol",
   "size": "250",
   "priceUnit": "23",
   "cantDisc": "7",
   "priceCant": "20",
   "offer": "no",
   "graduation": "",
-  "years": ""
+  "years": "",
+  "stock": 32,
+  "cantValoration": 10,
+  "acuValoration": 47,
+  "valoration": "4.7"
  }
 ]

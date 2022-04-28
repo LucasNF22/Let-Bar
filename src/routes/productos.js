@@ -19,6 +19,8 @@ router.put ("/editar-producto/:id", productosController.actualizarProducto)
 
 router.get("/categoria/:id", productosController.categoriaProducto);
 
+router.put("/valorar/:id", productosController.valorarProducto);
+
 
 
 module.exports = router;

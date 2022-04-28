@@ -21,13 +21,18 @@
                     
                     <div>
                         <label>Categoría:</label>
-                        <select name="category" class="imputForm" value ="<%= producto.category %>" >
-                            <option value="sinAlcohol">Sin alcohol</option>
-                            <option value="cervezas">Cervezas</option>
-                            <option value="snacks">Snacks</option>
-                            <option value="espumantes">Espumantes</option>
-                            <option value="vinos">Vinos</option>
-                            <option value="destilados">Destilados</option>
+                        
+                        <select name="category" class="imputForm" >
+                            <% 
+                            categorias.forEach(categoria=> {
+                                if(categoria.category == producto.category){ %>
+                            <option value="<%=categoria.category%>" selected><%= categoria.name %> </option>
+                               <% }else{ %>
+                                <option value="<%=categoria.category%>"><%= categoria.name %> </option>
+                              <% } 
+
+                            } ) %>
+                            
                         </select>
                     </div>
                     <div>
@@ -63,12 +68,12 @@
                         <input type="text" name="graduation" placeholder="Graduacion alcoholica..." class="imputForm" value="<%= producto.graduation %>">
                     </div>
                     <div>
-                        <label>Stock:</label>
-                        <input type="number" name="stock" placeholder="Stock en unidades..." class="imputForm" value="<%= producto.stock %>">
+                        <label>Stock actual: <palabra-celeste><%= producto.stock %> Und.</palabra-celeste></label>
+                        <input type="number" name="stock" placeholder="Añadir stock..." class="imputForm" >
                     </div>
                     <div>
                         <label>Descripción:</label>
-                        <textarea rows="5" name="description" placeholder="Describe tu producto..." class="imputForm" >"<%= producto.description %>"</textarea>
+                        <textarea rows="5" name="description" placeholder="Describe tu producto..." class="imputForm" ><%= producto.description %></textarea>
                     </div>
                     <div>
                         <label>Fotos del producto:</label>
