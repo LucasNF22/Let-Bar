@@ -85,7 +85,6 @@ const productosController = {
         productosActualizados.forEach(producto => {
             if (producto.id == productoId) {
 
-                producto.id = producto.id
                 producto.name = req.body.name;
                 producto.description = req.body.description;
                 producto.category = req.body.category;
@@ -93,7 +92,6 @@ const productosController = {
                 producto.priceUnit = req.body.priceUnit;
                 producto.cantDisc = req.body.cantDisc;
                 producto.priceCant = req.body.priceCant;
-                producto.valoration = "";
                 producto.offer = req.body.offer;
                 producto.graduation = req.body.graduation;
                 producto.years = req.body.years;
