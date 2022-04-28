@@ -10,14 +10,12 @@ router.get("/catalogo", productosController.catalogo);
 router.get("/detalle-producto/:id", productosController.detalleProducto);
 
 
-
 router.get("/agregar-producto", productosController.agregarProducto);
 router.post("/", productosController.guardarProducto);
 
-router.get("/editar-producto", productosController.editarProducto);
+router.get("/editar-producto/:id", productosController.editarProducto);
 
-router.delete("/eliminar/:id", productosController.eliminarProducto)
-
+router.put ("/editar-producto/:id", productosController.actualizarProducto)
 
 router.get("/categoria/:id", productosController.categoriaProducto);
 
