@@ -1,15 +1,16 @@
-Retrospectiva Sprint 3
+Retrospectiva Sprint 4
 
 Start Doing:
-Comentarios en el código.
+Tener terminadas la mayor cantidad de cosas de playground para poder debatir entre todos las dudas que surjan.
 Daily o weekly.
-Comenzar antes con los entregables.
+
 
 
 More of:
-Ser mas especificos al hacer commits.
 Proyecto en Trello.
-Consultar dudas en clases.
+Dedicar más horas al código
+
+
 
 
 
@@ -17,15 +18,17 @@ Keep Doing:
 Trabajar con Slack.
 Respetar nomencaltura del código.
 Interconsultas en el grupo.
+Consultas en clases.
+Hablar acerca de las cosas que tenemos que mejorar como grupo.
 
 
 Less of
-Duplicar estilos.
+Dejar consultas para último momento.
 
 
 
 Stop Doing
-Dejar las cosas para ultimo momento.
+Dejar las actividades de playground para último momento, ya que nos ayudan a debatir en grupo si estan terminadas.
 
 
 
