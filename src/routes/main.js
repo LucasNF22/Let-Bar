@@ -1,9 +1,24 @@
 const express = require("express");
+var router = express.Router();
+
 const mainController=require("../controllers/mainController");
 
-var router = express.Router();
+
 
 router.get("/", mainController.home);
 router.get("/home", mainController.homeLogueado);
+
+
+
+let routesProductos = require("./productos.js");
+let routesUsers= require ("./users.js");
+let routesCompras = require ("./compras.js");
+
+
+router.use("/productos", routesProductos);
+router.use("/users", routesUsers);
+router.use("/compras", routesCompras);
+
+
 
 module.exports=router;

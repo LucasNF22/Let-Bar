@@ -1,0 +1,12 @@
+
+
+                <section class="menu-categorias">
+                    <% categories.forEach(categoria=> { %>
+
+                        <a href="/productos/categoria/<%=categoria.category %>" class="boton-menu-cat">
+                            <img src="<%=categoria.icon %>" alt="">
+                        </a>
+
+                        <% }) %>
+
+                </section>

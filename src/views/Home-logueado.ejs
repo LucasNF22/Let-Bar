@@ -4,6 +4,9 @@
     <body>
         <%- include("../views/partials/headerGeneral") %>
             <main class="backgris">
+                <div class="btn-menu">
+
+                </div>
                 <section class="ofertas">
 
                     <div class="ofertas-slide">
@@ -38,7 +41,9 @@
                     <a href="/productos/categoria/snacks" class="boton-menu-cat">
                         <img src="/img/categoryIcons/snacks.png" alt="">
                     </a>
-
+                    
+                
+                
                 </section>
 
                 <% categorias.forEach(categoria=>{ %>
@@ -54,29 +59,29 @@
                         <div class="tarj-cat-inf">
                             <div class="tarj-cat-inf-izq padding20">
 
-                            <% productos.forEach(producto=>{ if(producto.category == categoria.category){ %>   
-                                <!--Tajeta de producto-->
-                                <article class="tarjeta-art-cat">
-                                    <div class="caja-art-cat-sup">
-                                        <a href="/productos/detalle-producto/<%= producto.id %>"><img src="/img/products/<%= producto.image %>"
-                                                alt=""></a>
-                                    </div>
-                                    <div class="caja-art-inf-cat">
+                                <% productos.forEach(producto=>{ if(producto.category == categoria.category){ %>
+                                    <!--Tajeta de producto-->
+                                    <article class="tarjeta-art-cat">
+                                        <div class="caja-art-cat-sup">
+                                            <a href="/productos/detalle-producto/<%= producto.id %>"><img
+                                                    src="/img/products/<%= producto.image %>" alt=""></a>
+                                        </div>
+                                        <div class="caja-art-inf-cat">
 
-                                        <div class="caja-art-inf-izq">
-                                            <div class="art-nombre overflow">
-                                                <%= producto.name %>
+                                            <div class="caja-art-inf-izq">
+                                                <div class="art-nombre overflow">
+                                                    <%= producto.name %>
+                                                </div>
+                                                <div class="art-precio">
+                                                    $<%= producto.priceUnit %>
+                                                </div>
                                             </div>
-                                            <div class="art-precio">
-                                                $<%= producto.priceUnit %>
+                                            <div class="caja-art-inf-der-cat">
+                                                <i class="fa-solid fa-circle-plus"></i>
                                             </div>
                                         </div>
-                                        <div class="caja-art-inf-der-cat">
-                                            <i class="fa-solid fa-circle-plus"></i>
-                                        </div>
-                                    </div>
-                                </article>
-                                <% }}) %>
+                                    </article>
+                                    <% }}) %>
 
                             </div>
 
@@ -89,10 +94,12 @@
                     <!--Tajeta de categoria-->
                     <% }) %>
 
-                        
 
+                    
 
             </main>
+            
+
             <!--Footer-->
             <%- include("../views/partials/footer") %>
     </body>

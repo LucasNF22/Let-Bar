@@ -1,5 +1,7 @@
 const express = require("express");
-const { append } = require("express/lib/response");
+
+
+
 const productosController = require("../controllers/productosController");
 
 var router = express.Router();
