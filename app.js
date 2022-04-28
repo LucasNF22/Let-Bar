@@ -16,9 +16,13 @@ let routesMain=require("./src/routes/main.js");
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
 
-app.listen(3000, () =>{
+/* app.listen(3000, () =>{
     console.log("Servidor listo en el puerto 3000...");
-});
+}) ; */
+
+app.listen(process.env.PORT || 3000, () =>{
+    console.log("Servidor listo en el puerto 3000...");
+} );
 
 
 
