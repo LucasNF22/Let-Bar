@@ -42,7 +42,7 @@ const productosController = {
             "name": req.body.name,
             "description": req.body.description,
             "image": req.body.image,
-            "category": req.body.categoria,
+            "category": req.body.category,
             "size": req.body.size,
             "priceUnit": req.body.priceUnit,
             "cantDisc": req.body.cantDisc,
@@ -116,6 +116,7 @@ const productosController = {
 
 
     categoriaProducto: (req, res) => {
+        
         let idCategoria = req.params.id
         let categoria = products.filter(producto => producto.category == idCategoria);
         res.render(path.join(__dirname, "../views/categoriaProducto"), { producto: categoria });

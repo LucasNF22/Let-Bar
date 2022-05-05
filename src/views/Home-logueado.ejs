@@ -62,10 +62,9 @@
                                 <% productos.forEach(producto=>{ if(producto.category == categoria.category){ %>
                                     <!--Tajeta de producto-->
                                     <article class="tarjeta-art-cat">
-                                        <div class="caja-art-cat-sup">
-                                            <a href="/productos/detalle-producto/<%= producto.id %>"><img
-                                                    src="/img/products/<%= producto.image %>" alt=""></a>
-                                        </div>
+                                        <a href="/productos/detalle-producto/<%= producto.id %>"><div class="caja-art-cat-sup">
+                                            <img src="/img/products/<%= producto.image %>" alt="">
+                                        </div></a>
                                         <div class="caja-art-inf-cat">
 
                                             <div class="caja-art-inf-izq">

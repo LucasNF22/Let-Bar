@@ -17,6 +17,8 @@ router.get("/editar-producto/:id", productosController.editarProducto);
 
 router.put ("/editar-producto/:id", productosController.actualizarProducto)
 
+router.delete("/eliminar/:id", productosController.eliminarProductos)
+
 router.get("/categoria/:id", productosController.categoriaProducto);
 
 router.put("/valorar/:id", productosController.valorarProducto);

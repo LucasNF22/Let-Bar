@@ -100,13 +100,13 @@
                         <div class="det-art-sexta">
                             Valoración de los compradores: <%= producto.valoration %> <i class="fa-regular fa-star"></i>
                         </div>
-                    
+
                     </div>
-                    
+
                     <div class="texto-valoracion">Valora este producto:</div>
                     <form action="/productos/valorar/<%= producto.id %>?_method=PUT" method="POST" class="valoracion">
-                        
-                        
+
+
                         <div class="clasificacion">
                             <input id="radio1" type="radio" name="estrellas" value="5">
                             <label for="radio1"><i class="fa-regular fa-star"></i></label>
@@ -121,7 +121,7 @@
                         </div>
                         <button type="submit" class="boton-valoracion">Valorar</button>
                     </form>
-                    
+
 
 
                 </section>
