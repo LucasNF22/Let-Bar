@@ -30,9 +30,10 @@ const productosController = {
     },
 
     guardarProducto: (req, res) => {
+        const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+        const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-
-        let productosOriginales = products;
+        let productosOriginales = productos;
 
         let ultimoObjeto = (productosOriginales.length) - 1;
         let ultimoId = productosOriginales[ultimoObjeto].id;

@@ -16,38 +16,43 @@
                     
                 <h4>Crea tu cuenta</h4>
 
-                <form action="resultado.html" method="POST">
+                <form action="/users/register" method="POST" enctype="multipart/form-data">
                     <div>
                         <label>Nombre y Apellido:</label>
-                        <input class="control" type="text" name="nombre y apellido" placeholder="Nombre y Apellido" required>
+                        <input class="control" type="text" name="name" placeholder="Nombre y Apellido" required>
                     </div>
 
                     <div>
                         <label>Email:</label>
-                        <input class="control" type="email" name="Email" placeholder="Email" required>
+                        <input class="control" type="email" name="email" placeholder="Email" required>
                     </div>
 
                     <div>
                         <label>Contraseña:</label>
-                        <input class="control" type="password" name="Contraseña" placeholder="Contraseña" required>
+                        <input class="control" type="password" name="password" placeholder="Contraseña" required>
                     </div>
 
                     <div >
                         <label>Repetir contraseña:</label>
-                        <input class="control" type="password" name="Repetir contraseña" placeholder="Repetir contraseña" required>
+                        <input class="control" type="password" name="pass_confirm" placeholder="Repetir contraseña" required>
                     </div>
 
                     <div>
                         <label>Número de teléfono:</label>
-                        <input class="control" type="tel" name="Número de teléfono" placeholder="Número de teléfono">
+                        <input class="control" type="tel" name="tel" placeholder="Número de teléfono">
                     </div>
 
                     <div>
                         <label>Fecha de nacimiento:</label>
-                        <input class="control" type="date" name="fecha de nacimiento" required>
+                        <input class="control" type="date" name="birthday" required>
                     </div>
 
-                    <a href="/home"><button type="submit" class="boton-formulario">Registrarme</button></a>
+                    <div>
+                        <label>Imagen de perfil:</label>
+                        <input class="control" type="file" name="avatar" >
+                    </div>
+
+                    <button type="submit" class="boton-formulario">Registrarme</button>
 
                     <h2>O ingresa con...</h2>
 
