@@ -294,5 +294,19 @@
   "localidad": "localidad",
   "codigo_postal": "codigo_postal",
   "fecha_nac": "1999-05-05"
+ },
+ {
+  "id": 25,
+  "first_name": "ssss",
+  "last_name": " ",
+  "email": "sss@gmail.com",
+  "password": "$2a$10$uanGoEc4z1lNrzfobPfHQuJQlrKrh0XIB.Yz5XEfnDLAspNkFp1oa",
+  "tel": "33",
+  "avatar": " ",
+  "category": "user",
+  "direccion": "direccion",
+  "localidad": "localidad",
+  "codigo_postal": "codigo_postal",
+  "fecha_nac": "2022-05-05"
  }
 ]

@@ -4,6 +4,20 @@
 <body class="fondo">
     
     <%- include("../views/partials/headerGeneral") %>
+    <% if (typeof errors !='undefined'){ %>
+        <p style="color:red">ERROR</p>
+
+        <ul>
+            <% for (let i=0; i <errors.length; i++) {%>
+            <li>
+                <%=errors[i].msg%>
+            </li>    
+            <% } %>
+            }
+        </ul>
+        <% } %>
+
+    }
         <main >
 
             <div class="logo-registro">
@@ -20,7 +34,7 @@
 
                 <h4>Iniciar sesión</h4>
 
-                <form action="resultado.html" method="POST">
+                <form action="/users/login" method="POST">
 
                     <div>
                         <label>Email:</label>
@@ -31,7 +45,7 @@
                         <label>Contraseña:</label>
                         <input class="control" type="password" name="Contraseña" placeholder="Contraseña" required>
                     </div>
-
+                    <input type="submit" value="Login">
                     <button type="submit" class="boton-formulario">Iniciar sesión</button>
                     </br>
                     <div class="passw">    
