@@ -37,7 +37,7 @@ const uploadFile = multer({ storage: storage }) /*,
                 }
             }
         }*/
-   
+
 
 
 // validaciones para register
@@ -113,24 +113,40 @@ const validacionesRegister = [
                 }
 
             }
-            return true;   
+            return true;
         })
-        .custom((value, { req }) => { 
-            let file= req.file
+        .custom((value, { req }) => {
+            let file = req.file
             if (file) {
                 let tamaño = file.size
-                    if (parseInt(tamaño) > 1000000) {
+                if (parseInt(tamaño) > 1000000) {
                     throw new Error('El tamaño de imagen maximo permitido es de 1MB');
                 }
             }
-                return true;
-            
+            return true;
 
-            
-        } )         /* ,check("*").escape()*/
+
+
+        })         /* ,check("*").escape()*/
 
 
 ]
+
+// validaciones para Login
+const validacionesLogin = [
+
+    check('email')
+        .notEmpty().withMessage("Debes introducir tu email").bail()
+        .isEmail().withMessage("El correo no es valido"),
+
+    check('password')
+        .notEmpty().withMessage("Debes introducir una contraseña").bail()
+        .isLength({ min: 6 }).withMessage('La contraseña debe contener minimo 8 caracteres')  // validacion minimo y maximo de caracteres
+        .isAlphanumeric().withMessage("La contraseña debe contener al menos un número y una letra"),
+        
+
+];
+
 
 // Rutas registro
 
@@ -140,17 +156,8 @@ router.post("/register/process", uploadFile.single('avatar'), validacionesRegist
 
 // Rutas Login
 router.get("/login", usersControllers.login);
+router.post("/login/process", validacionesLogin, usersControllers.procesarLogin);
 
-/* Validación de datos ingresados */
-
-/*Middleware errores */
-
-let errores = [
-    check('email').isEmail().withMessage("El correo no es valido"),
-    check('password').isLength({ min: 2 }).withMessage('La contraseña debe tener al menos 2 caracteres'),
-];
-
-router.post("/login", errores, usersControllers.procesarLogin);
 
 
 

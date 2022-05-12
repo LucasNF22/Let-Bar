@@ -1,68 +1,72 @@
-
 <%- include("../views/partials/head") %>
 
-<body class="fondo">
-    
-    <%- include("../views/partials/headerGeneral") %>
-    <% if (typeof errors !='undefined'){ %>
-        <p style="color:red">ERROR</p>
+    <body class="fondo">
 
-        <ul>
-            <% for (let i=0; i <errors.length; i++) {%>
-            <li>
-                <%=errors[i].msg%>
-            </li>    
-            <% } %>
-            }
-        </ul>
-        <% } %>
-
-    }
-        <main >
-
-            <div class="logo-registro">
-                <img src="/img/logo-letbar-sin-fondo.png" alt="">
-            </div>
-
-            <div class="opcion-crear-cuenta">
-                <h1>¿No tenes una cuenta?</h1>
-               <a href="/users/register"><button class="boton-formulario">Crear cuenta</button></a>
-            </div>
+        <%- include("../views/partials/headerGeneral") %>
 
 
-            <div class="formulario">
+            <main>
 
-                <h4>Iniciar sesión</h4>
+                <div class="logo-registro">
+                    <img src="/img/logo-letbar-sin-fondo.png" alt="">
+                </div>
 
-                <form action="/users/login" method="POST">
+                <div class="opcion-crear-cuenta">
+                    <h1>¿No tenes una cuenta?</h1>
+                    <a href="/users/register"><button class="boton-formulario">Crear cuenta</button></a>
+                </div>
 
-                    <div>
-                        <label>Email:</label>
-                        <input class="control" type="email" name="Email" placeholder="Email" required>
-                    </div>
 
-                    <div>
-                        <label>Contraseña:</label>
-                        <input class="control" type="password" name="Contraseña" placeholder="Contraseña" required>
-                    </div>
-                    <input type="submit" value="Login">
-                    <button type="submit" class="boton-formulario">Iniciar sesión</button>
-                    </br>
-                    <div class="passw">    
-                    <a href="#">Olvide mi contraseña</a>
-                    </div>
+                <div class="formulario">
+
+                    <h4>Iniciar sesión</h4>
+
+                    <form action="/users/login/process" method="POST">
+
                         <div>
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-google"></a>
+                            <label>Email:</label>
+                            <input type="text" name="email" placeholder="Email"
+                                class="control <%= locals.errors && errors.email ? 'control-error' : null %>"
+                                value="<%= locals.oldData ? oldData.email : null %>">
+                            <% if(locals.errors && errors.email){ %>
+                                <div class="feedback">
+                                    <%= errors.email.msg %>
+                                </div>
+                                <% } %>
                         </div>
-                    
-                </form>
 
-            </div>
-        </main>
+                        <div>
+                            <label>Contraseña:</label>
+                            <input 
+                                type="password" 
+                                name="password" 
+                                placeholder="Contraseña"
+                                class="control <%= locals.errors && errors.password ? 'control-error' : null %>"
+                                >
+                            <% if(locals.errors && errors.password){ %>
+                                <div class="feedback">
+                                    <%= errors.password.msg %>
+                                </div>
+                                <% } %>
+                        </div>
+                        <input type="submit" value="Login">
+                        <button type="submit" class="boton-formulario">Iniciar sesión</button>
+                        </br>
+                        <div class="passw">
+                            <a href="#">Olvide mi contraseña</a>
+                        </div>
+                        <div>
+                            <a href="#" class="fa fa-facebook"></a>
+                            <a href="#" class="fa fa-google"></a>
+                        </div>
 
-        <%- include("../views/partials/footer") %>
+                    </form>
 
-</body>
+                </div>
+            </main>
 
-</html>
+            <%- include("../views/partials/footer") %>
+
+    </body>
+
+    </html>
