@@ -16,40 +16,128 @@
                     
                 <h4>Crea tu cuenta</h4>
 
-                <form action="/users/register" method="POST" enctype="multipart/form-data">
-                    <div>
-                        <label>Nombre y Apellido:</label>
-                        <input class="control" type="text" name="name" placeholder="Nombre y Apellido" required>
+                
+
+                <form action="/users/register/process" method="POST" enctype="multipart/form-data">
+                    <div class="campo">
+                        <label>Nombre:</label>
+                        <input 
+                            type="text" name="first_name" 
+                            placeholder="Nombre" 
+                            class="control <%= locals.errors && errors.first_name ? 'control-error' : null %> " 
+                            value="<%= locals.oldData ? oldData.first_name : null %>"
+                            >
+                        <% if(locals.errors && errors.first_name){ %>
+                            <div class="feedback">
+                                <%= errors.first_name.msg %>
+                            </div>
+                        <% } %>
                     </div>
 
-                    <div>
+                    <div class="campo">
+                        <label>Apellido:</label>
+                        <input 
+                            type="text" name="last_name" 
+                            placeholder="Apellido" 
+                            class="control <%= locals.errors && errors.last_name ? 'control-error' : null %> " 
+                            value="<%= locals.oldData ? oldData.last_name : null %>"
+                            >
+                        <% if(locals.errors && errors.last_name){ %>
+                            <div class="feedback">
+                                <%= errors.last_name.msg %>
+                            </div>
+                        <% } %>
+                    </div>
+                        
+                    <div class="campo">
                         <label>Email:</label>
-                        <input class="control" type="email" name="email" placeholder="Email" required>
+                        <input 
+                            type="text" 
+                            name="email" 
+                            placeholder='Email'
+                            class="control <%= locals.errors && errors.email ? 'control-error' : null %>"
+                            value="<%= locals.oldData ? oldData.email : null %>"
+                            >
+                        <% if(locals.errors && errors.email){ %>
+                            <div class="feedback">
+                                <%= errors.email.msg %>
+                            </div>
+                        <% } %>
                     </div>
 
-                    <div>
+                    <div class="campo">
                         <label>Contraseña:</label>
-                        <input class="control" type="password" name="password" placeholder="Contraseña" required>
+                        <input 
+                            type="password" 
+                            name="password" 
+                            placeholder="Contraseña"
+                            class="control <%= locals.errors && errors.password ? 'control-error' : null %>" 
+                            >
+                            <% if(locals.errors && errors.password){ %>
+                                <div class="feedback">
+                                    <%= errors.password.msg %>
+                                </div>
+                            <% } %>
                     </div>
 
-                    <div >
+                    <div class="campo">
                         <label>Repetir contraseña:</label>
-                        <input class="control" type="password" name="pass_confirm" placeholder="Repetir contraseña" required>
+                        <input 
+                            type="password", 
+                            name="pass_confirm", 
+                            placeholder="Repetir contraseña",
+                            class="control <%= locals.errors && errors.pass_confirm ? 'control-error' : null %>" 
+                            >
+                            <% if(locals.errors && errors.pass_confirm){ %>
+                                <div class="feedback">
+                                    <%= errors.pass_confirm.msg %>
+                                </div>
+                            <% } %>
                     </div>
 
-                    <div>
+                    <div class="campo">
                         <label>Número de teléfono:</label>
-                        <input class="control" type="tel" name="tel" placeholder="Número de teléfono">
+                        <input 
+                            type="tel" 
+                            name="tel" 
+                            placeholder="Número de teléfono"
+                            class="control <%= locals.errors && errors.tel ? 'control-error' : null %>" 
+                            value="<%= locals.oldData ? oldData.tel : null %>"
+                            >
+                            <% if(locals.errors && errors.tel){ %>
+                                <div class="feedback">
+                                    <%= errors.tel.msg %>
+                                </div>
+                            <% } %>
                     </div>
 
-                    <div>
+                    <div class="campo">
                         <label>Fecha de nacimiento:</label>
-                        <input class="control" type="date" name="birthday" required>
+                        <input 
+                            type="date" 
+                            name="birthday" 
+                            class="control <%= locals.errors && errors.birthday ? 'control-error' : null %>" 
+                            value="<%= locals.oldData ? oldData.birthday : null %>"
+                            >
+                            <% if(locals.errors && errors.birthday){ %>
+                                <div class="feedback">
+                                    <%= errors.birthday.msg %>
+                                </div>
+                            <% } %>
                     </div>
 
-                    <div>
+                    <div class="campo">
                         <label>Imagen de perfil:</label>
-                        <input class="control" type="file" name="avatar" >
+                        <input 
+                            type="file" 
+                            name="avatar"
+                            class="control <%= locals.errors && errors.avatar ? 'control-error' : null %>" 
+                            >
+                        <% if(locals.errors && errors.avatar){ %>
+                            <div class="feedback">
+                                <%= errors.avatar.msg %>
+                            </div>
+                        <% } %>
                     </div>
 
                     <button type="submit" class="boton-formulario">Registrarme</button>
