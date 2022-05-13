@@ -7,11 +7,7 @@ var router = express.Router()
 //const session= require('express-session');
 
 const { check } = require("express-validator");
-
 const { body } = require('express-validator');
-
-const Logger = require("nodemon/lib/utils/log");
-
 
 /* Configuracion donde se guardan las imagenes con MULTER */
 const storage = multer.diskStorage({
@@ -158,9 +154,11 @@ router.post("/register/process", uploadFile.single('avatar'), validacionesRegist
 router.get("/login", usersControllers.login);
 router.post("/login/process", validacionesLogin, usersControllers.procesarLogin);
 
+// Rutas Panel de control
 
+router.get("/panel-control", usersControllers.control);
 
-
+// Ruta de prueba de session
 router.get('/check', function (req, res) {
     if (req.session.usuarioLogueado == undefined) {
         res.send("No estas Logueado");
@@ -171,8 +169,6 @@ router.get('/check', function (req, res) {
 })
 
 
-// Rutas Panel de control
 
-router.get("/panel-control", usersControllers.control);
 
 module.exports = router

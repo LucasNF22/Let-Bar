@@ -1,4 +1,4 @@
-const path = require("path")
+const path = require("path");
 const fs = require("fs");
 const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
@@ -61,12 +61,13 @@ const usersControllers = {
         usuariosOriginales.push(nuevoUsuario);
         let usuariosActualizados = usuariosOriginales;
 
-        //Guarda los usuarios actualizados
+        //Guarda los usuarios actualizados y redirije al Login
         fs.writeFileSync(usuariosFilePath, JSON.stringify(usuariosActualizados, null, ' '));
-        res.redirect("/Home")
+        res.redirect("/login")
 
     },
 
+    //Imprime la vista del Login
     login: (req, res) => {
         res.render(path.join(__dirname, "../views/login"))
 
@@ -92,8 +93,9 @@ const usersControllers = {
                 oldData: req.body
             });
         }
-        //lucas@gmail.com
-        //pass_ Let123456
+        // Datos de usuario valido
+        // lucas@gmail.com
+        // pass: Let123456
 
         let usuarioALoguearse;
 
@@ -104,25 +106,37 @@ const usersControllers = {
             users = JSON.parse(userJSON);
         }
         */
+        
+        // !!!! de aca para abajo tenemos que separar la validacion del email, y la de el password
+        //      para poder mandar primero el mensaje de "el email no esta en la base de datos", 
+        //      y si lo encuentra y la password no coincide mostrar el mensaje de "credenciales invalidas" ¡¡¡¡¡
+        
         for (let i = 0; i < users.length; i++) {
             if (users[i].email == req.body.email) {
                 if (bcrypt.compareSync(req.body.password, users[i].password)) {
                     usuarioALoguearse = users[i];
                     console.log(usuarioALoguearse);
                     req.session.usuarioLogueado = usuarioALoguearse;
-            
+
                     res.redirect("/Home");
                     return;
                 }
             }
         }
-        
+
         console.log(usuarioALoguearse);
 
         if (usuarioALoguearse == undefined) {
-            res.render(path.join(__dirname, "../views/login", /*{ usuarioErroneo: [{ msg: "Credenciales invalidas" }] }*/));
-            
-        } 
+            return res.render(path.join(__dirname, "../views/login"), {
+                errors: {
+                    email:{                                 /// aca si manda el mesaje si el usuario es undefined.
+                        msg: "credenciales invalidas"
+                    }
+                },
+                oldData: req.body
+            });
+           
+        }
     },
 
     control: (req, res) => {
