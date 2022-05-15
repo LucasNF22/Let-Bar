@@ -9,8 +9,8 @@ var router = express.Router()
 const { check } = require("express-validator");
 const { body } = require('express-validator');
 
-/* Configuracion donde se guardan las imagenes con MULTER */
-const storage = multer.diskStorage({
+//***** Configuracion donde se guardan las imagenes con MULTER ****
+/*const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         let carpetaDeGuardado = path.join(__dirname, "../../public/img/users/avatar");
         cb(null, carpetaDeGuardado);
@@ -19,20 +19,12 @@ const storage = multer.diskStorage({
         let nombreImagen = Date.now() + path.extname(file.originalname);
         cb(null, nombreImagen);
     }
-});
+});*/
+const bufferImagen = multer.memoryStorage();
 
 /* Middleware de multer */
-const uploadFile = multer({ storage: storage }) /*, 
-    limits:{fileSize: 1000000}, 
-    fileFiler: function(req, file, cb){
-        let extensionesValidas = ['.jpg', '.png', '.gif'];
-             if (file){
-                let fileExtension = path.extname(file.originalname);
-                if (!extensionesValidas.includes(fileExtension)) {
-                    new Error(`Las extensiones de imagen permitidas son: ${extensionesValidas.join(', ')}`);
-                }
-            }
-        }*/
+const uploadFile = multer({ storage: bufferImagen })
+
 
 
 
@@ -107,7 +99,6 @@ const validacionesRegister = [
                 if (!extensionesValidas.includes(fileExtension)) {
                     throw new Error(`Las extensiones de imagen permitidas son: ${extensionesValidas.join(', ')}`);
                 }
-
             }
             return true;
         })
@@ -120,12 +111,7 @@ const validacionesRegister = [
                 }
             }
             return true;
-
-
-
-        })         /* ,check("*").escape()*/
-
-
+        })
 ]
 
 // validaciones para Login
@@ -139,13 +125,10 @@ const validacionesLogin = [
         .notEmpty().withMessage("Debes introducir una contraseña").bail()
         .isLength({ min: 6 }).withMessage('La contraseña debe contener minimo 8 caracteres')  // validacion minimo y maximo de caracteres
         .isAlphanumeric().withMessage("La contraseña debe contener al menos un número y una letra"),
-        
-
 ];
 
 
 // Rutas registro
-
 router.get("/register", usersControllers.registro);
 router.post("/register/process", uploadFile.single('avatar'), validacionesRegister, usersControllers.procesarRegistro,);
 
@@ -155,7 +138,6 @@ router.get("/login", usersControllers.login);
 router.post("/login/process", validacionesLogin, usersControllers.procesarLogin);
 
 // Rutas Panel de control
-
 router.get("/panel-control", usersControllers.control);
 
 // Ruta de prueba de session
