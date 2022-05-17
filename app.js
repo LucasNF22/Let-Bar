@@ -21,7 +21,7 @@ app.use(cookieParser());
 
 let routesMain=require("./src/routes/main.js");
 
-
+app.set('views', path.resolve(__dirname, './src/views'));
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
 

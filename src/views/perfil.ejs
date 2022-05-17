@@ -1,0 +1,67 @@
+<!--Head-->
+<%- include("../views/partials/head") %>
+
+    <body class="body-control">
+        <header class="caja-header-control">
+            <div class="nav-izq">
+                <a href="/home"><img src="/img/logo-letbar-sin-fondo.png" alt="" class="iconos"></a>
+            </div>
+
+            <nav class="header-control">
+                <div class="caja-direc-der">
+                    <div class="text-center">Perfil</div>
+                </div>
+                <div class="caja-direc-izq">
+                    <a href="/home"><i class="fa-solid fa-house iconos-perfil"></i></a>
+                </div>
+                <div class="caja-direc-izq">
+                    <a href=""><i class="fa-solid fa-arrow-right-to-bracket iconos-perfil"></i></a>
+                </div>
+
+            </nav>
+
+
+        </header>
+
+
+        <main class="main-usuario">
+
+            <div class="tarjeta-usuario">
+                <img src="/img/users/avatar/rick_morty.jpg" alt="" class="img-perfil">
+                <br>
+
+                <h2>Lucas Fiorentino</h3>
+                    <br>
+
+                    <label>Email:</label>
+                    <div class="imputForm">lucas@gmail.com</div>
+                    <br>
+
+                    <label>Telefono:</label>
+                    <div class="imputForm">11-1234-1234</div>
+                    <br>
+
+                    <label>Dirección:</label>
+                    <div class="imputForm">p sherman calle wallaby 42 sidney</div>
+                    <br>
+                    <div class="boton-editar"><i class="fa-solid fa-pen-to-square"></i></div>
+            </div>
+
+
+            <div class="tarjeta-usuario">
+                Mis compras
+            </div>
+            <div class="tarjeta-usuario">
+                Mi historial
+            </div>
+
+
+
+
+
+
+        </main>
+
+        <!--Footer-->
+        <%- include("../views/partials/footer") %>
+    </body>

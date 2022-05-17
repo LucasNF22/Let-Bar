@@ -150,7 +150,8 @@ router.get('/check', function (req, res) {
     }
 })
 
-
+//Rutas de Perfil de Usuario
+router.get("/perfil", usersControllers.profile);
 
 
 module.exports = router

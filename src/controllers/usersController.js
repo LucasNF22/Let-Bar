@@ -158,9 +158,16 @@ const usersControllers = {
 
         }
     },
-
+    
+    //Imprime la vista del Panel de control
     control: (req, res) => {
         res.render(path.join(__dirname, "../views/control"))
+    },
+    
+    //Imprime la vista del perfil del usuario
+    profile: (req, res) => {
+        res.render("perfil");
+
     }
 
 
