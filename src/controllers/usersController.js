@@ -30,6 +30,18 @@ const usersControllers = {
                 oldData: req.body
             });
         }
+
+        for (let i = 0; i < usuarios.length; i++) {
+            if (usuarios[i].email == req.body.email) {
+                return res.render(path.join(__dirname, "../views/register"), {
+                    errors: {
+                        email: {                                
+                            msg: "Email ya registrado en la base de datos"
+                        }
+                    },
+                    oldData: req.body
+                });    
+            }}
         
         //Este codgido se ejecuta si no hay errores en las validaciones.
         
@@ -114,6 +126,10 @@ const usersControllers = {
         // !!!! de aca para abajo tenemos que separar la validacion del email, y la de el password
         //      para poder mandar primero el mensaje de "el email no esta en la base de datos", 
         //      y si lo encuentra y la password no coincide mostrar el mensaje de "credenciales invalidas" ¡¡¡¡¡
+
+
+        //let usuarioALoguearse = users.findByField("email", req.body.email)
+        
 
         for (let i = 0; i < users.length; i++) {
             if (users[i].email == req.body.email) {
