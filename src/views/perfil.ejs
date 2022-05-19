@@ -27,22 +27,22 @@
         <main class="main-usuario">
 
             <div class="tarjeta-usuario">
-                <img src="/img/users/avatar/rick_morty.jpg" alt="" class="img-perfil">
+                <img src="/img/users/avatar/<%= usuario.avatar %>" alt="" class="img-perfil">
                 <br>
 
-                <h2>Lucas Fiorentino</h3>
+                <h2><%= usuario.first_name + " " + usuario.last_name %> </h3>
                     <br>
 
                     <label>Email:</label>
-                    <div class="imputForm">lucas@gmail.com</div>
+                    <div class="imputForm"><%= usuario.email %></div>
                     <br>
 
                     <label>Telefono:</label>
-                    <div class="imputForm">11-1234-1234</div>
+                    <div class="imputForm"><%= usuario.tel %></div>
                     <br>
 
                     <label>Dirección:</label>
-                    <div class="imputForm">p sherman calle wallaby 42 sidney</div>
+                    <div class="imputForm"><%= usuario.direccion %> </div>
                     <br>
                     <div class="boton-editar"><i class="fa-solid fa-pen-to-square"></i></div>
             </div>

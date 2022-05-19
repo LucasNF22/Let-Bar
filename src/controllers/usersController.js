@@ -150,7 +150,7 @@ const usersControllers = {
             return res.render(path.join(__dirname, "../views/login"), {
                 errors: {
                     email: {                                 /// aca si manda el mesaje si el usuario es undefined.
-                        msg: "credenciales invalidas"
+                        msg: "Alguno de los datos no es válido"
                     }
                 },
                 oldData: req.body
@@ -166,7 +166,7 @@ const usersControllers = {
     
     //Imprime la vista del perfil del usuario
     profile: (req, res) => {
-        res.render("perfil");
+        res.render("perfil", {usuario : req.session.usuarioLogueado});
 
     }
 

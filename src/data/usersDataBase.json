@@ -322,5 +322,19 @@
   "direccion": " ",
   "localidad": " ",
   "codigo_postal": " "
+ },
+ {
+  "id": 27,
+  "first_name": "ana",
+  "last_name": "casado",
+  "email": "ana@gmail.com",
+  "password": "$2a$10$QCOQi/NQUBcLeT/w2uZev.WLs3Azi4pMtWWszlCEwT0lpmq1x1VBi",
+  "tel": "12345678",
+  "avatar": "1652916882128.png",
+  "category": "user",
+  "birthday": "1999-08-24",
+  "direccion": " ",
+  "localidad": " ",
+  "codigo_postal": " "
  }
 ]

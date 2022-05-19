@@ -32,7 +32,7 @@ const uploadFile = multer({ storage: bufferImagen })
 const validacionesRegister = [
     body("first_name")
         .notEmpty().withMessage("Debes introducir tu nombre").bail()
-        .isLength({ min: 4 }).withMessage("tu nombre debe tener mínimo 4 letras")
+        .isLength({ min: 3 }).withMessage("tu nombre debe tener mínimo 4 letras")
         .isAlpha().withMessage("solo puede introducir letras"),
 
     body("last_name")
