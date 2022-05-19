@@ -41,9 +41,9 @@
                     <a href="/productos/categoria/snacks" class="boton-menu-cat">
                         <img src="/img/categoryIcons/snacks.png" alt="">
                     </a>
-                    
-                
-                
+
+
+
                 </section>
 
                 <% categorias.forEach(categoria=>{ %>
@@ -60,11 +60,15 @@
                             <div class="tarj-cat-inf-izq padding20">
 
                                 <% productos.forEach(producto=>{ if(producto.category == categoria.category){ %>
+
                                     <!--Tajeta de producto-->
                                     <article class="tarjeta-art-cat">
-                                        <a href="/productos/detalle-producto/<%= producto.id %>"><div class="caja-art-cat-sup">
-                                            <img src="/img/products/<%= producto.image %>" alt="">
-                                        </div></a>
+
+                                        <label for="popUp" href="/productos/detalle-producto/<%= producto.id %>">
+                                            <div class="caja-art-cat-sup">
+                                                <img src="/img/products/<%= producto.image %>" alt="">
+                                            </div>
+                                        </label>
                                         <div class="caja-art-inf-cat">
 
                                             <div class="caja-art-inf-izq">
@@ -80,6 +84,36 @@
                                             </div>
                                         </div>
                                     </article>
+                                    <!-- inicio Pop Up de producto-->
+                                    <input type="checkbox" id="popUp">
+                                    <div class="fondo-popUp">
+                                        <div class="cont-popUp">
+                                            <div class="tarjeta-popUp">
+
+
+                                                <img src="/img/products/<%= producto.image %>" alt="" class="img-popUp">
+                                                <br>
+                                                <%= producto.name %>
+                                                    <br>
+                                                    <div class="label-popUp">Precio:</div>
+                                                    <div class="imputForm">$<%= producto.priceUnit %>
+                                                    </div>
+                                                    <br>
+                                                    <div class="label-popUp">Telefono:</div>
+                                                    <div class="imputForm">telefono</div>
+                                                    <br>
+                                                    <div class="label-popUp">Dirección:</div>
+                                                    <div class="imputForm">
+                                                        <%= producto.description %>
+                                                    </div>
+                                                    <br>
+                                                    <label for="popUp" class="boton-cerrar-popUp"><i
+                                                            class="fa-solid fa-xmark"></i></label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- FIN Pop Up de producto-->
+
                                     <% }}) %>
 
                             </div>
@@ -94,10 +128,10 @@
                     <% }) %>
 
 
-                    
+
 
             </main>
-            
+
 
             <!--Footer-->
             <%- include("../views/partials/footer") %>
