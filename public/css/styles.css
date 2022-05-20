@@ -1724,22 +1724,137 @@ input #file-upload-button {
     top: 22px;
     z-index: 10;
 }
+
 .boton-editar i {
     font-size: 15px;
-    
+
 }
 
 .boton-editar:active {
     background-color: #41C1F0;
-  box-shadow: -6px 6px 20px rgba(65, 193, 240, 0.8);
-  color: #fff;
-  
+    box-shadow: -6px 6px 20px rgba(65, 193, 240, 0.8);
+    color: #fff;
+
 }
 
 .iconos-perfil {
     color: white;
     filter: drop-shadow(0px 0px 4px rgba(65, 193, 240, 0.8));
     z-index: 10;
+}
+
+/* ///////////////////
+
+    panel de listado de productos
+
+   /////////////////// */
+
+.main-producto-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95%;
+    flex-direction: column;
+    gap: 22px;
+    padding-top: 22px;
+    padding-bottom: 22px;
+}
+   
+.tarjeta-categoria-edit {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background-color: #F1F1F1;
+    border-radius: 15px;
+    padding-top: 10px;
+    height: max-content;
+    box-shadow: 10px 10px 15px #bebebe,
+        -10px -10px 15px #ffffff;
+    max-width: 450px;
+}
+
+
+.cont-producto-edit {
+    display: flex;
+    margin-top: 5px;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 8px;
+    padding-bottom: 22px;
+}
+
+.tarjeta-producto-edit {
+    width: 95%;
+    border-radius: 5px;
+    background: #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #3A3A3A;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 12px;
+    padding: 8px;
+    position: relative;
+}
+
+.tarjeta-producto-edit div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 4px;
+    margin-right: 4px;
+    text-align: center;
+    
+}
+
+.img-edit {
+    width: 50px;
+}
+
+.boton-editar-prod {
+    
+    padding: 10px;
+    color: #666666;
+    justify-content: center;
+    align-items: center;
+    color: #3A3A3A;
+    border-radius: 5px 5px 5px 5px;
+    background: #e8e8e8;
+    transition: all .2s;
+    box-shadow: 6px 6px 12px #c5c5c5,
+        -6px -6px 12px #ffffff;
+    
+    
+}
+
+.boton-editar-prod i {
+    font-size: 15px;
+
+}
+
+.boton-editar-prod:active {
+    background-color: #41C1F0;
+    box-shadow: -6px 6px 20px rgba(65, 193, 240, 0.8);
+    color: #fff;
+
+}
+
+.user-edit{
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    justify-content: flex-start;
+}
+
+.flex-wrap{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
 }
 
 

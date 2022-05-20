@@ -138,7 +138,9 @@ router.get("/login", usersControllers.login);
 router.post("/login/process", validacionesLogin, usersControllers.procesarLogin);
 
 // Rutas Panel de control
-router.get("/panel-control", usersControllers.control);
+router.get("/panel-control", usersControllers.control); //Dashboard
+router.get("/listadoProductos", usersControllers.listadoProductos) //Listado de Productos
+router.get("/listadoUsuarios", usersControllers.listadoUsuarios) //Listado de Usuarios
 
 // Ruta de prueba de session
 router.get('/check', function (req, res) {

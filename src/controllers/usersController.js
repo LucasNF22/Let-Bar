@@ -168,9 +168,24 @@ const usersControllers = {
     profile: (req, res) => {
         res.render("perfil", {usuario : req.session.usuarioLogueado});
 
+    },
+
+    listadoProductos: (req,res)=>{
+        const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+        const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+        const categoriesFilePath = path.join(__dirname, '../data/categoriesDataBase.json');
+        const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
+        
+        res.render("listaDeProductos", {productos: products, categorias: categories});
+
+    },
+
+    listadoUsuarios: (req, res) => {
+        const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
+        const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
+        
+        res.render("listadoDeUsuarios", {usuarios: usuarios});
     }
-
-
 }
 
 module.exports = usersControllers;
