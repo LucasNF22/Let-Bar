@@ -90,7 +90,8 @@
                                     <div class="fondo-popUp">
                                         <div class="cont-popUp">
                                             <div class="tarjeta-popUp">
-
+                                                <label for="popUp" class="boton-cerrar-popUp"><i
+                                                        class="fa-solid fa-xmark"></i></label>
                                                 <div class="cont-img">
                                                     <img src="/img/products/<%= producto.image %>" alt=""
                                                         class="img-popUp">
@@ -100,7 +101,7 @@
                                                         </h4>
                                                     </div>
                                                 </div>
-                                                <br>
+                                                
                                                 <div class="renglon-popUp">
                                                     <div class="renglon-tit-popUp">Precio:</div>
                                                     <div class="renglon-cont-popUp">$<%= producto.priceUnit %>
@@ -122,12 +123,38 @@
                                                 <div class="renglon-popUp">
                                                     <div class="renglon-tit-popUp">Descripcion:</div>
                                                 </div>
-                                                <div class="renglon-cont-popUp desc-popUp">
-                                                    <%= producto.description %>
+                                                
+                                                    <div class="renglon-cont-popUp desc-popUp">
+                                                        <%= producto.description %>
+                                                    
+                                                </div>
+                                                <div class="renglon-popUp">
+                                                    <div class="renglon-tit-popUp-val">Valora este producto:</div>
+                                                    
+                                                </div>
+                                                <div class="renglon-cont-popUp-val">
+                                                    <form action="/productos/valorar/<%= producto.id %>?_method=PUT"
+                                                        method="POST" class="valoracion-popUp">
+                                                        <div class="clasificacion">
+                                                            <input id="radio1" type="radio" name="estrellas" value="5">
+                                                            <label for="radio1"><i class="fa-regular fa-star"></i></label>
+                                                            <input id="radio2" type="radio" name="estrellas" value="4">
+                                                            <label for="radio2"><i class="fa-regular fa-star"></i></label>
+                                                            <input id="radio3" type="radio" name="estrellas" value="3">
+                                                            <label for="radio3"><i class="fa-regular fa-star"></i></label>
+                                                            <input id="radio4" type="radio" name="estrellas" value="2">
+                                                            <label for="radio4"><i class="fa-regular fa-star"></i></label>
+                                                            <input id="radio5" type="radio" name="estrellas" value="1">
+                                                            <label for="radio5"><i class="fa-regular fa-star"></i></label>
+                                                        </div>
+                                                        <button type="submit" class="boton-valoracion correcion-boton">Valorar</button>
+                                                    </form>
                                                 </div>
 
-                                                <label for="popUp" class="boton-cerrar-popUp"><i
-                                                        class="fa-solid fa-xmark"></i></label>
+                                                <a href="/productos/detalle-producto/<%=producto.id%>" class="boton-verMas-popUp">Ver mas</a>
+                                                
+                                                
+
                                             </div>
                                         </div>
                                     </div>

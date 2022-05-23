@@ -3,7 +3,7 @@ const path = require("path");
 const app = express();
 const methodOverride =  require('method-override');
 const session = require('express-session');
-const cookieParser = require("cookie-parser");
+const cookie = require("cookie-parser");
 
 const usuarioLogueadoMiddleware = require ('./src/middlewares/usuarioLogueadoMiddleware')
 
@@ -18,12 +18,12 @@ app.use(session({
         saveUninitialized: true,
     }));
 
-app.use(cookieParser());
-app.use (usuarioLogueadoMiddleware)
+app.use(cookie());
+app.use (usuarioLogueadoMiddleware);
 
-let routesMain=require("./src/routes/main.js");
+let routesMain = require("./src/routes/main.js");
 
-app.set('views', path.resolve(__dirname, './src/views'));
+app.set('views', path.resolve(__dirname, './src/views')); 
 const publicPath = path.resolve(__dirname, "./public");
 app.use(express.static(publicPath));
 

@@ -57,6 +57,7 @@
                         </div>
                         <br>
                         <!--Visible solo para administradores-->
+                        <% if(locals.estaLogueado && locals.usuarioLogueado.category == "admin") { %>
                         <div class="">
                             <a href="/productos/editar-producto/<%= producto.id %>"><button class="boton-admin naranja">
                                     Editar </button></a>
@@ -66,7 +67,7 @@
                             </form>
 
                         </div>
-
+                        <% } %>
                 </section>
 
 

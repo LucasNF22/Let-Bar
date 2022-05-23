@@ -99,7 +99,8 @@ const usersControllers = {
         let validaciones = validationResult(req);
 
         console.log("----------------");
-        //console.log(users)
+        console.log("llego");
+        console.log(req.body)
         console.log("----------------");
 
 
@@ -128,15 +129,18 @@ const usersControllers = {
         //      y si lo encuentra y la password no coincide mostrar el mensaje de "credenciales invalidas" ¡¡¡¡¡
 
 
-        //let usuarioALoguearse = users.findByField("email", req.body.email)
+        
         
 
         for (let i = 0; i < users.length; i++) {
             if (users[i].email == req.body.email) {
                 if (bcrypt.compareSync(req.body.password, users[i].password)) {
                     usuarioALoguearse = users[i];
-                    console.log(usuarioALoguearse);
+                    delete usuarioALoguearse.password;
                     req.session.usuarioLogueado = usuarioALoguearse;
+                    if(req.body.recordar){
+                        res.cookie("emailUsuario", req.body.email, {maxAge: 1000 * 60})
+                    }
 
                     res.redirect("/Home");
                     return;
@@ -166,6 +170,7 @@ const usersControllers = {
     
     //Imprime la vista del perfil del usuario
     profile: (req, res) => {
+        console.log(req.cookies.emailUsuario)
         res.render("perfil", {usuario : req.session.usuarioLogueado});
 
     },
@@ -190,7 +195,7 @@ const usersControllers = {
     logout: (req, res) =>{
         req.session.destroy();
         return res.redirect ('/')
-        //FALTA AGREGAR BOTON DE CERRAR SESIÓN//
+        
 
     }
 }

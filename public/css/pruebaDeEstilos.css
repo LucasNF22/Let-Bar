@@ -283,6 +283,7 @@ div.clasificacion input:checked~label {
     transition: all .15s;
     font-family: 'Roboto Mono', monospace;
     padding: 20px;
+    position: relative;
 }
 .cont-img{
     display: flex;
@@ -318,7 +319,7 @@ div.clasificacion input:checked~label {
 .renglon-popUp {
     display: flex;
     width: 100%;
-    margin-bottom: 8px;
+    margin-top: 8px;
     
 }
 
@@ -343,6 +344,29 @@ div.clasificacion input:checked~label {
     font-family: 'Roboto Mono', monospace;
 }
 
+.renglon-tit-popUp-val {
+    align-self: flex-start;
+    padding-left: 10px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 3px 10px 3px 10px;
+    font-size: 12px;
+    width: 100%;
+    
+}
+.renglon-cont-popUp-val {
+    align-self: flex-start;    
+    padding: 3px 10px 3px 10px;
+    font-size: 12px;
+    color: white;    
+    width: 100%;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.correcion-boton {
+    padding: 3px 10px 3px 10px;
+}
+
 .boton-cerrar-popUp {
     display: flex;
     position: absolute;
@@ -354,8 +378,7 @@ div.clasificacion input:checked~label {
     border-radius: 50%;
     background: #c5c5c5;
     transition: all .2s;
-    box-shadow: 0px 0px 10px white;
-        
+    box-shadow: 0px 0px 10px white;   
     right: -18px;
     top: -18px;
     z-index: 10;
@@ -372,6 +395,28 @@ div.clasificacion input:checked~label {
   
 }
 
+.boton-verMas-popUp {
+    display: flex;
+    position: absolute;
+    width: 70%;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 10px 10px 0px 0px;
+    background: #c5c5c5;
+    transition: all .2s;
+    box-shadow: 0px 0px 10px white;   
+    bottom: 0px;
+    z-index: 10;
+}
+.boton-verMas-popUp:active {
+    background-color: #41C1F0;
+  box-shadow: -6px 6px 20px rgba(65, 193, 240, 0.8);
+  color: #fff;
+  
+}
+
 .iconos-popUp {
     color: white;
     filter: drop-shadow(0px 0px 4px rgba(65, 193, 240, 0.8));
@@ -380,6 +425,16 @@ div.clasificacion input:checked~label {
 
 .desc-popUp {
     overflow-x: scroll;
+    margin-top: 8px;
+}
+
+.valoracion-popUp {
+    display:flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #1c1c1c;
+    
 }
 
 

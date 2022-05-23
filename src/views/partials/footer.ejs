@@ -7,7 +7,7 @@
             <div class="caja-footer-izq-sup">
 
                 <div class="caja-footer-izq-sup-izq">
-                    <a href="/home"><img src="/img/logo-letbar-sin-fondo.png" alt="" class="iconos"></a>
+                    <a href="/home"><img src="/img/icons/logo-letbar-sin-fondo.png" alt="" class="iconos"></a>
                 </div>
                 <div class="caja-footer-izq-sup-der">
                     <div>
@@ -19,17 +19,20 @@
 
             <div class="caja-footer-izq-inf">
                 <div>
-                    <img src="/img/icono-insta.png" alt="" class="iconos-footer">
+                    <img src="/img/icons/icono-insta.png" alt="" class="iconos-footer">
                 </div>
                 <div>
-                    <img src="/img/icono.wap.png" alt="" class="iconos-footer">
+                    <img src="/img/icons/icono.wap.png" alt="" class="iconos-footer">
                 </div>
                 <div>
-                    <img src="/img/icono-twitter.png" alt="" class="iconos-footer">
+                    <img src="/img/icons/icono-twitter.png" alt="" class="iconos-footer">
                 </div>
-                <div>
-                    <a href="/users/panel-control"><i class="fa-solid fa-sliders icono-control"></i></a>
-                </div>
+                <% if(locals.estaLogueado && locals.usuarioLogueado.category == "admin") { %>
+                    <div>
+                        <a href="/users/panel-control"><i class="fa-solid fa-sliders icono-control"></i></a>
+                    </div>
+                <% } %>
+                
             </div>
         </div>
 
