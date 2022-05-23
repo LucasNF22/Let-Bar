@@ -23,9 +23,14 @@
     </nav>
 
     <div class="nav-der">
+
         <!-- <a  for="btn-menu"><img src="/img/icono-carrito.png" alt="" class="iconos"></a> -->
         <label for="btn-menu"><img src="/img/icono-carrito.png" alt="" class="iconos"></label>
-        <a href="/users/login"><img class="iconos" src="/img/icono-perfil.png" alt="alhas"></a>
+         <% if (locals.estaLogueado)  { %>
+        <a href="/users/perfil"><img class="iconos" src="/img/icono-perfil.png" alt="alhas"></a>
+        <% } else { %>
+            <a href="/users/login"><i class="fa-solid fa-arrow-right-to-bracket"></i></a>
+        <% } %>
 
     </div>
 </header>

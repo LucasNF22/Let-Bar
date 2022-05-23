@@ -5,6 +5,8 @@ const methodOverride =  require('method-override');
 const session = require('express-session');
 const cookieParser = require("cookie-parser");
 
+const usuarioLogueadoMiddleware = require ('./src/middlewares/usuarioLogueadoMiddleware')
+
 app.use(express.urlencoded ({ extended: false }));
 app.use(express.json());
 app.use(methodOverride('_method'));
@@ -17,7 +19,7 @@ app.use(session({
     }));
 
 app.use(cookieParser());
-
+app.use (usuarioLogueadoMiddleware)
 
 let routesMain=require("./src/routes/main.js");
 

@@ -185,6 +185,13 @@ const usersControllers = {
         const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
         
         res.render("listadoDeUsuarios", {usuarios: usuarios});
+    },
+
+    logout: (req, res) =>{
+        req.session.destroy();
+        return res.redirect ('/')
+        //FALTA AGREGAR BOTON DE CERRAR SESIÓN//
+
     }
 }
 

@@ -4,10 +4,15 @@ const multer = require('multer');
 const path = require('path');
 var router = express.Router()
 
-//const session= require('express-session');
+const guestMiddleware = require ('../middlewares/guestMiddleware')
+const auntenticadoMiddleware = require ('../middlewares/autentidadoMiddleware')
+
+
+const session= require('express-session');
 
 const { check } = require("express-validator");
 const { body } = require('express-validator');
+const autenticadoMiddleware = require("../middlewares/autentidadoMiddleware");
 
 //***** Configuracion donde se guardan las imagenes con MULTER ****
 /*const storage = multer.diskStorage({
@@ -129,12 +134,12 @@ const validacionesLogin = [
 
 
 // Rutas registro
-router.get("/register", usersControllers.registro);
+router.get("/register", guestMiddleware, usersControllers.registro);
 router.post("/register/process", uploadFile.single('avatar'), validacionesRegister, usersControllers.procesarRegistro,);
 
 
 // Rutas Login
-router.get("/login", usersControllers.login);
+router.get("/login", guestMiddleware, usersControllers.login);
 router.post("/login/process", validacionesLogin, usersControllers.procesarLogin);
 
 // Rutas Panel de control
@@ -148,12 +153,14 @@ router.get('/check', function (req, res) {
         res.send("No estas Logueado");
 
     } else {
+        console.log(req.session);
         res.send("El usuario logueado es" + req.session.usuarioLogueado.email);
     }
 })
 
 //Rutas de Perfil de Usuario
-router.get("/perfil", usersControllers.profile);
+router.get("/perfil",autenticadoMiddleware, usersControllers.profile);
 
-
+//Logout
+router.get("/",autenticadoMiddleware, usersControllers.profile);
 module.exports = router
