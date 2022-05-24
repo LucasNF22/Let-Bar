@@ -3,6 +3,7 @@ const { body } = require('express-validator');
 const validacionesLogin = [
 
     body('email')
+        .trim()
         .notEmpty().withMessage("Debes introducir tu email").bail()
         .isEmail().withMessage("El correo no es valido"),
 

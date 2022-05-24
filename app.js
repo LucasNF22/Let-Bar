@@ -12,6 +12,7 @@ app.use(express.json());
 app.use(methodOverride('_method'));
 app.set("view engine","ejs");
 
+
 app.use(session({ 
         secret:"Mensaje Secreto", 
         resave: false, 
@@ -22,6 +23,7 @@ app.use(cookie());
 app.use (usuarioLogueadoMiddleware);
 
 let routesMain = require("./src/routes/main.js");
+const req = require("express/lib/request");
 
 app.set('views', path.resolve(__dirname, './src/views')); 
 const publicPath = path.resolve(__dirname, "./public");
@@ -38,3 +40,7 @@ app.listen(process.env.PORT || 3000, () =>{
 
 
 app.use ("/", routesMain);
+
+app.use((req, res, next)=>{
+    res.status(404).render("error-404")
+})

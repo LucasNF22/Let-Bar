@@ -27,7 +27,7 @@
                             <label>Email:</label>
                             <input type="text" name="email" placeholder="Email"
                                 class="control <%= locals.errors && errors.email ? 'control-error' : null %>"
-                                value="<%= locals.oldData ? oldData.email : null %>  ">
+                                value="<%= locals.email %>">
                                
                             
                                 <% if(locals.errors && errors.email){ %>

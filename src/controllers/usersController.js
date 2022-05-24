@@ -85,7 +85,11 @@ const usersControllers = {
 
     //Imprime la vista del Login
     login: (req, res) => {
-        res.render(path.join(__dirname, "../views/login"))
+        let email = req.cookies.emailUsuario ? req.cookies.emailUsuario : "" ;
+
+        res.render(path.join(__dirname, "../views/login"), {
+            email
+        })
 
     },
 
@@ -105,9 +109,10 @@ const usersControllers = {
 
 
         if (validaciones.errors.length > 0) {
+            console.log(req.body.email);
             return res.render(path.join(__dirname, "../views/login"), {
                 errors: validaciones.mapped(),
-                oldData: req.body
+                email: req.body.email
             });
         }
         // Datos de usuario valido
@@ -157,7 +162,7 @@ const usersControllers = {
                         msg: "Alguno de los datos no es válido"
                     }
                 },
-                oldData: req.body
+                email: req.body.email
             });
 
         }
