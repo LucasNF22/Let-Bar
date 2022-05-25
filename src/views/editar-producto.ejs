@@ -14,66 +14,88 @@
 
                 <img src="/img/fondo-variable-01.png" alt="" class="wall-izq">
                 <img src="/img/fondo-variable-02.png" alt="" class="wall-der">
- 
+                <br>
+                <a href="/users/listadoProductos">
+                    <div class="boton-editar-prod"> Atras </div>
+                </a>
                 <h3>Editar producto</h3>
-                
-                <form action="/productos/editar-producto/<%= producto.id %>?_method=PUT" method="POST" class="FormCarga">
-                    
+
+                <form action="/productos/editar-producto/<%= producto.id %>?_method=PUT" method="POST"
+                    class="FormCarga">
+
                     <div>
                         <label>Categoría:</label>
-                        
-                        <select name="category" class="imputForm" >
-                            <% 
-                            categorias.forEach(categoria=> {
-                                if(categoria.category == producto.category){ %>
-                            <option value="<%=categoria.category%>" selected><%= categoria.name %> </option>
-                               <% }else{ %>
-                                <option value="<%=categoria.category%>"><%= categoria.name %> </option>
-                              <% } 
 
-                            } ) %>
-                            
+                        <select name="category" class="imputForm">
+                            <% categorias.forEach(categoria=> {
+                                if(categoria.category == producto.category){ %>
+                                <option value="<%=categoria.category%>" selected>
+                                    <%= categoria.name %>
+                                </option>
+                                <% }else{ %>
+                                    <option value="<%=categoria.category%>">
+                                        <%= categoria.name %>
+                                    </option>
+                                    <% } } ) %>
+
                         </select>
                     </div>
                     <div>
                         <label>Nombre del producto:</label>
-                        <input type="text" name="name" id= "name" placeholder="Nombre del producto..." class="imputForm" value="<%= producto.name %>">
+                        <input type="text" name="name" id="name" placeholder="Nombre del producto..." class="imputForm"
+                            value="<%= producto.name %>">
                     </div>
                     <div>
                         <label>Tamaño del producto:</label>
-                        <input type="text" name="size" placeholder="Tamaño en ml..." class="imputForm" value="<%= producto.size %>">
+                        <input type="text" name="size" placeholder="Tamaño en ml..." class="imputForm"
+                            value="<%= producto.size %>">
                     </div>
                     <div>
                         <label>Cosecha:</label>
-                        <input type="number" name="years" placeholder="Año Cosecha..." class="imputForm" value="<%= producto.years %>">
+                        <input type="number" name="years" placeholder="Año Cosecha..." class="imputForm"
+                            value="<%= producto.years %>">
                     </div>
                     <div>
                         <label>Precio por unidad:</label>
-                        <input type="number" name="priceUnit" placeholder="Precio por unidad..." class="imputForm" value="<%= producto.priceUnit %>">
+                        <input type="number" name="priceUnit" placeholder="Precio por unidad..." class="imputForm"
+                            value="<%= producto.priceUnit %>">
                     </div>
                     <div>
                         <label>Precio por cantidad:</label>
-                        <input type="number" name="priceCant" placeholder="Precio por cantidad..." class="imputForm" value="<%= producto.priceCant %>">
+                        <input type="number" name="priceCant" placeholder="Precio por cantidad..." class="imputForm"
+                            value="<%= producto.priceCant %>">
                     </div>
                     <div>
                         <label>Unidades para descuento:</label>
-                        <input type="number" name="cantDisc" placeholder="Unidades para descuentos..." class="imputForm" value="<%= producto.cantDisc %>">
+                        <input type="number" name="cantDisc" placeholder="Unidades para descuentos..." class="imputForm"
+                            value="<%= producto.cantDisc %>">
                     </div>
                     <div>
                         <label>En oferta</label>
-                        <input type="boolean" name="offer" placeholder="Producto en oferta..." class="imputForm" value="<%= producto.offer %>">
+                        <select name="offer" class="imputForm">
+                            <% if(producto.offer=="false" ){ %>
+                                <option value="false" selected>No</option>
+                                <% }else{ %>
+                                    <option value="true" selected>Si</option>
+                                    <% } %>
+                        </select>
+
                     </div>
                     <div>
                         <label>Graduación alcoholica:</label>
-                        <input type="text" name="graduation" placeholder="Graduacion alcoholica..." class="imputForm" value="<%= producto.graduation %>">
+                        <input type="text" name="graduation" placeholder="Graduacion alcoholica..." class="imputForm"
+                            value="<%= producto.graduation %>">
                     </div>
                     <div>
-                        <label>Stock actual: <palabra-celeste><%= producto.stock %> Und.</palabra-celeste></label>
-                        <input type="number" name="stock" placeholder="Añadir stock..." class="imputForm" >
+                        <label>Stock actual: <palabra-celeste>
+                                <%= producto.stock %> Und.
+                            </palabra-celeste></label>
+                        <input type="number" name="stock" placeholder="Añadir stock..." class="imputForm">
                     </div>
                     <div>
                         <label>Descripción:</label>
-                        <textarea rows="5" name="description" placeholder="Describe tu producto..." class="imputForm" ><%= producto.description %></textarea>
+                        <textarea rows="5" name="description" placeholder="Describe tu producto..."
+                            class="imputForm"><%= producto.description %></textarea>
                     </div>
                     <div>
                         <label>Fotos del producto:</label>

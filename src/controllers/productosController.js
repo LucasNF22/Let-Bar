@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require('fs');
+const { validationResult } = require("express-validator");
 
 const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -10,10 +11,6 @@ const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
 
 
 const productosController = {
-
-    catalogo: (req, res) => {
-        res.render(path.join(__dirname, "../views/catalogo"));
-    },
 
     detalleProducto: (req, res) => {
         const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
@@ -33,16 +30,36 @@ const productosController = {
         const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+        let validaciones = validationResult(req);
+
+        console.log("llego la imagen")
+        console.log(req.file);
+        console.log(validaciones.mapped());
+        
+        if (validaciones.errors.length > 0) {
+            console.log(req.body.email);
+            return res.render("agregar-producto", {
+                errors: validaciones.mapped(),
+                oldData: req.body
+            });
+        }
+
         let productosOriginales = productos;
 
         let ultimoObjeto = (productosOriginales.length) - 1;
         let ultimoId = productosOriginales[ultimoObjeto].id;
         let nuevoId = ultimoId + 1;
+        
+        //Info de la imagen de usuario
+        let nombreImagen = "producto" + "_" + nuevoId + "_" + Date.now() + path.extname(req.file.originalname);
+        let destinoImagen = path.join(__dirname, "../../public/img/products/");
+        let dataImagen = req.file.buffer;
+            
         let nuevoProducto = {
             "id": nuevoId,
             "name": req.body.name,
             "description": req.body.description,
-            "image": req.body.image,
+            "image": nombreImagen,
             "category": req.body.category,
             "size": req.body.size,
             "priceUnit": req.body.priceUnit,
@@ -57,8 +74,13 @@ const productosController = {
             "valoration": 0,
 
         };
+
+        
+
+
         productosOriginales.push(nuevoProducto);
 
+        fs.writeFileSync(destinoImagen + nombreImagen, dataImagen);
         fs.writeFileSync(productsFilePath, JSON.stringify(productosOriginales, null, ' '));
         res.redirect("/Home")
 

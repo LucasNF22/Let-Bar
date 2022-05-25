@@ -63,15 +63,13 @@ const validacionesRegister = [
             let file = req.file;
             let extensionesValidas = ['.jpg', '.png', '.gif'];
 
-            if (!file) {
-                throw new Error('Tenes que seleccionar una imagen');
-
-            } else if (file) {
+            if (file) {
                 let fileExtension = path.extname(file.originalname);
                 if (!extensionesValidas.includes(fileExtension)) {
                     throw new Error(`Las extensiones de imagen permitidas son: ${extensionesValidas.join(', ')}`);
                 }
-            }
+
+            } 
             return true;
         })
         .custom((value, { req }) => {

@@ -18,24 +18,24 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 
 
 // Rutas registro
-router.get("/register", guestMiddleware, usersControllers.registro);
-router.post("/register/process", uploadFile.single('avatar'), validacionesRegister, usersControllers.procesarRegistro,);
+router.get("/register", [ guestMiddleware ], usersControllers.registro);
+router.post("/register/process", [ uploadFile.single('avatar'), validacionesRegister ], usersControllers.procesarRegistro,);
 
 
 // Rutas Login
-router.get("/login", guestMiddleware, usersControllers.login);
-router.post("/login/process", validacionesLogin, usersControllers.procesarLogin);
+router.get("/login", [ guestMiddleware ], usersControllers.login);
+router.post("/login/process", [ validacionesLogin ], usersControllers.procesarLogin);
 
 // Rutas de administrador
-router.get("/panel-control", adminMiddleware, usersControllers.control); //Dashboard
-router.get("/listadoProductos", adminMiddleware, usersControllers.listadoProductos) //Listado de Productos
-router.get("/listadoUsuarios", adminMiddleware, usersControllers.listadoUsuarios) //Listado de Usuarios
+router.get("/panel-control", [ adminMiddleware ], usersControllers.control); //Dashboard
+router.get("/listadoProductos", [ adminMiddleware ], usersControllers.listadoProductos) //Listado de Productos
+router.get("/listadoUsuarios", [ adminMiddleware ], usersControllers.listadoUsuarios) //Listado de Usuarios
 
 //Logout
-router.get("/logout",autenticadoMiddleware, usersControllers.logout);
+router.get("/logout",[ autenticadoMiddleware ], usersControllers.logout);
 
 //Rutas de Perfil de Usuario
-router.get("/perfil",autenticadoMiddleware, usersControllers.profile);
+router.get("/perfil",[ autenticadoMiddleware ], usersControllers.profile);
 
 // Ruta de prueba de session
 router.get('/check', function (req, res) {

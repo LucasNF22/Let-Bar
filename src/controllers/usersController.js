@@ -46,9 +46,15 @@ const usersControllers = {
         //Este codgido se ejecuta si no hay errores en las validaciones.
         
         //Info de la imagen de usuario
-        let nombreImagen = Date.now() + path.extname(req.file.originalname);
-        let destinoImagen = path.join(__dirname, "../../public/img/users/avatar/");
-        let dataImagen = req.file.buffer;
+        let nombreImagen = "default.jpg"
+        let destinoImagen = " ";
+        let dataImagen = " "; 
+
+        if(req.file){
+            nombreImagen = Date.now() + path.extname(req.file.originalname);
+            destinoImagen = path.join(__dirname, "../../public/img/users/avatar/");
+            dataImagen = req.file.buffer;
+        }
 
         //Genera el nuevo usuario
         let usuariosOriginales = usuarios;
@@ -77,7 +83,9 @@ const usersControllers = {
         let usuariosActualizados = usuariosOriginales;
 
         //Guarda los usuarios actualizados y redirije al Login
-        fs.writeFileSync(destinoImagen + nombreImagen, dataImagen);
+        if(req.file){
+            fs.writeFileSync(destinoImagen + nombreImagen, dataImagen);
+        }        
         fs.writeFileSync(usuariosFilePath, JSON.stringify(usuariosActualizados, null, ' '));
         res.redirect("/users/login");
 

@@ -1943,36 +1943,31 @@ input #file-upload-button {
         inset 0 0 .75em .25em var(--glow-color);
     text-shadow: 0 0 .5em var(--glow-color);
     position: relative;
-    transition: all 0.3s;
+    transition: all 0.1s;
 }
 
 .button-voler::after {
-    pointer-events: none;
+   
     content: "";
     position: absolute;
     top: 120%;
     left: 0;
     height: 100%;
     width: 100%;
-    background-color: var(--glow-spread-color);
+    background-color: rgb(176, 239, 255);
     filter: blur(2em);
-    opacity: .7;
+    opacity: 0.7;
     transform: perspective(1.5em) rotateX(35deg) scale(1, .6);
 }
 
-.button-voler:hover {
+.button-voler:active {
     color: #3A3A3A;
-    background-color: var(--glow-color);
+    background-color: rgb(176, 239, 255);;
     box-shadow: 0 0 1em .25em var(--glow-color),
-        0 0 4em 2em var(--glow-spread-color),
+        0 0 4em 1em var(--glow-spread-color),
         inset 0 0 .75em .25em var(--glow-color);
 }
 
-.button-voler:active {
-    box-shadow: 0 0 0.6em .25em var(--glow-color),
-        0 0 2.5em 2em var(--glow-spread-color),
-        inset 0 0 .5em .25em var(--glow-color);
-}
 
 
 

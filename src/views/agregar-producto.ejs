@@ -11,14 +11,19 @@
 
 
             <main class="centrado wall">
-
+                
                 <img src="/img/fondo-variable-01.png" alt="" class="wall-izq">
                 <img src="/img/fondo-variable-02.png" alt="" class="wall-der">
- 
+                <br>
+                <a href="/users/panel-control">
+                    <div class="boton-editar-prod"> Atras </div>
+                </a>
+
                 <h3>Agregar nuevo producto</h3>
-                
-                <form action="/productos" method="POST" class="FormCarga">
-                    
+
+                <form action="/productos/agregar-producto/process" method="POST" enctype="multipart/form-data"
+                    class="FormCarga">
+
                     <div>
                         <label>Categoría:</label>
                         <select name="category" class="imputForm">
@@ -32,7 +37,14 @@
                     </div>
                     <div>
                         <label>Nombre del producto:</label>
-                        <input type="text" name="name" id= "name" placeholder="Nombre del producto..." class="imputForm">
+                        <input type="text" name="name" id="name" placeholder="Nombre del producto..." class="imputForm"
+                            value="<%= locals.oldData ? oldData.name : null %>">
+
+                        <% if(locals.errors && errors.name){ %>
+                            <div class="feedback">
+                                <%= errors.name.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>Tamaño del producto:</label>
@@ -48,21 +60,24 @@
                     </div>
                     <div>
                         <label>Precio por cantidad:</label>
-                        <input type="number" name="priceCant" placeholder="Precio por cantidad..."
-                            class="imputForm">
+                        <input type="number" name="priceCant" placeholder="Precio por cantidad..." class="imputForm">
                     </div>
                     <div>
                         <label>Unidades para descuento:</label>
-                        <input type="number" name="cantDisc" placeholder="Unidades para descuentos..." class="imputForm">
+                        <input type="number" name="cantDisc" placeholder="Unidades para descuentos..."
+                            class="imputForm">
                     </div>
                     <div>
                         <label>En oferta</label>
-                        <input type="boolean" name="offer" placeholder="Producto en oferta..." class="imputForm">
+                        <select name="offer" class="imputForm">
+                            <option value="false">No</option>
+                            <option value="true">Si</option>
+
+                        </select>
                     </div>
                     <div>
                         <label>Graduación alcoholica:</label>
-                        <input type="number" name="graduation" placeholder="Graduacion alcoholica..."
-                            class="imputForm">
+                        <input type="number" name="graduation" placeholder="Graduacion alcoholica..." class="imputForm">
                     </div>
                     <div>
                         <label>Stock:</label>
@@ -70,11 +85,17 @@
                     </div>
                     <div>
                         <label>Descripción:</label>
-                        <textarea rows="5" name="description" placeholder="Describe tu producto..." class="imputForm"></textarea>
+                        <textarea rows="5" name="description" placeholder="Describe tu producto..."
+                            class="imputForm"></textarea>
                     </div>
                     <div>
                         <label>Fotos del producto:</label>
                         <input type="file" name="image" accept=".jpg" class="imputForm">
+                        <% if(locals.errors && errors.image){ %>
+                            <div class="feedback">
+                                <%= errors.image.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="caja-fotos-producto">
                         <div class="foto-producto"> <i class="fa-solid fa-plus"></i> </div>
