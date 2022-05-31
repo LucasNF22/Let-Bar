@@ -1692,6 +1692,8 @@ input #file-upload-button {
     width: 100%;
     border-radius: 50%;
     border: #666666 3px solid;
+    aspect-ratio: 1;
+    object-fit: cover;
 
 }
 
@@ -1706,6 +1708,12 @@ input #file-upload-button {
     border-radius: 10px;
     padding: 3px 10px 3px 10px;
     font-size: 12px;
+}
+
+.cuadrado{
+    width: 100px;
+    border: dashed 2px red;
+    aspect-ratio: 1;
 }
 
 .boton-editar {
@@ -1819,6 +1827,9 @@ input #file-upload-button {
 
 .img-edit {
     width: 50px;
+    aspect-ratio: 1;
+    border: solid 1px white;
+    object-fit: cover;
 }
 
 .boton-editar-prod {
