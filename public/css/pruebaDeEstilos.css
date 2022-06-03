@@ -253,7 +253,7 @@ div.clasificacion input:checked~label {
 
 .cont-popUp {
     width: 85%;
-    max-width: 380px;
+    max-width: 320px;
     background: #1c1c1c;
     border-radius: 15px;
     height: 90vh;
