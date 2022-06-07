@@ -12,7 +12,7 @@ const usersControllers = {
     },
     //Procesa los datos del register
     procesarRegistro: (req, res) => {
-        const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
+        const usuariosFilePath = path.join(__dirname, '../database/usersDataBase.json');
         const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
         const validaciones = validationResult(req);
@@ -104,7 +104,7 @@ const usersControllers = {
 
     //Procesa los datos login
     procesarLogin: (req, res) => {
-        const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
+        const usuariosFilePath = path.join(__dirname, '../database/usersDataBase.json');
         const users = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
 
 
@@ -189,9 +189,9 @@ const usersControllers = {
     },
 
     listadoProductos: (req,res)=>{
-        const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+        const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
         const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-        const categoriesFilePath = path.join(__dirname, '../data/categoriesDataBase.json');
+        const categoriesFilePath = path.join(__dirname, '../database/categoriesDataBase.json');
         const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
         
         res.render("listaDeProductos", {productos: products, categorias: categories});
@@ -199,7 +199,7 @@ const usersControllers = {
     },
 
     listadoUsuarios: (req, res) => {
-        const usuariosFilePath = path.join(__dirname, '../data/usersDataBase.json');
+        const usuariosFilePath = path.join(__dirname, '../database/usersDataBase.json');
         const usuarios = JSON.parse(fs.readFileSync(usuariosFilePath, 'utf-8'));
         
         res.render("listadoDeUsuarios", {usuarios: usuarios});

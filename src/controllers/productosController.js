@@ -2,10 +2,10 @@ const path = require("path");
 const fs = require('fs');
 const { validationResult } = require("express-validator");
 
-const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
-const categoriesFilePath = path.join(__dirname, '../data/categoriesDataBase.json');
+const categoriesFilePath = path.join(__dirname, '../database/categoriesDataBase.json');
 const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
 
 
@@ -13,7 +13,7 @@ const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
 const productosController = {
 
     detalleProducto: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+        const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         let idProd = req.params.id;
@@ -27,7 +27,7 @@ const productosController = {
     },
 
     guardarProducto: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+        const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
         const productos = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         let validaciones = validationResult(req);
@@ -96,7 +96,7 @@ const productosController = {
     },
 
     actualizarProducto: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+        const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
         const productosOriginales = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         let productoId = req.params.id;
@@ -156,7 +156,7 @@ const productosController = {
     },
 
     valorarProducto: (req, res) => {
-        const productsFilePath = path.join(__dirname, '../data/productsDataBase.json');
+        const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
         const productosOriginales = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
         let productoId = req.params.id;
