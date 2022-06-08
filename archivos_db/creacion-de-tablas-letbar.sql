@@ -14,8 +14,6 @@ id INT primary key auto_increment not null,
 user_type varchar(20) not null
 );	
 
-alter table users 
-add category_id int not null;
 
 create table addresses (
 id INT primary key auto_increment not null,
@@ -87,9 +85,25 @@ icon varchar(50) not null
 );
 
 
+alter table users
+add category_id int not null;
 
+alter table users 
+add foreign key (category_id) references users_categories(id);
 
+alter table addresses  
+add foreign key (user_id) references users(id);
 
+alter table payment_methods_data  
+add foreign key (payment_id) references payment_methods(id);
+
+alter table shopping_carts  
+add foreign key (user_id) references users(id),
+add foreign key (product_id) references products(id),
+add foreign key (payment_method_id) references payment_methods(id);
+
+alter table products  
+add foreign key (category_id) references product_categories(id);
 
 
 
