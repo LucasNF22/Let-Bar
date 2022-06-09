@@ -1,0 +1,43 @@
+module.exports = (sequelize, dataTypes) => {
+    let alias = "user_payments";
+
+    let cols = {
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true 
+        },
+        payment_method_id: {
+            type: dataTypes.varchar,
+        },
+
+        user_id: {
+            type: dataTypes.varchar,
+        },
+        
+        
+        };
+    
+
+    let config = {
+        tableName: "user_payments",
+        timestamps: false
+    };
+
+    const user_payments = sequelize.define( alias, cols, config );
+
+   user_payments.associate = models => {
+		
+        // tiene muchos:
+		user_payments.hasMany(models.products, {
+			as: 'users',
+            foreignKey: 'user_id'
+			
+		});
+
+	
+    };
+
+    return user_payments;
+
+}
