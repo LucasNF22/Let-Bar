@@ -14,10 +14,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
         },
         street: {
-            type: dataTypes.varchar,
+            type: dataTypes.STRING,
         },
         street_number: {
-            type: dataTypes.varchar,
+            type: dataTypes.STRING,
         },
         comments: {
             type: dataTypes.INTEGER,
@@ -34,13 +34,13 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const Users = sequelize.define( alias, cols, config );
+    const Address = sequelize.define( alias, cols, config );
 
-   addresses.associate = models => {
+   Address.associate = models => {
 		
         // tiene muchos:
-		Users.hasMany(models.products, {
-			as: 'users',
+		Address.belongTo (models.users, {
+			as: 'user',
             foreignKey: 'user_id'
 			
 		});
@@ -48,6 +48,6 @@ module.exports = (sequelize, dataTypes) => {
 	};
 
 
-    return addresses;
+    return Address;
 
 }

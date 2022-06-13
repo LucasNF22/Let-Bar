@@ -26,6 +26,8 @@ router.post("/register/process", [ uploadFile.single('avatar'), validacionesRegi
 router.get("/login", [ guestMiddleware ], usersControllers.login);
 router.post("/login/process", [ validacionesLogin ], usersControllers.procesarLogin);
 
+router.get ("/:id", usersControllers)
+
 // Rutas de administrador
 router.get("/panel-control", [ adminMiddleware ], usersControllers.control); //Dashboard
 router.get("/listadoProductos", [ adminMiddleware ], usersControllers.listadoProductos) //Listado de Productos
