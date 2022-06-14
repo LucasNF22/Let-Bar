@@ -1,5 +1,8 @@
 const express = require("express");
 const usersControllers = require("../controllers/usersController");
+
+const usersControllersDb = require("../controllers/usersControllersDb");
+
 const multer = require('multer');
 var router = express.Router();
 
@@ -26,7 +29,7 @@ router.post("/register/process", [ uploadFile.single('avatar'), validacionesRegi
 router.get("/login", [ guestMiddleware ], usersControllers.login);
 router.post("/login/process", [ validacionesLogin ], usersControllers.procesarLogin);
 
-router.get ("/:id", usersControllers)
+router.get ("/pruebadb", usersControllersDb.registro)
 
 // Rutas de administrador
 router.get("/panel-control", [ adminMiddleware ], usersControllers.control); //Dashboard

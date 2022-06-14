@@ -14,10 +14,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
         },
         email: {
-            type: dataTypes.varchar,
+            type: dataTypes.STRING,
         },
         password: {
-            type: dataTypes.varchar,
+            type: dataTypes.STRING,
         },
         tel: {
             type: dataTypes.INTEGER,
@@ -26,8 +26,11 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
         },
         birthday: {
-            type: dataTypes.dataTypes,
+            type: dataTypes.STRING,
         },
+        category_id: {
+            type: dataTypes.INTEGER
+        }
     };
     
     let config = {
@@ -35,20 +38,25 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const Users = sequelize.define( alias, cols, config );
+    const User = sequelize.define( alias, cols, config );
 
-   Users.associate = models => {
+   User.associate = models => {
 		
         // tiene muchos:
-		Users.belongsTo(models.products, {
+		User.belongsTo(models.products_categories, {
 			as: 'categories',
             foreignKey: 'category_id'
 			
 		});
 
+        User.hasMany(models.addresses, {
+            as: "adsresses",
+            foreignKey: "user_id"
+        })
+
 	}
 
 
-    return Users;
+    return User;
 
 }

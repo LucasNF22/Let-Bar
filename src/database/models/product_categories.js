@@ -37,6 +37,6 @@ module.exports = (sequelize, dataTypes) => {
 	}
 
 
-    return Products_category;
+    return Product_category;
 
 }

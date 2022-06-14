@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
    Address.associate = models => {
 		
         // tiene muchos:
-		Address.belongTo (models.users, {
+		Address.belongsTo(models.users, {
 			as: 'user',
             foreignKey: 'user_id'
 			

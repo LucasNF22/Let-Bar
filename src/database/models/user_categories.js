@@ -13,6 +13,7 @@ module.exports = (sequelize, dataTypes) => {
         
         
         
+        
     };
     
     let config = {
@@ -20,20 +21,20 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const user_categories = sequelize.define( alias, cols, config );
+    const user_category = sequelize.define( alias, cols, config );
 
-   user_categories.associate = models => {
+   user_category.associate = models => {
 		
         // tiene muchos:
-		user_categories.hasMany(models.products, {
+		user_category.hasMany(models.users, {
 			as: 'users',
-            foreignKey: 'user_id'
+            foreignKey: 'category_id'
 			
 		});
 
 	};
 
 
-    return users_categries;
+    return user_category;
 
 }

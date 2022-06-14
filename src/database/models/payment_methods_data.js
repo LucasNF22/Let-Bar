@@ -1,4 +1,4 @@
-Module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, dataTypes) => {
     let alias = "payment_methods_data";
 
     let cols = {
@@ -8,19 +8,19 @@ Module.exports = (sequelize, dataTypes) => {
             autoIncrement: true 
         },
         card_number: {
-            type: dataTypes.varchar,
+            type: dataTypes.STRING,
         },
         card_bank: {
-            type: dataTypes.varchar,
+            type: dataTypes.STRING,
         },
         owner: {
-            type: dataTypes.varchar,
+            type: dataTypes.STRING,
         },
         cbu: {
             type: dataTypes.INTEGER,
         },
         mp_alias: {
-            type: dataTypes.varchar,
+            type: dataTypes.STRING,
         },
         mp_cvu: {
             type: dataTypes.INTEGER,
@@ -36,7 +36,7 @@ Module.exports = (sequelize, dataTypes) => {
 
     const Payment_methods_data = sequelize.define( alias, cols, config );
 
-   addresses.associate = models => {
+    Payment_methods_data.associate = models => {
 		
         // tiene muchos:
 		Payment_methods_data.hasMany(models.products, {
