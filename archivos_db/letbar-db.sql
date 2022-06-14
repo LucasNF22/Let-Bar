@@ -31,7 +31,9 @@ CREATE TABLE `addresses` (
   `comments` varchar(200) NOT NULL,
   `user_id` int(11) NOT NULL,
   `address_alias` varchar(20) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  CONSTRAINT `addresses_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -83,7 +85,9 @@ CREATE TABLE `payment_methods_data` (
   `mp_alias` varchar(50) DEFAULT NULL,
   `mp_cvu` int(50) DEFAULT NULL,
   `payment_id` int(16) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `payment_id` (`payment_id`),
+  CONSTRAINT `payment_methods_data_ibfk_1` FOREIGN KEY (`payment_id`) REFERENCES `payment_methods` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -146,7 +150,9 @@ CREATE TABLE `products` (
   `cantValoration` decimal(10,0) DEFAULT NULL,
   `acuValoration` int(11) DEFAULT NULL,
   `valoration` decimal(10,0) DEFAULT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `category_id` (`category_id`),
+  CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `product_categories` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -160,6 +166,37 @@ LOCK TABLES `products` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `purchases`
+--
+
+DROP TABLE IF EXISTS `purchases`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `purchases` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `status` varchar(50) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `payment_method_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `user_id` (`user_id`),
+  KEY `payment_method_id` (`payment_method_id`),
+  CONSTRAINT `purchases_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `purchases_ibfk_2` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_methods` (`id`),
+  CONSTRAINT `purchases_ibfk_3` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
+  CONSTRAINT `purchases_ibfk_4` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_methods` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `purchases`
+--
+
+LOCK TABLES `purchases` WRITE;
+/*!40000 ALTER TABLE `purchases` DISABLE KEYS */;
+/*!40000 ALTER TABLE `purchases` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `shopping_carts`
 --
 
@@ -168,11 +205,25 @@ DROP TABLE IF EXISTS `shopping_carts`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `shopping_carts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `user_id` int(50) NOT NULL,
-  `product_id` int(20) NOT NULL,
-  `status` varchar(50) NOT NULL,
-  `payment_method_id` int(20) NOT NULL,
-  PRIMARY KEY (`id`)
+  `purchase_id` int(11) NOT NULL,
+  `product_id` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `purchase_id` (`purchase_id`),
+  KEY `product_id` (`product_id`),
+  CONSTRAINT `shopping_carts_ibfk_1` FOREIGN KEY (`purchase_id`) REFERENCES `purchases` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_10` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_11` FOREIGN KEY (`purchase_id`) REFERENCES `purchases` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_12` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_13` FOREIGN KEY (`purchase_id`) REFERENCES `purchases` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_14` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_2` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_3` FOREIGN KEY (`purchase_id`) REFERENCES `purchases` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_4` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_5` FOREIGN KEY (`purchase_id`) REFERENCES `purchases` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_6` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_7` FOREIGN KEY (`purchase_id`) REFERENCES `purchases` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_8` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`),
+  CONSTRAINT `shopping_carts_ibfk_9` FOREIGN KEY (`purchase_id`) REFERENCES `purchases` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -202,7 +253,9 @@ CREATE TABLE `users` (
   `avatar` varchar(100) NOT NULL,
   `birthday` date NOT NULL,
   `category_id` int(11) NOT NULL,
-  PRIMARY KEY (`id`)
+  PRIMARY KEY (`id`),
+  KEY `category_id` (`category_id`),
+  CONSTRAINT `users_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `users_categories` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -275,4 +328,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-02 21:57:37
+-- Dump completed on 2022-06-14 20:01:09

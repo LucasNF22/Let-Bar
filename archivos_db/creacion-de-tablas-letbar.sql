@@ -106,9 +106,28 @@ alter table products
 add foreign key (category_id) references product_categories(id);
 
 
+drop table if exists shopping_carts;
 
+create table purchases(
+id INT primary key auto_increment not null,
+status varchar(50) not null,
+user_id INT not null,
+payment_method_id INT not null
+);
 
+create table shopping_carts(
+id INT primary key auto_increment not null,
+purchase_id INT not null,
+product_id INT not null
+);
 
+alter table purchases  
+add foreign key (user_id) references users(id),
+add foreign key (payment_method_id) references payment_methods(id);
+
+alter table shopping_carts  
+add foreign key (purchase_id) references purchases(id),
+add foreign key (product_id) references products(id);
 
 
 
