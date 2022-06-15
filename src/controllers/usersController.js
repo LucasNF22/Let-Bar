@@ -4,8 +4,8 @@ const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
 
 const db = require ("../database/models"); 
-const { redirect } = require("express/lib/response");
-const users = require("../database/models/users");
+
+
 
 
 const usersControllers = {
@@ -47,7 +47,7 @@ const usersControllers = {
                 });    
             }}
         
-        //Este codgido se ejecuta si no hay errores en las validaciones.
+        //Este codigo se ejecuta si no hay errores en las validaciones.
         
         //Info de la imagen de usuario
         let nombreImagen = "default.jpg"

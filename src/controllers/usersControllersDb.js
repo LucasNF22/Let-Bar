@@ -9,17 +9,21 @@ const db = require("../database/models");
 
 
 const usersControllersDb = {
-    registro: function (req, res) {
-        db.users.findAll()
+    pruebadb: function (req, res) {
+        db.User.findAll()
             .then(function (users) {
                 console.log(users);
                 return res.send(users)
             })
+    },
 
+    registro: (req, res) => {
+        
+        res.render("register");
     },
 
     procesarRegistro: function (req, res) {
-        db.users.create({
+        db.User.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
             email: req.body.email,
@@ -33,7 +37,7 @@ const usersControllersDb = {
     },
 
     listadoUsuarios: function (req, res) {
-        db.users.findAll()
+        db.User.findAll()
             .then(function (users) {
                 res.render("listadoDeUsuarios", { users: users })
             })

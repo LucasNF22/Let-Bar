@@ -21,7 +21,7 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 
 
 // Rutas registro
-router.get("/register", [ guestMiddleware ], usersControllers.registro);
+router.get("/register", [ guestMiddleware ], usersControllersDb.registro);
 router.post("/register/process", [ uploadFile.single('avatar'), validacionesRegister ], usersControllers.procesarRegistro,);
 
 
@@ -29,7 +29,8 @@ router.post("/register/process", [ uploadFile.single('avatar'), validacionesRegi
 router.get("/login", [ guestMiddleware ], usersControllers.login);
 router.post("/login/process", [ validacionesLogin ], usersControllers.procesarLogin);
 
-router.get ("/pruebadb", usersControllersDb.registro)
+// Ruta de prueba para base de datos
+router.get ("/pruebadb", usersControllersDb.pruebadb);
 
 // Rutas de administrador
 router.get("/panel-control", [ adminMiddleware ], usersControllers.control); //Dashboard
