@@ -7,7 +7,7 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true 
         },
-        provinuser_type: {
+        user_type: {
             type: dataTypes.STRING,
         },
         

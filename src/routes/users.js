@@ -22,7 +22,7 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 
 // Rutas registro
 router.get("/register", [ guestMiddleware ], usersControllersDb.registro);
-router.post("/register/process", [ uploadFile.single('avatar'), validacionesRegister ], usersControllers.procesarRegistro,);
+router.post("/register/process", [ uploadFile.single('avatar'), validacionesRegister ], usersControllersDb.procesarRegistro,);
 
 
 // Rutas Login
