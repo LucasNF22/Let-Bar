@@ -9,6 +9,7 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 const validacionesProductos = require("../middlewares/productsValidations")  // validaciones para imagen de producto
 const uploadFile = multer({ storage: bufferImagen }) // Middleware de multer 
 const productosController = require("../controllers/productosController");
+const productosControllerDb = require("../controllers/productosControllerDb");
 
 var router = express.Router();
 
@@ -16,7 +17,7 @@ var router = express.Router();
 router.get("/detalle-producto/:id", productosController.detalleProducto);
 
 
-router.get("/agregar-producto", [ adminMiddleware ], productosController.agregarProducto);
+router.get("/agregar-producto", [ adminMiddleware ], productosControllerDb.agregarProducto);
 router.post("/agregar-producto/process", [ uploadFile.single('image'), validacionesProductos ], productosController.guardarProducto);
 
 

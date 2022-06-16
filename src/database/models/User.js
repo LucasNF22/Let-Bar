@@ -59,7 +59,7 @@ module.exports = (sequelize, dataTypes) => {
         User.belongsToMany(models.Payment_method, {
 			as: 'payments_methods',
             through: 'users_payments',
-            foreign_key: "payment_method_id",
+            foreign_key: "user_id",
             otherKey: "payment_method_id",
             timestamps: false
 			

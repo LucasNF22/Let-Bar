@@ -27,12 +27,17 @@
                     <div>
                         <label>Categoría:</label>
                         <select name="category" class="imputForm">
-                            <option value="sinAlcohol">Sin alcohol</option>
-                            <option value="cervezas">Cervezas</option>
-                            <option value="snacks">Snacks</option>
-                            <option value="espumantes">Espumantes</option>
-                            <option value="vinos">Vinos</option>
-                            <option value="destilados">Destilados</option>
+                            <% categorias.forEach(categoria=> {
+                                if(categoria.category == producto.category){ %>
+                                <option value="<%=categoria.category%>" selected>
+                                    <%= categoria.name %>
+                                </option>
+                                <% }else{ %>
+                                    <option value="<%=categoria.category%>">
+                                        <%= categoria.name %>
+                                    </option>
+                                    <% } } ) %>
+
                         </select>
                     </div>
                     <div>
