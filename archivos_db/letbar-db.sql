@@ -122,7 +122,7 @@ CREATE TABLE `product_categories` (
 
 LOCK TABLES `product_categories` WRITE;
 /*!40000 ALTER TABLE `product_categories` DISABLE KEYS */;
-INSERT INTO `product_categories` VALUES (1,'cerveza','Cerveza','/img/categoryIcons/cervezas.png'),(2,'vinos','Vinos','/img/categoryIcons/vinos.png'),(3,'sinAlcohol','Sin alcohol','/img/categoryIcons/sinAlchol.png'),(4,'destilados','Destilados','/img/categoryIcons/destilados.png'),(5,'espumantes','Espumantes','/img/categoryIcons/espumantes.png'),(6,'snacks','Snacks','/img/categoryIcons/snacks.png');
+INSERT INTO `product_categories` VALUES (1,'cervezas','Cervezas','/img/categoryIcons/cervezas.png'),(2,'vinos','Vinos','/img/categoryIcons/vinos.png'),(3,'sinAlcohol','Sin alcohol','/img/categoryIcons/sinAlchol.png'),(4,'destilados','Destilados','/img/categoryIcons/destilados.png'),(5,'espumantes','Espumantes','/img/categoryIcons/espumantes.png'),(6,'snacks','Snacks','/img/categoryIcons/snacks.png');
 /*!40000 ALTER TABLE `product_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -331,4 +331,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-15 23:26:32
+-- Dump completed on 2022-06-16 15:58:12

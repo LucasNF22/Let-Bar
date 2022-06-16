@@ -13,7 +13,7 @@ const db = require("../database/models");
 const productosControllerDb = {
 
     detalleProducto: (req, res) => {
-        db.Product.finByPk(req.params.id) /* inlcuir relaciones */
+        db.Product.findByPk(req.params.id) /* inlcuir relaciones */
             .then(productoDb => {
 
                 res.render("detalle-producto", { producto: productoDb });
@@ -24,7 +24,7 @@ const productosControllerDb = {
 
         db.Product_category.findAll()
         .then(categoriasDb => {
-
+            
             res.render("agregar-producto", {categorias : categoriasDb});
         });
     },
@@ -33,16 +33,24 @@ const productosControllerDb = {
 
         let validaciones = validationResult(req);
 
+        console.log(req.file)
+
         if (validaciones.errors.length > 0) {
-            
-            return res.render("agregar-producto", {
-                errors: validaciones.mapped(),
-                oldData: req.body
-            });
+            db.Product_category.findAll()
+            .then(categoriasDb => {
+
+                return res.render("agregar-producto", {
+                    errors: validaciones.mapped(),
+                    oldData: req.body,
+                    categorias : categoriasDb
+                });
+            })
         }
 
+        
+        
         //Info de la imagen de prodcuto
-        let nombreImagen = "producto" + "_" + nuevoId + "_" + Date.now() + path.extname(req.file.originalname);
+        let nombreImagen = "producto" + "_" + Date.now() + path.extname(req.file.originalname);
         let destinoImagen = path.join(__dirname, "../../public/img/products/");
         let dataImagen = req.file.buffer;
 
@@ -76,7 +84,7 @@ const productosControllerDb = {
 
     editarProducto: (req, res) => {
 
-        let pedidoProducto = db.Product.finByPk(req.params.id);
+        let pedidoProducto = db.Product.findByPk(req.params.id);
         let pedidoCategorias = db.Product_category.findAll();
 
         Promise.all([pedidoProducto, pedidoCategorias])

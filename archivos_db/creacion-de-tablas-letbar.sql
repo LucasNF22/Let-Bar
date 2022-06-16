@@ -129,5 +129,8 @@ alter table shopping_carts
 add foreign key (purchase_id) references purchases(id),
 add foreign key (product_id) references products(id);
 
+UPDATE product_categories 
+SET category = 'cervezas', name = 'Cervezas'
+WHERE id = 1;
 
 

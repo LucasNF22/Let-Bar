@@ -1,11 +1,11 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "address";
+    let alias = "Address";
 
     let cols = {
         id: {
             type: dataTypes.INTEGER,
             primaryKey: true,
-            autoIncrement: true 
+            autoIncrement: true
         },
         province: {
             type: dataTypes.STRING,
@@ -28,27 +28,25 @@ module.exports = (sequelize, dataTypes) => {
         user_id: {
             type: dataTypes.INTEGER,
         },
-        
-        
+
+
     };
-    
+
     let config = {
         tableName: "addresses",
         timestamps: false
     };
 
-    const Address = sequelize.define( alias, cols, config );
+    const Address = sequelize.define(alias, cols, config);
 
-   Address.associate = models => {
-		
-        
-		Address.belongsTo(models.User, {
-			as: 'users',
-            foreignKey: 'user_id'
-			
-		});
+    Address.associate = models => {
 
-	};
+        Address.belongsTo(models.User, {
+            as: "users",
+            foreignKey: "user_id"
+        })
+
+    };
 
 
     return Address;

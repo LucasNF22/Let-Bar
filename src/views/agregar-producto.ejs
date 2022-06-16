@@ -27,16 +27,13 @@
                     <div>
                         <label>Categoría:</label>
                         <select name="category" class="imputForm">
-                            <% categorias.forEach(categoria=> {
-                                if(categoria.category == producto.category){ %>
-                                <option value="<%=categoria.category%>" selected>
+                            <% categorias.forEach(categoria=> { %>
+                               
+                                <option value="<%=categoria.id%>">
                                     <%= categoria.name %>
                                 </option>
-                                <% }else{ %>
-                                    <option value="<%=categoria.category%>">
-                                        <%= categoria.name %>
-                                    </option>
-                                    <% } } ) %>
+                                
+                                    <%  } ) %>
 
                         </select>
                     </div>
@@ -50,6 +47,10 @@
                                 <%= errors.name.msg %>
                             </div>
                             <% } %>
+                    </div>
+                    <div>
+                        <label>Marca:</label>
+                        <input type="text" name="brand" placeholder="Marca del" class="imputForm">
                     </div>
                     <div>
                         <label>Tamaño del producto:</label>
@@ -82,7 +83,7 @@
                     </div>
                     <div>
                         <label>Graduación alcoholica:</label>
-                        <input type="number" name="graduation" placeholder="Graduacion alcoholica..." class="imputForm">
+                        <input type="text" name="graduation" placeholder="Graduacion alcoholica..." class="imputForm">
                     </div>
                     <div>
                         <label>Stock:</label>
@@ -95,7 +96,7 @@
                     </div>
                     <div>
                         <label>Fotos del producto:</label>
-                        <input type="file" name="image" accept=".jpg" class="imputForm">
+                        <input type="file" name="image"  class="imputForm">
                         <% if(locals.errors && errors.image){ %>
                             <div class="feedback">
                                 <%= errors.image.msg %>

@@ -8,26 +8,27 @@ const bufferImagen = multer.memoryStorage();
 const adminMiddleware = require("../middlewares/adminMiddleware");
 const validacionesProductos = require("../middlewares/productsValidations")  // validaciones para imagen de producto
 const uploadFile = multer({ storage: bufferImagen }) // Middleware de multer 
-const productosController = require("../controllers/productosController");
+
 const productosControllerDb = require("../controllers/productosControllerDb");
 
 var router = express.Router();
 
 
-router.get("/detalle-producto/:id", productosController.detalleProducto);
+router.get("/detalle-producto/:id", productosControllerDb.detalleProducto);
 
 
 router.get("/agregar-producto", [ adminMiddleware ], productosControllerDb.agregarProducto);
-router.post("/agregar-producto/process", [ uploadFile.single('image'), validacionesProductos ], productosController.guardarProducto);
+router.post("/agregar-producto/process", [ uploadFile.single('image'), validacionesProductos ], productosControllerDb.guardarProducto);
 
 
-router.get("/editar-producto/:id",[ adminMiddleware ], productosController.editarProducto);
-router.put ("/editar-producto/:id", productosController.actualizarProducto)
-router.delete("/eliminar/:id", [ adminMiddleware ], productosController.eliminarProducto)
+router.get("/editar-producto/:id",[ adminMiddleware ], productosControllerDb.editarProducto);
+router.put ("/editar-producto/:id", productosControllerDb.actualizarProducto)
 
-router.get("/categoria/:id", productosController.categoriaProducto);
+router.delete("/eliminar/:id", [ adminMiddleware ], productosControllerDb.eliminarProducto)
 
-router.put("/valorar/:id", productosController.valorarProducto);
+router.get("/categoria/:id", productosControllerDb.categoriaProducto);
+
+router.put("/valorar/:id", productosControllerDb.valorarProducto);
 
 
 

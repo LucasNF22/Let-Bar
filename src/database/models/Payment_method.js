@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "payment_method";
+    let alias = "Payment_method";
 
     let cols = {
         id: {
@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
     
 
     let config = {
-        tableName: "payments_methods",
+        tableName: "payment_methods",
         timestamps: false
     };
 
