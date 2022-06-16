@@ -79,6 +79,16 @@ const usersControllersDb = {
 
     },
 
+    
+
+    control: (req, res) => {
+        db.User.findAll()
+        .then (function(users){
+        res.render( "control", {users : users})
+        })
+      
+    },
+
     listadoUsuarios: function (req, res) {
         db.User.findAll()
             .then(function (users) {
@@ -91,6 +101,13 @@ const usersControllersDb = {
             .then(function (users) {
                 res.render("perfil", { users: users })
             })
+    },
+
+    logout: (req, res) =>{
+        req.session.destroy();
+        return res.redirect ('/')
+        
+
     }
 }
 

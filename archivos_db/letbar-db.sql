@@ -113,7 +113,7 @@ CREATE TABLE `product_categories` (
   `name` varchar(50) NOT NULL,
   `icon` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -122,6 +122,7 @@ CREATE TABLE `product_categories` (
 
 LOCK TABLES `product_categories` WRITE;
 /*!40000 ALTER TABLE `product_categories` DISABLE KEYS */;
+INSERT INTO `product_categories` VALUES (1,'cerveza','Cerveza','/img/categoryIcons/cervezas.png'),(2,'vinos','Vinos','/img/categoryIcons/vinos.png'),(3,'sinAlcohol','Sin alcohol','/img/categoryIcons/sinAlchol.png'),(4,'destilados','Destilados','/img/categoryIcons/destilados.png'),(5,'espumantes','Espumantes','/img/categoryIcons/espumantes.png'),(6,'snacks','Snacks','/img/categoryIcons/snacks.png');
 /*!40000 ALTER TABLE `product_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,7 +257,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `users_categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,6 +266,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
+INSERT INTO `users` VALUES (2,'pepito','pepito','pepito@gmail.com','Let123456',123456,'default.jpg','2000-07-19',1),(3,'cala','cala','cala@gmail.com','$2a$10$ZpijuNVZnpQPW4IpUzLVBeiMiPhV/XsPExLSzUPBUkPB5xKTYYorW',12345678,'default.jpg','2000-03-12',1);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -279,7 +281,7 @@ CREATE TABLE `users_categories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_type` varchar(20) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -288,6 +290,7 @@ CREATE TABLE `users_categories` (
 
 LOCK TABLES `users_categories` WRITE;
 /*!40000 ALTER TABLE `users_categories` DISABLE KEYS */;
+INSERT INTO `users_categories` VALUES (1,'usuario'),(2,'admin');
 /*!40000 ALTER TABLE `users_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -328,4 +331,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-14 20:01:09
+-- Dump completed on 2022-06-15 23:26:32
