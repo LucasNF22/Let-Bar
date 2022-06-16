@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Payment_method";
+    let alias = "payment_method";
 
     let cols = {
         id: {

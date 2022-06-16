@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "payment_methods_data";
+    let alias = "payment_method_data";
 
     let cols = {
         id: {
@@ -8,7 +8,7 @@ module.exports = (sequelize, dataTypes) => {
             autoIncrement: true 
         },
         card_number: {
-            type: dataTypes.STRING,
+            type: dataTypes.INTEGER,
         },
         card_bank: {
             type: dataTypes.STRING,
@@ -25,6 +25,9 @@ module.exports = (sequelize, dataTypes) => {
         mp_cvu: {
             type: dataTypes.INTEGER,
         },
+        payment_id: {
+            type: dataTypes.INTEGER,
+        },
         
         
     };
@@ -34,12 +37,12 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false
     };
 
-    const Payment_methods_data = sequelize.define( alias, cols, config );
+    const Payment_method_data = sequelize.define( alias, cols, config );
 
-    Payment_methods_data.associate = models => {
+    Payment_method_data.associate = models => {
 		
         // tiene muchos:
-		Payment_methods_data.hasMany(models.products, {
+		Payment_method_data.belongsTo (models.Payment_method, {
 			as: 'users',
             foreignKey: 'user_id'
 			

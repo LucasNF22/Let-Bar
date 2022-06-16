@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "Address";
+    let alias = "address";
 
     let cols = {
         id: {
@@ -17,16 +17,16 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING,
         },
         street_number: {
-            type: dataTypes.STRING,
+            type: dataTypes.INTEGER,
         },
         comments: {
-            type: dataTypes.INTEGER,
+            type: dataTypes.STRING,
         },
         alias: {
             type: dataTypes.STRING,
         },
         user_id: {
-            type: dataTypes.STRING,
+            type: dataTypes.INTEGER,
         },
         
         
