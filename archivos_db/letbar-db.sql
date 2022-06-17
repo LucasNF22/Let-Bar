@@ -154,7 +154,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `product_categories` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,6 +163,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
+INSERT INTO `products` VALUES (3,'Cerveza Andes Origen Rubia Lata','Andes Origen Rubia es una cerveza mendocina, hecha con agua del deshielo de la cordillera y pura malta tostada a fuego lento, que ofrece colores y texturas bien distintivas. Esta cerveza tiene un arom','producto_undefined_1655407943899.jpg',1,'/* ver de donde saca','473',200,6,125,0,0,200,5,0,0,NULL),(4,'','','producto_1655409108149.jpg',1,'/* ver de donde saca','',0,0,0,0,0,0,0,0,0,NULL),(5,'prueba','','producto_tarjeta-021655500201845.jpg',1,'/* ver de donde saca','',0,0,0,0,0,0,0,0,0,NULL),(6,'prueba modificado','','producto_andes-rubia21_1655504006766.jpg',2,'vinito','',0,0,0,0,0,3000,0,0,0,NULL),(7,'prueba3','','producto_productos-181655500630561.jpg',1,'','',0,0,0,1,0,0,0,0,0,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -331,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-16 15:58:12
+-- Dump completed on 2022-06-17 19:54:01
