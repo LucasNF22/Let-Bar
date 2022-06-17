@@ -23,62 +23,66 @@ const productosControllerDb = {
     agregarProducto: (req, res) => {
 
         db.Product_category.findAll()
-        .then(categoriasDb => {
-            
-            res.render("agregar-producto", {categorias : categoriasDb});
-        });
+            .then(categoriasDb => {
+
+                res.render("agregar-producto", { categorias: categoriasDb });
+            });
     },
 
     guardarProducto: (req, res) => {
 
         let validaciones = validationResult(req);
 
-        console.log(req.file)
 
-        if (validaciones.errors.length > 0) {
-            db.Product_category.findAll()
+
+        db.Product_category.findAll()
             .then(categoriasDb => {
+                if (validaciones.errors.length > 0) {
 
-                return res.render("agregar-producto", {
-                    errors: validaciones.mapped(),
-                    oldData: req.body,
-                    categorias : categoriasDb
-                });
+                    return res.render("agregar-producto", {
+                        errors: validaciones.mapped(),
+                        oldData: req.body,
+                        categorias: categoriasDb
+                    });
+                }
+
+
+
+
+
+                //Info de la imagen de prodcuto
+                let nombreProd = req.file.originalname.split(".")
+                let nombreImagen = "producto" + "_" + nombreProd[0] + "_" + Date.now() + path.extname(req.file.originalname);
+                let destinoImagen = path.join(__dirname, "../../public/img/products/");
+                let dataImagen = req.file.buffer;
+
+
+                db.Product.create({
+
+                    "name": req.body.name,
+                    "description": req.body.description,
+                    "image": nombreImagen,
+                    "category_id": req.body.category,
+                    "brand": req.body.brand,
+                    "size": req.body.size,
+                    "priceUnit": req.body.priceUnit,
+                    "cantDisc": req.body.cantDisc,
+                    "priceCant": req.body.priceCant,
+                    "offer": req.body.offer,
+                    "graduation": req.body.graduation,
+                    "year": req.body.years,
+                    "stock": req.body.stock,
+                    "cantValoration": 0,
+                    "acuValoration": 0,
+                    "valoration": 0,
+                })
+                    .then(resultado => {
+
+                        fs.writeFileSync(destinoImagen + nombreImagen, dataImagen);
+                        res.redirect("/users/panel-control")
+                    })
             })
-        }
 
-        
-        
-        //Info de la imagen de prodcuto
-        let nombreImagen = "producto" + "_" + Date.now() + path.extname(req.file.originalname);
-        let destinoImagen = path.join(__dirname, "../../public/img/products/");
-        let dataImagen = req.file.buffer;
-
-
-        db.Product.create({
-
-            "name": req.body.name,
-            "description": req.body.description,
-            "image": nombreImagen,
-            "category_id": req.body.category,
-            "brand": "/* ver de donde sacarlo */",
-            "size": req.body.size,
-            "priceUnit": req.body.priceUnit,
-            "cantDisc": req.body.cantDisc,
-            "priceCant": req.body.priceCant,
-            "offer": req.body.offer,
-            "graduation": req.body.graduation,
-            "year": req.body.years,
-            "stock": req.body.stock,
-            "cantValoration": 0,
-            "acuValoration": 0,
-            "valoration": 0,
-        })
-            .then(resultado => {
-
-                fs.writeFileSync(destinoImagen + nombreImagen, dataImagen);
-                res.redirect("/users/panel-control")
-            })
     },
 
 
@@ -102,33 +106,62 @@ const productosControllerDb = {
 
     actualizarProducto: (req, res) => {
 
-        let productoId = req.params.id
+        let productoId = req.params.id;
+        let nombreImagen = "";
+        let destinoImagen = "";
+        let dataImagen = "";
 
-        db.Product.update({
+        db.Product.findByPk(productoId)
+            .then(productoOriginal => {
 
-            "name": req.body.name,
-            "description": req.body.description,
-            "image": nombreImagen,
-            "category_id": req.body.category,
-            "brand": "/* ver de donde sacarlo */",
-            "size": req.body.size,
-            "priceUnit": req.body.priceUnit,
-            "cantDisc": req.body.cantDisc,
-            "priceCant": req.body.priceCant,
-            "offer": req.body.offer,
-            "graduation": req.body.graduation,
-            "year": req.body.years,
-            "stock": db.Product.stock + parseInt(req.body.stock) /* cargar el dato existente de stock */
+                if (!req.file) {
+                    nombreImagen = productoOriginal.image;
+                } else {
+                    let nombreProd = req.file.originalname.split(".")
+                    nombreImagen = "producto" + "_" + nombreProd[0] + "_" + Date.now() + path.extname(req.file.originalname);
+                    destinoImagen = path.join(__dirname, "../../public/img/products/");
+                    dataImagen = req.file.buffer;
+                }
+                
+                // Para suma de stock
+                let st = 0                
+                if(req.body.stock == ""){
+                    st = 0;
+                }else{
+                    st = parseInt(req.body.stock);
+                }
+                
 
-        }, {
-            where: {
-                id: productoId
-            }
-        })
-            .then(resultado => {
+                db.Product.update({
 
-                res.redirect("/productos/detalle-producto/" + productoId)
-            });
+                    "name": req.body.name,
+                    "description": req.body.description,
+                    "image": nombreImagen,
+                    "category_id": req.body.category,
+                    "brand": req.body.brand,
+                    "size": req.body.size,
+                    "priceUnit": req.body.priceUnit,
+                    "cantDisc": req.body.cantDisc,
+                    "priceCant": req.body.priceCant,
+                    "offer": req.body.offer,
+                    "graduation": req.body.graduation,
+                    "year": req.body.years,
+                    "stock": parseInt(productoOriginal.stock) + st 
+
+                }, {
+                    where: {
+                        id: productoId
+                    }
+                })
+                    .then(resultado => {
+                        if(!req.file){
+                            res.redirect("/users/listadoProductos")
+                        }else{
+                            fs.writeFileSync(destinoImagen + nombreImagen, dataImagen); 
+                            res.redirect("/users/listadoProductos")
+                        }
+                    });
+            })
 
     },
 
@@ -139,9 +172,27 @@ const productosControllerDb = {
 
     categoriaProducto: (req, res) => {
 
-        let idCategoria = req.params.id
-        let categoria = products.filter(producto => producto.category == idCategoria);
-        res.render(path.join(__dirname, "../views/categoriaProducto"), { producto: categoria });
+        
+        pedidoCategorias = db.Product_category.findOne({
+            where:{
+                category: req.params.id
+            }
+        })
+        .then(categoria => {
+
+            db.Product.findAll({
+                where:{
+                    category_id: categoria.id
+                }
+            })
+            .then(ProductosCat => {
+    
+                res.render("categoriaProducto", { producto: ProductosCat });
+            })
+        })
+       
+       
+        
     },
 
     eliminarProducto: (req, res) => {
@@ -163,15 +214,15 @@ const productosControllerDb = {
         let productoId = req.params.id;
 
         let nuevaValoracion = req.body.estrellas;
-        
+
         db.Product.findByPk(productoId)
-        .then(y=>{
-            db.Product.update({
+            .then(y => {
+                db.Product.update({
 
-            }).then({
+                }).then({
 
+                })
             })
-        })
 
         /* console.log("*****");
         console.log(productoId) */

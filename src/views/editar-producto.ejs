@@ -20,7 +20,7 @@
                 </a>
                 <h3>Editar producto</h3>
 
-                <form action="/productos/editar-producto/<%= producto.id %>?_method=PUT" method="POST"
+                <form action="/productos/editar-producto/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
                     class="FormCarga">
 
                     <div>
@@ -29,11 +29,11 @@
                         <select name="category" class="imputForm">
                             <% categorias.forEach(categoria=> {
                                 if(categoria.category == producto.category){ %>
-                                <option value="<%=categoria.category%>" selected>
+                                <option value="<%=categoria.id%>" selected>
                                     <%= categoria.name %>
                                 </option>
                                 <% }else{ %>
-                                    <option value="<%=categoria.category%>">
+                                    <option value="<%=categoria.id%>">
                                         <%= categoria.name %>
                                     </option>
                                     <% } } ) %>
@@ -47,8 +47,12 @@
                     </div>
                     <div>
                         <label>Tamaño del producto:</label>
-                        <input type="text" name="size" placeholder="Tamaño en ml..." class="imputForm"
+                        <input type="text" name="size" placeholder="Tamaño del producto." class="imputForm"
                             value="<%= producto.size %>">
+                    </div>
+                    <div>
+                        <label>Marca:</label>
+                        <input type="text" name="brand" placeholder="Marca del producto" class="imputForm">
                     </div>
                     <div>
                         <label>Cosecha:</label>
@@ -73,10 +77,13 @@
                     <div>
                         <label>En oferta</label>
                         <select name="offer" class="imputForm">
-                            <% if(producto.offer=="false" ){ %>
-                                <option value="false" selected>No</option>
+                           
+                             <% if(producto.offer == false ){ %>
+                                <option value= false selected>No</option>
+                                <option value = true >Si</option>
                                 <% }else{ %>
-                                    <option value="true" selected>Si</option>
+                                    <option value = false >No</option>
+                                    <option value = true selected>Si</option>
                                     <% } %>
                         </select>
 

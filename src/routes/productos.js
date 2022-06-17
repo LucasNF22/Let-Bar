@@ -14,22 +14,21 @@ const productosControllerDb = require("../controllers/productosControllerDb");
 var router = express.Router();
 
 
-router.get("/detalle-producto/:id", productosControllerDb.detalleProducto);
+router.get("/detalle-producto/:id", productosControllerDb.detalleProducto); /* OK DB */
 
 
-router.get("/agregar-producto", [ adminMiddleware ], productosControllerDb.agregarProducto);
-router.post("/agregar-producto/process", [ uploadFile.single('image'), validacionesProductos ], productosControllerDb.guardarProducto);
+router.get("/agregar-producto", [ adminMiddleware ], productosControllerDb.agregarProducto); /* OK DB */
+router.post("/agregar-producto/process", [ uploadFile.single('image'), validacionesProductos ], productosControllerDb.guardarProducto); /* OK DB */
 
 
-router.get("/editar-producto/:id",[ adminMiddleware ], productosControllerDb.editarProducto);
-router.put ("/editar-producto/:id", productosControllerDb.actualizarProducto)
+router.get("/editar-producto/:id",[ adminMiddleware ], productosControllerDb.editarProducto); /* OK DB */
+router.put ("/editar-producto/:id",  uploadFile.single('image'), productosControllerDb.actualizarProducto); /* OK DB */
 
-router.delete("/eliminar/:id", [ adminMiddleware ], productosControllerDb.eliminarProducto)
+router.delete("/eliminar/:id", [ adminMiddleware ], productosControllerDb.eliminarProducto);
 
-router.get("/categoria/:id", productosControllerDb.categoriaProducto);
+router.get("/categoria/:id", productosControllerDb.categoriaProducto);  /* OK DB */
 
 router.put("/valorar/:id", productosControllerDb.valorarProducto);
-
 
 
 module.exports = router;
