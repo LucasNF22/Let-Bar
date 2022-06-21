@@ -85,6 +85,7 @@ module.exports = (sequelize, dataTypes) => {
         });
     }
 
+ /* prueba de version commit */
 
     return Product;
 
