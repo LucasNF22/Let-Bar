@@ -24,7 +24,7 @@ router.post("/agregar-producto/process", [ uploadFile.single('image'), validacio
 router.get("/editar-producto/:id",[ adminMiddleware ], productosControllerDb.editarProducto); /* OK DB */
 router.put ("/editar-producto/:id",  uploadFile.single('image'), productosControllerDb.actualizarProducto); /* OK DB */
 
-router.delete("/eliminar/:id", [ adminMiddleware ], productosControllerDb.eliminarProducto);
+router.delete("/eliminar/:id", [ adminMiddleware ], productosControllerDb.eliminarProducto); /* OK DB */
 
 router.get("/categoria/:id", productosControllerDb.categoriaProducto);  /* OK DB */
 

@@ -41,10 +41,10 @@
 
                             <!--Tajeta para editar producto-->
                             <div class="tarjeta-producto-edit">
-                                <div>
+                                <div class="margin-LR">
                                     <img src="/img/products/<%= producto.image %>" alt="" class="img-edit">
-                                </div>
-                                <div>
+                                </div >
+                                <div class="margin-LR">
                                     <div>
                                         ID:
                                     </div>
@@ -53,7 +53,7 @@
                                     </div>
                                     
                                 </div>
-                                <div>
+                                <div class="margin-LR">
                                     <div>
                                         Nombre:
                                     </div>
@@ -62,7 +62,7 @@
                                     </div>
                                     
                                 </div>
-                                <div>
+                                <div class="margin-LR">
                                     <div>
                                         Stock:
                                 
@@ -71,7 +71,12 @@
                                         <%= producto.stock %>
                                     </div>
                                 </div>
-                                <a href="/productos/editar-producto/<%= producto.id %>"><div class="boton-editar-prod"><i class="fa-solid fa-pen-to-square"></i></div></a>
+                                <div class="box-icons">
+
+                                    <a href="/productos/editar-producto/<%= producto.id %>"><div class="boton-editar-prod"><i class="fa-solid fa-pen-to-square"></i></div></a>
+                                    <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
+                                        <button type="submit" class="boton-editar-prod"><i class="fa-solid fa-trash"></i></button></form>
+                                </div>
                             </div>
                             
                             <% }}) %>

@@ -1819,10 +1819,13 @@ input #file-upload-button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-left: 4px;
-    margin-right: 4px;
     text-align: center;
 
+}
+
+.margin-LR{
+    margin-left: 4px;
+    margin-right: 4px;
 }
 
 .img-edit {
@@ -1844,6 +1847,7 @@ input #file-upload-button {
     transition: all .2s;
     box-shadow: 6px 6px 12px #c5c5c5,
         -6px -6px 12px #ffffff;
+    border: none;
 
 
 }
@@ -1857,8 +1861,19 @@ input #file-upload-button {
     background-color: #41C1F0;
     box-shadow: -6px 6px 20px rgba(65, 193, 240, 0.8);
     color: #fff;
+    
 
 }
+
+.box-icons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
 
 .user-edit {
     display: flex;

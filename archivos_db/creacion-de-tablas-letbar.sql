@@ -133,4 +133,9 @@ UPDATE product_categories
 SET category = 'cervezas', name = 'Cervezas'
 WHERE id = 1;
 
+alter table products  change valoration valoration DECIMAL(5,1);
+
+alter table products  change graduation graduation DECIMAL(5,1);
+
+alter table products  change cantValoration cantValoration DECIMAL(5,1);
 

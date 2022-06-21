@@ -34,7 +34,9 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "addresses",
-        timestamps: false
+        timestamps: false,
+        paranoid: true,
+        deleteAt: "destroyTime"
     };
 
     const Address = sequelize.define(alias, cols, config);

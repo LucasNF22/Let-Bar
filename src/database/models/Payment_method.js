@@ -18,7 +18,9 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "payment_methods",
-        timestamps: false
+        timestamps: false,
+        paranoid: true,
+        deleteAt: "destroyTime"
     };
 
     const Payment_method = sequelize.define( alias, cols, config );

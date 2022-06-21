@@ -18,7 +18,9 @@ module.exports = (sequelize, dataTypes) => {
     
     let config = {
         tableName: "users_categories",
-        timestamps: false
+        timestamps: false,
+        paranoid: true,
+        deleteAt: "destroyTime"
     };
 
     const User_category = sequelize.define( alias, cols, config );

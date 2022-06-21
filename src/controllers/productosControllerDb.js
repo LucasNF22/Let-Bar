@@ -122,15 +122,15 @@ const productosControllerDb = {
                     destinoImagen = path.join(__dirname, "../../public/img/products/");
                     dataImagen = req.file.buffer;
                 }
-                
+
                 // Para suma de stock
-                let st = 0                
-                if(req.body.stock == ""){
+                let st = 0
+                if (req.body.stock == "") {
                     st = 0;
-                }else{
+                } else {
                     st = parseInt(req.body.stock);
                 }
-                
+
 
                 db.Product.update({
 
@@ -146,7 +146,7 @@ const productosControllerDb = {
                     "offer": req.body.offer,
                     "graduation": req.body.graduation,
                     "year": req.body.years,
-                    "stock": parseInt(productoOriginal.stock) + st 
+                    "stock": parseInt(productoOriginal.stock) + st
 
                 }, {
                     where: {
@@ -154,10 +154,10 @@ const productosControllerDb = {
                     }
                 })
                     .then(resultado => {
-                        if(!req.file){
+                        if (!req.file) {
                             res.redirect("/users/listadoProductos")
-                        }else{
-                            fs.writeFileSync(destinoImagen + nombreImagen, dataImagen); 
+                        } else {
+                            fs.writeFileSync(destinoImagen + nombreImagen, dataImagen);
                             res.redirect("/users/listadoProductos")
                         }
                     });
@@ -172,33 +172,33 @@ const productosControllerDb = {
 
     categoriaProducto: (req, res) => {
 
-        
+
         pedidoCategorias = db.Product_category.findOne({
-            where:{
+            where: {
                 category: req.params.id
             }
         })
-        .then(categoria => {
+            .then(categoria => {
 
-            db.Product.findAll({
-                where:{
-                    category_id: categoria.id
-                }
+                db.Product.findAll({
+                    where: {
+                        category_id: categoria.id
+                    }
+                })
+                    .then(ProductosCat => {
+
+                        res.render("categoriaProducto", { producto: ProductosCat });
+                    })
             })
-            .then(ProductosCat => {
-    
-                res.render("categoriaProducto", { producto: ProductosCat });
-            })
-        })
-       
-       
-        
+
+
+
     },
 
     eliminarProducto: (req, res) => {
         let idAEliminar = req.params.id;
 
-        db.Product.destroy({  /* configurar el modelo para soft delete */
+        db.Product.destroy({
             where: {
                 id: req.params.id
             }
@@ -216,42 +216,33 @@ const productosControllerDb = {
         let nuevaValoracion = req.body.estrellas;
 
         db.Product.findByPk(productoId)
-            .then(y => {
+            .then(ProdValo => {
+
+                cantValoration = parseInt(ProdValo.cantValoration) + 1;
+                acuValoration = parseInt(ProdValo.acuValoration) + parseInt(nuevaValoracion);
+                promedio = parseInt(ProdValo.acuValoration) / parseInt(ProdValo.cantValoration);
+                valoration = promedio.toFixed(1);
+                
+                console.log(promedio);
+                console.log(valoration);
+
                 db.Product.update({
 
-                }).then({
-
+                    "cantValoration": cantValoration,
+                    "acuValoration": acuValoration,
+                    "valoration": valoration,
+                }, {
+                    where: {
+                        id: productoId
+                    }
                 })
+
+                    .then(resultado => {
+
+                        res.redirect("/productos/detalle-producto/" + productoId)
+                    })
             })
 
-        /* console.log("*****");
-        console.log(productoId) */
-
-        if (nuevaValoracion != undefined) {
-            productoValorado.forEach(producto => {
-                if (producto.id == productoId) {
-
-                    /* console.log('-----originales------');
-                    console.log(producto.cantValoration);
-                    console.log(producto.acuValoration);
-                    console.log(producto.valoration); */
-
-                    producto.cantValoration = parseInt(producto.cantValoration) + 1;
-                    producto.acuValoration = parseInt(producto.acuValoration) + parseInt(nuevaValoracion);
-                    promedio = parseInt(producto.acuValoration) / parseInt(producto.cantValoration);
-                    producto.valoration = promedio.toFixed(1);
-
-                    /* console.log('------actuzalizados-----');
-                    console.log(producto.cantValoration);
-                    console.log(producto.acuValoration);
-                    console.log(producto.valoration); */
-                }
-
-            })
-        }
-
-        fs.writeFileSync(productsFilePath, JSON.stringify(productoValorado, null, ' '));
-        res.redirect("/productos/detalle-producto/" + productoId);
     }
 
 }

@@ -52,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
         acuValoration: {
             type: dataTypes.INTEGER
         },
-        Valoration: {
+        valoration: {
             type: dataTypes.DECIMAL
         }
 
@@ -60,7 +60,9 @@ module.exports = (sequelize, dataTypes) => {
 
     let config = {
         tableName: "products",
-        timestamps: false
+        timestamps: false,
+        paranoid: true,
+        deleteAt: "destroyTime"
     };
 
     const Product = sequelize.define(alias, cols, config);
