@@ -2,11 +2,6 @@ const path = require("path");
 const fs = require('fs');
 const { validationResult } = require("express-validator");
 
-const productsFilePath = path.join(__dirname, '../database/productsDataBase.json');
-const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
-
-const categoriesFilePath = path.join(__dirname, '../database/categoriesDataBase.json');
-const categories = JSON.parse(fs.readFileSync(categoriesFilePath, 'utf-8'));
 
 const db = require("../database/models");
 

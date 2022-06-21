@@ -1,0 +1,108 @@
+<!--Head-->
+<%- include("../views/partials/head") %>
+
+    <body class="body-control">
+        <header class="caja-header-control">
+            <div class="nav-izq">
+                <a href="/home"><img src="/img/new-icons/logo-letbar-sin-fondo.png" alt="" class="iconos"></a>
+            </div>
+
+            <nav class="header-control">
+                <div class="caja-direc-der">
+                    <div class="text-center">Panel de control</div>
+                </div>
+                <div class="caja-direc-izq">
+                    <i class="fa-solid fa-sliders icono-control"></i>
+                </div>
+
+            </nav>
+
+
+        </header>
+        <main class="main-producto-edit">
+            <a href="/users/panel-control">
+                <div class="boton-editar-prod"> Atras </div>
+            </a>
+            <section class="tarjeta-categoria-edit ">
+                <div class="tarj-cat-sup padding20">
+                    <div>
+                        Usuarios a editar
+                    </div>
+                </div>
+                <div class="cont-producto-edit">
+
+
+                    
+                        <!--Tajeta para editar Usuario-->
+                        <div class="tarjeta-producto-edit">
+                            <div>
+                                <img src="/img/users/avatar/<%= usuario.avatar %>" alt="" class="img-edit">
+                            </div>
+                            <div>
+                                <div>
+                                    ID:
+                                </div>
+                                <div>
+                                    Nombre:
+                                </div>
+                                <div>
+                                    categoria:
+                                </div>
+                            </div>
+
+                            <div class="flex-wrap overflow">
+                                <div>
+
+                                    <div>
+                                        <%= usuario.id %>
+                                    </div>
+
+
+                                </div>
+                                <div class="user-edit">
+                                    <div>
+                                        <%= usuario.first_name + " " + usuario.last_name %>
+                                    </div>
+
+                                    <div>
+                                        <select name="category" class="imputForm">
+                                            <% categorias.forEach(categoria=> {
+                                                if(categoria.category == producto.category){ %>
+                                                <option value="<%=categoria.id%>" selected>
+                                                    <%= categoria.name %>
+                                                </option>
+                                                <% }else{ %>
+                                                    <option value="<%=categoria.id%>">
+                                                        <%= categoria.name %>
+                                                    </option>
+                                                    <% } } ) %>
+                
+                                        </select>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <a href="#">
+                                <div class="boton-editar-prod">Editar</div>
+                            </a>
+                        </div>
+
+                       
+
+
+
+
+                </div>
+
+            </section>
+
+
+
+
+
+
+        </main>
+
+        <!--Footer-->
+        <%- include("../views/partials/footer") %>
+    </body>

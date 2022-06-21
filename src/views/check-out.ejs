@@ -1,95 +1,246 @@
 <!--Head-->
 <%- include("../views/partials/head") %>
 
-<body>
-    <%- include("../views/partials/headerGeneral") %>
+    <body class="body-check">
+        <%- include("../views/partials/headerGeneral") %>
 
-    <main class="check">
+            <main class="check">
+                
+                
+                
+                <div class="check-datos-container">
+                    
+                    <a href="/home">
+                        <div class="boton-editar-prod"> Atras </div>
+                    </a>
+                    <div class="check-datos-box">
 
-        <div class="check-resumen">
+                        <div class="check-datos-titulo">
 
-            <div class="check-prod">
-                <div>
-                    cant
-                </div>
-                <div>
-                    img
-                </div>
-                <div>
-                    nombre
-                </div>
-                <div class="check-precio">
-                    precio
-                </div>
-            </div>
-            <div class="check-prod">
-                <div>
-                    cant
-                </div>
-                <div>
-                    img
-                </div>
-                <div>
-                    nombre
-                </div>
-                <div>
-                    precio
-                </div>
-            </div>
-            <div class="check-prod">
-                <div>
-                    cant
-                </div>
-                <div>
-                    img
-                </div>
-                <div>
-                    nombre
-                </div>
-                <div>
-                    precio
-                </div>
-            </div>
-
-
-        </div>
-
-        <div class="check-datos">
-
-            <div class="carrito-producto">
-                <div class="carr-caj-izq">
-
-                </div>
-                <div class="carr-caj-der">
-                    <div class="carr-caj-der-sup">
-                        <div class="carr-caj-der-sup-nomb">
-                            termidor
+                            datos usuario
                         </div>
-                        <div class="carr-caj-der-sup-prec">
-                            5 pe
+
+                        <div class="check-datos-cont">
+                            Nombre : "el nombre"
                         </div>
+                        <div class="check-datos-cont">
+                            Apellido: "el apellido"
+                        </div>
+
+
                     </div>
-                    <div class="carr-caj-der-inf">
-                        <div class="carr-caj-der-inf-cant">
-                            - Cantidad +
+                    <div class="check-datos-box">
+
+                        <div class="check-datos-titulo">
+
+                            Direccion de entrega
                         </div>
-                        <div class="carr-caj-der-inf-borrar">
-                            <i class="fa-solid fa-xmark"></i>
+                        <div class="check-datos-cont-entrega">
+                            <div>
+                                Entregar en:
+                            </div>
+
+                            <select name="address.alias" class="imputForm-pago">
+
+                                <option value="Mp"> Casa </option>
+                                <option value="tc"> Trabajo </option>
+                                <option value="td"> Casa novia </option>
+
+                            </select>
+
                         </div>
+                        <div class="check-datos-cont">
+                            Provincia: "address.province"
+                        </div>
+                        <div class="check-datos-cont">
+                            Localidad: "address.locality"
+                        </div>
+                        <div class="check-datos-cont">
+                            Calle: "address.street address.street_number"
+                        </div>
+
+                    </div>
+                    <div class="check-datos-box">
+                        <div class="check-datos-titulo">
+
+                            Forma de pago
+                        </div>
+
+                        <select name="pago" class="imputForm-pago">
+
+                            <option value="Mp"> MercadoPago </option>
+                            <option value="tc"> Tarjeta de Crédito </option>
+                            <option value="td"> Tarjeta de Débito </option>
+                            <option value="tb"> Transferencia Bancaria </option>
+                            <option value="ef"> Efectivo </option>
+                        </select>
+
                     </div>
                 </div>
-            </div>
+
+                <div class="check-datos-container">
+
+                    <div class="check-datos-box">
+                        <div class="check-datos-titulo">
+
+                            Resumen de compra
+                        </div>
+                        /* un for each por cada producto en carrito */
+                        <div class="tarjeta-producto-edit">
+                            <div class="margin-LR">
+                                <img src="/img/products/andes-ipa.jpg" alt="" class="img-edit">
+                            </div>
+
+                            <div class="margin-LR">
+                                <div>
+                                    Nombre:
+                                </div>
+                                <div>
+                                    Andes Ipa
+                                </div>
+
+                            </div>
+                            <div class="margin-LR">
+                                <div>
+                                    precio:
+                                </div>
+                                <div>
+                                    $250
+                                </div>
+
+                            </div>
+
+                            <div class="box-icons">
+                                <form action="#" method="POST">
+                                    <button type="submit" class="boton-editar-prod"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-producto-edit">
+                            <div class="margin-LR">
+                                <img src="/img/products/andes-ipa.jpg" alt="" class="img-edit">
+                            </div>
+
+                            <div class="margin-LR">
+                                <div>
+                                    Nombre:
+                                </div>
+                                <div>
+                                    Andes Ipa
+                                </div>
+
+                            </div>
+                            <div class="margin-LR">
+                                <div>
+                                    precio:
+                                </div>
+                                <div>
+                                    $250
+                                </div>
+
+                            </div>
+
+                            <div class="box-icons">
+                                <form action="#" method="POST">
+                                    <button type="submit" class="boton-editar-prod"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="tarjeta-producto-edit">
+                            <div class="margin-LR">
+                                <img src="/img/products/andes-ipa.jpg" alt="" class="img-edit">
+                            </div>
+
+                            <div class="margin-LR">
+                                <div>
+                                    Nombre:
+                                </div>
+                                <div>
+                                    Andes Ipa
+                                </div>
+
+                            </div>
+                            <div class="margin-LR">
+                                <div>
+                                    precio:
+                                </div>
+                                <div>
+                                    $250
+                                </div>
+
+                            </div>
+
+                            <div class="box-icons">
+                                <form action="#" method="POST">
+                                    <button type="submit" class="boton-editar-prod"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </div>
+                        </div>
 
 
-        </div>
-    </main>
+
+                    </div>
+                    <div class="check-datos-box">
+
+                        <div class="tarjeta-producto-edit">
+
+                            <div class="margin-LR">
+                                <div>
+                                    Envío:
+                                </div>
+                                <div>
+                                    $$$$
+                                </div>
+
+                            </div>
+                            <div class="margin-LR">
+                                <div>
+                                    productos:
+                                </div>
+                                <div>
+                                    $$$$
+                                </div>
+
+                            </div>
+                            <div class="margin-LR">
+                                <div>
+                                    Total:
+                                </div>
+                                <div>
+                                    $$$$
+                                </div>
+
+                            </div>
+
+                            <div class="box-icons">
+                                <form action="#" method="POST">
+                                    <button type="submit" class="boton-editar-prod">Comprar</button>
+                                </form>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
 
-</body>
 
-<!--Footer-->
-<%- include("../views/partials/footer") %>
 
-</body>
 
-</html>
+            </main>
+
+
+    </body>
+
+    <!--Footer-->
+    <%- include("../views/partials/footer") %>
+
+        </body>
+
+        </html>
