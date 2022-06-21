@@ -2,6 +2,7 @@ const path = require("path");
 const fs = require("fs");
 const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
+const User = require ("../database/models/User")
 
 
 const db = require("../database/models");
@@ -33,18 +34,6 @@ const usersControllersDb = {
             })
         }
 
-        //for (let i = 0; i < usuarios.length; i++) {
-           // if (usuarios[i].email == req.body.email) {
-            //    return res.render("register", {
-             //       errors: {
-              //          email: {
-              //              msg: "Email ya registrado en la base de datos"
-               //         }
-               //     },
-              //      oldData: req.body
-              //  });
-         //   }
-       // }
        let passEncriptada = bcrypt.hashSync(req.body.password, 10);
 
         //Info de la imagen de usuario
@@ -97,7 +86,7 @@ const usersControllersDb = {
     },
 
     perfil: function (req, res) {
-        db.perfil.findByPK(req.params.id)
+        db.User.findByPK(req.params.id)
             .then(function (users) {
                 res.render("perfil", { users: users })
             })
