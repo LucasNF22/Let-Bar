@@ -12,11 +12,11 @@ const comprasController = {
     },
     checkOut:(req, res) => {
         
-        let userData = 
+        let userData = req.session.usuarioLogueado 
         
         db.User.findByPk()
         
-        res.render("check-out");
+        res.render("check-out", { usuario: userData });
 
     },
 

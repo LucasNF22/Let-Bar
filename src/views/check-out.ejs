@@ -17,14 +17,14 @@
 
                         <div class="check-datos-titulo">
 
-                            datos usuario
+                            Datos del Comprador
                         </div>
 
                         <div class="check-datos-cont">
-                            Nombre : "el nombre"
+                            Nombre : <%=usuario.first_name%>
                         </div>
                         <div class="check-datos-cont">
-                            Apellido: "el apellido"
+                            Apellido: <%=usuario.last_name%>
                         </div>
 
 
@@ -218,9 +218,11 @@
                             </div>
 
                             <div class="box-icons">
-                                <form action="#" method="POST">
+                                <a href="/home">
+                                
                                     <button type="submit" class="boton-editar-prod">Comprar</button>
-                                </form>
+                                
+                                </a>
                             </div>
 
                         </div>

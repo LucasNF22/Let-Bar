@@ -1638,8 +1638,8 @@ input #file-upload-button {
 }
 
 .icono-control {
-    background: linear-gradient(90deg, #EB609F, #41C1F0);
-    font-size: 25px;
+    background: linear-gradient(270deg, #EB609F, #41C1F0);
+    font-size: 32px;
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;

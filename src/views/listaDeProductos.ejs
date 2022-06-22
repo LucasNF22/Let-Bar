@@ -37,12 +37,14 @@
                     <div class="cont-producto-edit">
 
 
-                        <% productos.forEach(producto=>{ if(producto.category == categoria.category){ %>
+                        <% productos.forEach(producto=>{ if(producto.category_id == categoria.id){ %>
 
                             <!--Tajeta para editar producto-->
                             <div class="tarjeta-producto-edit">
                                 <div class="margin-LR">
+                                    <a href="/productos/detalle-producto/<%=producto.id%>">
                                     <img src="/img/products/<%= producto.image %>" alt="" class="img-edit">
+                                </a>
                                 </div >
                                 <div class="margin-LR">
                                     <div>

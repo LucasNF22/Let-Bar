@@ -56,18 +56,7 @@
 
                         </div>
                         <br>
-                        <!--Visible solo para administradores-->
-                        <% if(locals.estaLogueado && locals.usuarioLogueado.category == "admin") { %>
-                        <div class="">
-                            <a href="/productos/editar-producto/<%= producto.id %>"><button class="boton-admin naranja">
-                                    Editar </button></a>
-
-                            <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
-                                <button type="submit" class="boton-admin rojo"> Eliminar </button> no tocar!!!!!!
-                            </form>
-
-                        </div>
-                        <% } %>
+                        
                 </section>
 
 

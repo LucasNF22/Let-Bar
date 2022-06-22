@@ -26,7 +26,7 @@
             <section class="tarjeta-categoria-edit ">
                 <div class="tarj-cat-sup padding20">
                     <div>
-                        Usuarios a editar
+                        Usuario a editar
                     </div>
                 </div>
                 <div class="cont-producto-edit">
@@ -65,26 +65,29 @@
                                     </div>
 
                                     <div>
+                                        <form action="/users/usuario-admin/<%=usuario.id%>/process?_method=PUT" method="POST">
                                         <select name="category" class="imputForm">
                                             <% categorias.forEach(categoria=> {
-                                                if(categoria.category == producto.category){ %>
+                                                if(categoria.id == usuario.category_id){ %>
                                                 <option value="<%=categoria.id%>" selected>
-                                                    <%= categoria.name %>
+                                                    <%= categoria.user_type %>
                                                 </option>
                                                 <% }else{ %>
                                                     <option value="<%=categoria.id%>">
-                                                        <%= categoria.name %>
+                                                        <%= categoria.user_type %>
                                                     </option>
                                                     <% } } ) %>
                 
                                         </select>
+                                   
                                     </div>
 
                                 </div>
                             </div>
-                            <a href="#">
-                                <div class="boton-editar-prod">Editar</div>
-                            </a>
+                            
+                                <button type="submit" class="boton-editar-prod">Editar</button>
+                            </form>
+                            
                         </div>
 
                        

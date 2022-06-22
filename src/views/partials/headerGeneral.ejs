@@ -23,7 +23,11 @@
     </nav>
 
     <div class="nav-der">
-
+<% if(locals.estaLogueado && locals.usuarioLogueado.category_id == 2) { %>
+                    
+                        <a href="/users/panel-control"><i class="fa-solid fa-sliders iconos icono-control menu-inicio"></i></a>
+                    
+                <% } %>
         <!-- <a  for="btn-menu"><img src="/img/icono-carrito.png" alt="" class="iconos"></a> -->
         <label for="btn-menu"><img src="/img/new-icons/icono-carrito.png" alt="" class="iconos"></label>
          <% if (locals.estaLogueado)  { %>

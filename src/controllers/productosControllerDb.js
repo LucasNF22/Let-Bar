@@ -191,7 +191,6 @@ const productosControllerDb = {
     },
 
     eliminarProducto: (req, res) => {
-        let idAEliminar = req.params.id;
 
         db.Product.destroy({
             where: {
@@ -200,7 +199,7 @@ const productosControllerDb = {
         })
             .then(resultado => {
 
-                res.redirect("/home")
+                res.redirect("/users/listaDeProductos")
             })
     },
 
@@ -213,13 +212,11 @@ const productosControllerDb = {
         db.Product.findByPk(productoId)
             .then(ProdValo => {
 
+
                 cantValoration = parseInt(ProdValo.cantValoration) + 1;
                 acuValoration = parseInt(ProdValo.acuValoration) + parseInt(nuevaValoracion);
-                promedio = parseInt(ProdValo.acuValoration) / parseInt(ProdValo.cantValoration);
+                promedio = parseInt(acuValoration) / parseInt(cantValoration);
                 valoration = promedio.toFixed(1);
-                
-                console.log(promedio);
-                console.log(valoration);
 
                 db.Product.update({
 

@@ -39,9 +39,12 @@
                             <div>
                                 <img src="/img/users/avatar/<%= usuario.avatar %>" alt="" class="img-edit">
                             </div>
-                            <div>
+                            <div class="margin-LR">
                                 <div>
                                     ID:
+                                </div>
+                                <div>
+                                    Permisos:
                                 </div>
                                 <div>
                                     Nombre:
@@ -51,11 +54,19 @@
                                 </div>
                             </div>
 
-                            <div class="flex-wrap overflow">
+                            <div class="flex-wrap overflow margin-LR">
                                 <div>
 
                                     <div>
                                         <%= usuario.id %>
+                                    </div>
+                                    <div>
+                                        <% categorias.forEach(categoria => { 
+
+                                            if(usuario.category_id == categoria.id){ %>
+                                                
+                                              <%=  categoria.user_type %>
+                                          <%  }}) %>
                                     </div>
 
 
@@ -71,10 +82,14 @@
 
                                 </div>
                             </div>
-                            <a href="#">
+                            <div class="box-icons">
+                            <a href="/users/usuario-admin/<%=usuario.id%>">
                                 <div class="boton-editar-prod"><i class="fa-solid fa-pen-to-square"></i></div>
                             </a>
-                        </div>
+                            <form action="/users/eliminar/<%= usuario.id %>?_method=DELETE" method="POST">
+                                <button type="submit" class="boton-editar-prod"><i class="fa-solid fa-trash"></i></button></form>
+                            </div>
+                            </div>
 
                         <% }) %>
 
