@@ -199,7 +199,7 @@ const productosControllerDb = {
         })
             .then(resultado => {
 
-                res.redirect("/users/listaDeProductos")
+                res.redirect("/users/listadoProductos")
             })
     },
 
