@@ -154,7 +154,7 @@ CREATE TABLE `products` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `products_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `product_categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,7 +163,7 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (3,'Cerveza Andes Origen Rubia Lata','Andes Origen Rubia es una cerveza mendocina, hecha con agua del deshielo de la cordillera y pura malta tostada a fuego lento, que ofrece colores y texturas bien distintivas. Esta cerveza tiene un arom','producto_undefined_1655407943899.jpg',1,'/* ver de donde saca','473',200,6,125,0,0,200,5.0,0.0,0,NULL),(4,'','','producto_1655409108149.jpg',1,'/* ver de donde saca','',0,0,0,0,0,0,0.0,0.0,0,NULL),(6,'prueba modificado','','producto_andes-rubia21_1655504006766.jpg',2,'vinito','',0,0,0,0,0,3000,0.0,0.0,0,NULL),(7,'prueba3','','producto_productos-181655500630561.jpg',1,'','',0,0,0,1,0,0,0.0,29.0,108,3.7);
+INSERT INTO `products` VALUES (3,'Cerveza Andes Origen Rubia Lata','Andes Origen Rubia es una cerveza mendocina, hecha con agua del deshielo de la cordillera y pura malta tostada a fuego lento, que ofrece colores y texturas bien distintivas. Esta cerveza tiene un arom','producto_undefined_1655407943899.jpg',1,'/* ver de donde saca','473',200,6,125,0,0,200,5.0,4.0,18,4.7),(6,'prueba modificado','','producto_andes-rubia21_1655504006766.jpg',2,'vinito','',0,0,0,0,0,3000,0.0,0.0,0,NULL),(7,'prueba3','','producto_productos-181655500630561.jpg',1,'','',0,0,0,1,0,0,0.0,29.0,108,3.7),(8,'Absolut Vodka','Absolut Vodka se hace exclusivamente a partir de ingredientes naturales y, a diferencia de lo que ocurre con muchos otros vodkas, no contiene azúcar añadido. Absolut es, de hecho, tan puro como puede ','producto_absolut-vodka_1655909327780.jpg',4,'Absolut','750ml',1200,6,1150,0,0,250,40.0,1.0,5,5.0);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -258,7 +258,7 @@ CREATE TABLE `users` (
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`),
   CONSTRAINT `users_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `users_categories` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -267,7 +267,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (2,'pepito','pepito','pepito@gmail.com','Let123456',123456,'default.jpg','2000-07-19',1),(3,'cala','cala','cala@gmail.com','$2a$10$ZpijuNVZnpQPW4IpUzLVBeiMiPhV/XsPExLSzUPBUkPB5xKTYYorW',12345678,'default.jpg','2000-03-12',1);
+INSERT INTO `users` VALUES (2,'pepito','pepito','pepito@gmail.com','Let123456',123456,'default.jpg','2000-07-19',1),(5,'Lucas','Fiorentino','lucas@gmail.com','$2a$10$ElHM68JAwKclRPY.lOusj./IE.m/BpGH530xjqy5XKD.PBRw4sO56',12345612,'1655903693982.jpg','2000-02-20',2);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,4 +332,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-20 22:57:12
+-- Dump completed on 2022-06-22 12:38:49
