@@ -2,7 +2,6 @@ const path = require("path");
 const fs = require("fs");
 const bcrypt = require('bcryptjs');
 const { validationResult } = require("express-validator");
-const User = require ("../database/models/User")
 
 
 const db = require("../database/models");
@@ -34,7 +33,7 @@ const usersControllersDb = {
             })
         }
 
-       let passEncriptada = bcrypt.hashSync(req.body.password, 10);
+        let passEncriptada = bcrypt.hashSync(req.body.password, 10);
 
         //Info de la imagen de usuario
         let nombreImagen = "default.jpg"
@@ -68,36 +67,130 @@ const usersControllersDb = {
 
     },
 
-    
+    login: (req, res) => {
+        let email = req.cookies.emailUsuario ? req.cookies.emailUsuario : "";
+        res.render("login", {
+            email
+        })
+
+    },
+
+
+    //Procesa los datos login
+    procesarLogin: (req, res) => {
+
+        let validaciones = validationResult(req);
+
+
+        if (validaciones.errors.length > 0) {
+            console.log(req.body.email);
+            return res.render("login", {
+                errors: validaciones.mapped(),
+                email: req.body.email
+            });
+        }
+        // Datos de usuario valido
+        // lucas@gmail.com
+        // pass: Let123456
+
+        let usuarioALoguearse;
+
+        /*if (users == "") {
+
+            users = [];
+        } else {
+            users = JSON.parse(userJSON);
+        }
+        */
+
+        // !!!! de aca para abajo tenemos que separar la validacion del email, y la de el password
+        //      para poder mandar primero el mensaje de "el email no esta en la base de datos", 
+        //      y si lo encuentra y la password no coincide mostrar el mensaje de "credenciales invalidas" ¡¡¡¡¡
+
+
+        db.User.findOne({
+
+            where: {
+                email: req.body.email
+            },
+            include: [
+                { association: "categories" }
+            ],
+        })
+            .then(usuario => {
+                if (usuario) {
+                    let usuarioDb = usuario
+                    if (bcrypt.compareSync(req.body.password, usuarioDb.password)) {
+                        usuarioALoguearse = usuarioDb;
+                        delete usuarioALoguearse.password;
+                        req.session.usuarioLogueado = usuarioALoguearse;
+                        if (req.body.recordar) {
+                            res.cookie("emailUsuario", req.body.email, { maxAge: 1000 * 60 })
+                        }
+                        res.redirect("/Home");
+                        return;
+                    }
+                }
+
+
+                if (usuarioALoguearse == undefined) {
+                    return res.render("login", {
+                        errors: {
+                            email: {                                 /// aca si manda el mesaje si el usuario es undefined.
+                                msg: "Alguno de los datos no es válido"
+                            }
+                        },
+                        email: req.body.email
+                    });
+
+                }
+            })
+
+
+    },
+
 
     control: (req, res) => {
-        db.User.findAll()
-        .then (function(users){
-        res.render( "control", {users : users})
-        })
-      
+        res.render("control")
     },
 
-    listadoUsuarios: function (req, res) {
-        db.User.findAll()
-            .then(function (users) {
-                res.render("listadoDeUsuarios", { users: users })
+
+    listadoProductos: (req, res) => {
+        let pedidoProductos = db.Product.findAll({include: [
+            { association: "categories", 
+        as: "category" }
+        ]});
+        let pedidoCategorias = db.Product_category.findAll();
+
+        Promise.all([pedidoProductos, pedidoCategorias])
+            .then(([productosDb, categoriasDb]) => {
+
+            res.render("listaDeProductos", { productos: productosDb, categorias: categoriasDb });
             })
-    },
 
-    perfil: function (req, res) {
-        db.User.findByPK(req.params.id)
-            .then(function (users) {
-                res.render("perfil", { users: users })
-            })
-    },
-
-    logout: (req, res) =>{
-        req.session.destroy();
-        return res.redirect ('/')
         
 
-    }
+    },
+    listadoUsuarios: (req, res) => {
+        db.User.findAll()
+            .then( usersDb => {
+                res.render("listadoDeUsuarios", { usuarios: usersDb })
+            })
+    },
+
+   
+    profile: (req, res) => {
+        console.log(req.cookies.emailUsuario)
+        res.render("perfil", {usuario : req.session.usuarioLogueado});
+
+    },
+
+    logout: (req, res) => {
+        req.session.destroy();
+        return res.redirect('/')
+
+
+    },
 }
 
 
