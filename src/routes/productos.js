@@ -17,7 +17,7 @@ var router = express.Router();
 router.get("/detalle-producto/:id", productosControllerDb.detalleProducto); /* OK DB */
 
 
-router.get("/agregar-producto", [ adminMiddleware ], productosControllerDb.agregarProducto); /* OK DB */
+router.get("/agregar-producto", /*[ adminMiddleware ], */productosControllerDb.agregarProducto); /* OK DB */
 router.post("/agregar-producto/process", [ uploadFile.single('image'), validacionesProductos ], productosControllerDb.guardarProducto); /* OK DB */
 
 

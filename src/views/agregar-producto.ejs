@@ -26,7 +26,7 @@
 
                     <div>
                         <label>Categoría:</label>
-                        <select name="category" class="imputForm">
+                        <select name="category" id="category" class="imputForm">
                             <% categorias.forEach(categoria=> { %>
 
                                 <option value="<%=categoria.id%>">
@@ -41,8 +41,8 @@
                         <label>Nombre del producto:</label>
                         <input type="text" name="name" id="name" placeholder="Nombre del producto..." class="imputForm"
                             value="<%= locals.oldData ? oldData.name : null %>">
-
-                        <% if(locals.errors && errors.name){ %>
+                            <ul id="nameErrors"></ul>
+                        <% if(locals.errors && errors.name ){ %>
                             <div class="feedback">
                                 <%= errors.name.msg %>
                             </div>
@@ -50,37 +50,43 @@
                     </div>
                     <div>
                         <label>Marca:</label>
-                        <input type="text" name="brand" placeholder="Marca del producto" class="imputForm"
+                        <input type="text" name="brand" id="brand" placeholder="Marca del producto" class="imputForm"
                             value="<%= locals.oldData ? oldData.brand : null %>">
+                            <ul id="brandErrors"></ul>
                     </div>
                     <div>
                         <label>Tamaño del producto:</label>
-                        <input type="text" name="size" placeholder="Tamaño del producto" class="imputForm"
+                        <input type="text" name="size" id="size" placeholder="Tamaño del producto" class="imputForm"
                             value="<%= locals.oldData ? oldData.size : null %>">
+                            <ul id="sizeErrors"></ul>
                     </div>
                     <div>
                         <label>Cosecha:</label>
-                        <input type="number" name="years" placeholder="Año Cosecha..." class="imputForm"
+                        <input type="number" name="years" id="years" placeholder="Año Cosecha..." class="imputForm"
                             value="<%= locals.oldData ? oldData.years : null %>">
+                            <ul id="yearsErrors"></ul>
                     </div>
                     <div>
                         <label>Precio por unidad:</label>
-                        <input type="number" name="priceUnit" placeholder="Precio por unidad..." class="imputForm"
+                        <input type="number" name="priceUnit" id="priceUnit" placeholder="Precio por unidad..." class="imputForm"
                             value="<%= locals.oldData ? oldData.priceUnit : null %>">
+                            <ul id="priceUnitErrors"></ul>
                     </div>
                     <div>
                         <label>Precio por cantidad:</label>
-                        <input type="number" name="priceCant" placeholder="Precio por cantidad..." class="imputForm"
+                        <input type="number" name="priceCant" id="priceCant" placeholder="Precio por cantidad..." class="imputForm"
                             value="<%= locals.oldData ? oldData.priceCant : null %>">
+                            <ul id="priceCantErrors"></ul>
                     </div>
                     <div>
                         <label>Unidades para descuento:</label>
-                        <input type="number" name="cantDisc" placeholder="Unidades para descuentos..." class="imputForm"
+                        <input type="number" name="cantDisc" id="cantDisc" placeholder="Unidades para descuentos..." class="imputForm"
                             value="<%= locals.oldData ? oldData.cantDisc : null %>">
+                            <ul id="cantDiscErrors"></ul>
                     </div>
                     <div>
                         <label>En oferta</label>
-                        <select name="offer" class="imputForm">
+                        <select name="offer" id="offer" class="imputForm">
                             <% if (locals.oldData && oldData.offer){ %>
                                 <% if(oldData.offer==false ){ %>
                                     <option value=false selected>No</option>
@@ -99,22 +105,26 @@
                     </div>
                     <div>
                         <label>Graduación alcoholica:</label>
-                        <input type="text" name="graduation" placeholder="Graduacion alcoholica..." class="imputForm"
+                        <input type="text" name="graduation" id="graduation" placeholder="Graduacion alcoholica..." class="imputForm"
                             value="<%= locals.oldData ? oldData.graduation : null %>">
+                            <ul id="graduationErrors"></ul>
                     </div>
                     <div>
                         <label>Stock:</label>
-                        <input type="number" name="stock" placeholder="Stock en unidades..." class="imputForm"
+                        <input type="number" name="stock" id="stock" placeholder="Stock en unidades..." class="imputForm"
                             value="<%= locals.oldData ? oldData.stock : null %>">
+                            <ul id="stockErrors"></ul>
                     </div>
                     <div>
                         <label>Descripción:</label>
-                        <textarea rows="5" name="description" placeholder="Describe tu producto..." class="imputForm"
+                        <textarea rows="5" name="description" id="description" placeholder="Describe tu producto..." class="imputForm"
                             value="<%= locals.oldData ? oldData.description : null %>"></textarea>
+                            <ul id="descriptionErrors"></ul>
                     </div>
                     <div>
                         <label>Fotos del producto:</label>
-                        <input type="file" name="image" class="imputForm">
+                        <input type="file" name="image" id="image" class="imputForm">
+                        <ul id="imageErrors"></ul>
                         <% if(locals.errors && errors.image){ %>
                             <div class="feedback">
                                 <%= errors.image.msg %>
