@@ -1,25 +1,37 @@
 const { body } = require('express-validator');
 const path = require("path");
 
+const db = require('../database/models');
+
+
 const validacionesRegister = [
     body("first_name")
         .notEmpty().withMessage("Debes introducir tu nombre").bail()
-        .isLength({ min: 3 }).withMessage("tu nombre debe tener mínimo 4 letras")
+        .isLength({ min: 2 }).withMessage("tu nombre debe tener mínimo 2 letras")
         .isAlpha().withMessage("solo puede introducir letras"),
 
     body("last_name")
         .notEmpty().withMessage("Debes introducir tu apellido").bail()
-        .isLength({ min: 4 }).withMessage("tu apellido debe tener mínimo 4 letras")
+        .isLength({ min: 2 }).withMessage("tu apellido debe tener mínimo 2 letras")
         .isAlpha().withMessage("solo puede introducir letras"),
 
-    body("email")
-        .notEmpty().withMessage("Debes introducir un correo").bail()
-        .isEmail().withMessage("Debes introducir un correo válido"),
+    body('email')
+        .notEmpty().withMessage('Tienes que ingresar un email').bail()
+        .isEmail().withMessage('Debes ingresar un formato de email valido').bail()
+        .custom(value => {
+            return db.User.findOne({
+                where: {"email" : value}
+            }).then(user => {
+              if (user) {
+                return Promise.reject('E-mail already in use');
+              }
+            });
+          }),
 
     body("password")
         //.trim() //Elimina espacio inicial y final
         .notEmpty().withMessage("Debes introducir una contraseña")
-        .isLength({ min: 6 }).withMessage('La contraseña debe contener minimo 8 caracteres')  // validacion minimo y maximo de caracteres
+        .isLength({ min: 8 }).withMessage('La contraseña debe contener minimo 8 caracteres')  // validacion minimo y maximo de caracteres
         .isAlphanumeric().withMessage("La contraseña debe contener al menos un número y una letra"),   //validacion alfanumerica 
 
     body("pass_confirm")
@@ -69,7 +81,7 @@ const validacionesRegister = [
                     throw new Error(`Las extensiones de imagen permitidas son: ${extensionesValidas.join(', ')}`);
                 }
 
-            } 
+            }
             return true;
         })
         .custom((value, { req }) => {

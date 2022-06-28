@@ -5,8 +5,6 @@ Quienes integran este equipo son:
 
 -Fernanda Ravizzini de 41 años,
 
--Tomás Gerez de 26 años,
-
 -Ana Laura Casado de 22 años.
 
  Páginas que usamos para guiarnos con los wireframes:
