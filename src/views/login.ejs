@@ -28,6 +28,8 @@
                             <input type="text" name="email" placeholder="Email"
                                 class="control <%= locals.errors && errors.email ? 'control-error' : null %>"
                                 value="<%= locals.email %>">
+                                <ul id="emailErrors"></ul>
+
                                
                             
                                 <% if(locals.errors && errors.email){ %>
@@ -45,6 +47,9 @@
                                 placeholder="Contraseña"
                                 class="control <%= locals.errors && errors.password ? 'control-error' : null %>"
                                 >
+                                <ul id="passwordsErrors"></ul>
+
+                                
                             <% if(locals.errors && errors.password){ %>
                                 <div class="feedback">
                                     <%= errors.password.msg %>

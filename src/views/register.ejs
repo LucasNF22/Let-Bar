@@ -27,6 +27,8 @@
                             class="control <%= locals.errors && errors.first_name ? 'control-error' : null %> " 
                             value="<%= locals.oldData ? oldData.first_name : null %>"
                             >
+                            <ul id="firstNameErrors"></ul>
+
                         <% if(locals.errors && errors.first_name){ %>
                             <div class="feedback">
                                 <%= errors.first_name.msg %>
@@ -42,6 +44,8 @@
                             class="control <%= locals.errors && errors.last_name ? 'control-error' : null %> " 
                             value="<%= locals.oldData ? oldData.last_name : null %>"
                             >
+                            <ul id="lastNameErrors"></ul>
+
                         <% if(locals.errors && errors.last_name){ %>
                             <div class="feedback">
                                 <%= errors.last_name.msg %>
@@ -58,6 +62,8 @@
                             class="control <%= locals.errors && errors.email ? 'control-error' : null %>"
                             value="<%= locals.oldData ? oldData.email : null %>"
                             >
+                            <ul id="emailErrors"></ul>
+
                         <% if(locals.errors && errors.email){ %>
                             <div class="feedback">
                                 <%= errors.email.msg %>
@@ -73,6 +79,8 @@
                             placeholder="Contraseña"
                             class="control <%= locals.errors && errors.password ? 'control-error' : null %>" 
                             >
+                            <ul id="passwordsErrors"></ul>
+
                             <% if(locals.errors && errors.password){ %>
                                 <div class="feedback">
                                     <%= errors.password.msg %>
@@ -88,6 +96,8 @@
                             placeholder="Repetir contraseña",
                             class="control <%= locals.errors && errors.pass_confirm ? 'control-error' : null %>" 
                             >
+                            <ul id="passConfirmErrors"></ul>
+
                             <% if(locals.errors && errors.pass_confirm){ %>
                                 <div class="feedback">
                                     <%= errors.pass_confirm.msg %>
@@ -104,6 +114,8 @@
                             class="control <%= locals.errors && errors.tel ? 'control-error' : null %>" 
                             value="<%= locals.oldData ? oldData.tel : null %>"
                             >
+                            <ul id="telefonoErrors"></ul>
+
                             <% if(locals.errors && errors.tel){ %>
                                 <div class="feedback">
                                     <%= errors.tel.msg %>
@@ -119,6 +131,8 @@
                             class="control <%= locals.errors && errors.birthday ? 'control-error' : null %>" 
                             value="<%= locals.oldData ? oldData.birthday : null %>"
                             >
+                            <ul id="fechaNacimientoErrors"></ul>
+
                             <% if(locals.errors && errors.birthday){ %>
                                 <div class="feedback">
                                     <%= errors.birthday.msg %>
@@ -133,6 +147,8 @@
                             name="avatar"
                             class="control <%= locals.errors && errors.avatar ? 'control-error' : null %>" 
                             >
+                            <ul id="avatarErrors"></ul>
+
                         <% if(locals.errors && errors.avatar){ %>
                             <div class="feedback">
                                 <%= errors.avatar.msg %>
