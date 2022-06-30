@@ -1,34 +1,53 @@
 <!-- inicio Pop Up de producto-->
-<label for="popUp"><img src="/img/icono-carrito.png" alt="" class="iconos"></label>
-
 <input type="checkbox" id="popUp">
-
 <div class="fondo-popUp">
-
     <div class="cont-popUp">
-
         <div class="tarjeta-popUp">
-            <img src="/img/users/avatar/rick_morty.jpg" alt="" class="img-perfil">
-            <br>
+            <label for="popUp" class="boton-cerrar-popUp"><i
+                    class="fa-solid fa-xmark"></i></label>
+            <div class="cont-img">
+                <img src="/img/products/<%= producto.image %>" alt=""
+                    class="img-popUp">
+                <div>
+                    <h4>
+                        <%= producto.name %>
+                    </h4>
+                </div>
+            </div>
+            
+            <div class="renglon-popUp">
+                <div class="renglon-tit-popUp">Precio:</div>
+                <div class="renglon-cont-popUp">$<%= producto.priceUnit %>
+                </div>
+            </div>
 
-            <h2>nombre </h3>
-                <br>
-
-                <div class="label-popUp">Email:</div>
-                <div class="imputForm">email</div>
-                <br>
-
-                <div class="label-popUp">Telefono:</div>
-                <div class="imputForm">telefono</div>
-                <br>
-
-                <div class="label-popUp">Dirección:</div>
-                <div class="imputForm">direccion</div>
-                <br>
-                <div class="label-popUp">Valora este producto:</div>
-                <form action="/productos/valorar/<%= producto.id %>?_method=PUT" method="POST" class="valoracion">
-
-
+            <div class="renglon-popUp">
+                <div class="renglon-tit-popUp">Tamaño:</div>
+                <div class="renglon-cont-popUp">
+                    <%= producto.size %>
+                </div>
+            </div>
+            <div class="renglon-popUp">
+                <div class="renglon-tit-popUp">Valoracion:</div>
+                <div class="renglon-cont-popUp">
+                    <%= producto.valoration %> <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+            <div class="renglon-popUp">
+                <div class="renglon-tit-popUp">Descripcion:</div>
+            </div>
+            
+                <div class="renglon-cont-popUp desc-popUp">
+                    <%= producto.description %>
+                
+            </div>
+            <div class="renglon-popUp">
+                <div class="renglon-tit-popUp-val">Valora este producto:</div>
+                
+            </div>
+            <div class="renglon-cont-popUp-val">
+                <form action="/productos/valorar/<%= producto.id %>?_method=PUT"
+                    method="POST" class="valoracion-popUp">
                     <div class="clasificacion">
                         <input id="radio1" type="radio" name="estrellas" value="5">
                         <label for="radio1"><i class="fa-regular fa-star"></i></label>
@@ -41,10 +60,14 @@
                         <input id="radio5" type="radio" name="estrellas" value="1">
                         <label for="radio5"><i class="fa-regular fa-star"></i></label>
                     </div>
-                    <button type="submit" class="boton-valoracion">Valorar</button>
+                    <button type="submit" class="boton-valoracion correcion-boton">Valorar</button>
                 </form>
+            </div>
 
-                <label for="popUp" class="boton-cerrar-popUp"><i class="fa-solid fa-circle-chevron-left"></i></label>
+            <a href="/productos/detalle-producto/<%=producto.id%>" class="boton-verMas-popUp">Ver mas</a>
+            
+            
+
         </div>
     </div>
 </div>

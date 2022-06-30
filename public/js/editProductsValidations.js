@@ -9,9 +9,8 @@ window.onload = function () {
     let inputPrecioCant = document.getElementById('priceCant');
     let inputCantDesc = document.getElementById('cantDisc');
     let inputGraduacion = document.getElementById('graduation');
-    let inputStock = document.getElementById('stock');
     let inputDescripcion = document.getElementById('description');
-    let inputImagen = document.getElementById('image');
+    
 
     // Se captura el formulario
     let form = document.querySelector(".FormCarga");
@@ -26,9 +25,8 @@ window.onload = function () {
     let precioCantErrors = document.getElementById('priceCantErrors');
     let cantDescErrors = document.getElementById('cantDiscErrors');
     let graduacionErrors = document.getElementById('graduationErrors');
-    let stockErrors = document.getElementById('stockErrors');
     let descripcionErrors = document.getElementById('descriptionErrors');
-    let imagenErrors = document.getElementById('imageErrors');
+   
 
 
 
@@ -45,14 +43,12 @@ window.onload = function () {
         let precioCantErrorsAcu = 0;
         let cantDescErrorsAcu = 0;
         let graduacionErrorsAcu = 0;
-        let stockErrorsAcu = 0;
         let descripcionErrorsAcu = 0;
-        let imagenErrorsAcu = 0;
+        
 
 
         // Se definen las validaciones -------------
 
-        // Validaciones de Nombre
         if (inputName.value === "") {
             nameErrors.innerHTML = "";
             nameErrors.innerHTML += '<li class="feedback">' + "Debes introducir un nombre" + '</li>';
@@ -136,16 +132,6 @@ window.onload = function () {
             graduacionErrorsAcu = 0;
         }
 
-        // Validaciones de Stock
-        if (inputStock.value === "") {
-            stockErrors.innerHTML = "";
-            stockErrors.innerHTML += '<li class="feedback">' + "Debes introducir un stock de producto" + '</li>';
-            stockErrorsAcu++;
-        } else {
-            stockErrors.innerHTML = "";
-            stockErrorsAcu = 0;
-        }
-
         // Validaciones de descripcion
         if (inputDescripcion.value === "") {
             descripcionErrors.innerHTML = "";
@@ -160,27 +146,7 @@ window.onload = function () {
             descripcionErrorsAcu = 0;
         }
 
-        // Validaciones de imagen
-        let imagen = inputImagen.value;
-        let extensionesValidas = [".jpg", ".png", ".gif" ];
-        let fileExtension = imagen.substring(imagen.lastIndexOf('.'),imagen.length);
         
-        
-        if (inputImagen.value === "") {    
-            imagenErrors.innerHTML = "";
-            imagenErrors.innerHTML += '<li class="feedback">' + "Debes introducir una imagen" + '</li>';
-            imagenErrorsAcu++;
-        } else if (!extensionesValidas.includes(fileExtension)){
-            imagenErrors.innerHTML = "";
-            imagenErrors.innerHTML += '<li class="feedback">' + `Las extensiones de imagen permitidas son: ${extensionesValidas.join(', ')}` + '</li>';
-            imagenErrorsAcu++;
-        }
-        else {
-            imagenErrors.innerHTML = "";
-            imagenErrorsAcu = 0;
-        }
-
-
         // Se suman los acumuladores de errores ------------------
         let AcuErrors =
             nameErrorsAcu +
@@ -191,13 +157,12 @@ window.onload = function () {
             precioCantErrorsAcu +
             cantDescErrorsAcu +
             graduacionErrorsAcu +
-            stockErrorsAcu +
-            descripcionErrorsAcu +
-            imagenErrorsAcu;
+            descripcionErrorsAcu;
+            
 
         
         
-        console.log(inputImagen.value);
+        
 
 
         // Si no hay errores se hace el submit del formulario

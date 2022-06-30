@@ -7,6 +7,7 @@ const bufferImagen = multer.memoryStorage();
 // Middlewares
 const adminMiddleware = require("../middlewares/adminMiddleware");
 const validacionesProductos = require("../middlewares/productsValidations")  // validaciones para imagen de producto
+const validacionesProductosEdit = require("../middlewares/editProductsValidations")
 const uploadFile = multer({ storage: bufferImagen }) // Middleware de multer 
 
 const productosControllerDb = require("../controllers/productosControllerDb");
@@ -17,12 +18,12 @@ var router = express.Router();
 router.get("/detalle-producto/:id", productosControllerDb.detalleProducto); /* OK DB */
 
 
-router.get("/agregar-producto", /*[ adminMiddleware ], */productosControllerDb.agregarProducto); /* OK DB */
-router.post("/agregar-producto/process", [ uploadFile.single('image'), validacionesProductos ], productosControllerDb.guardarProducto); /* OK DB */
+router.get("/agregar-producto", /*[ adminMiddleware ],*/ productosControllerDb.agregarProducto); /* OK DB */
+router.post("/agregar-producto/process", [/* adminMiddleware,*/ uploadFile.single('image'), validacionesProductos ], productosControllerDb.guardarProducto); /* OK DB */
 
 
-router.get("/editar-producto/:id",[ adminMiddleware ], productosControllerDb.editarProducto); /* OK DB */
-router.put ("/editar-producto/:id",  uploadFile.single('image'), productosControllerDb.actualizarProducto); /* OK DB */
+router.get("/editar-producto/:id", /*[ adminMiddleware ],*/ productosControllerDb.editarProducto); /* OK DB */
+router.put ("/editar-producto/:id", [/* adminMiddleware ,*/ uploadFile.single('image') ] ,validacionesProductosEdit, productosControllerDb.actualizarProducto); /* OK DB */
 
 router.delete("/eliminar/:id", [ adminMiddleware ], productosControllerDb.eliminarProducto); /* OK DB */
 

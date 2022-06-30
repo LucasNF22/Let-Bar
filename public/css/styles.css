@@ -63,6 +63,7 @@ palabra-celeste {
     width: 60px;
     height: 60px;
     filter: drop-shadow(-2px 2px 3px rgba(65, 193, 240, 0.8));
+    z-index: 1;
 }
 
 .nav-cent .iconos:hover {
@@ -1643,6 +1644,7 @@ input #file-upload-button {
     background-clip: text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    z-index: 1;
 }
 
 .icono-control:hover {

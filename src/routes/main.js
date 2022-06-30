@@ -8,7 +8,8 @@ const mainController=require("../controllers/mainController");
 router.get("/", mainController.home);
 router.get("/home", mainController.homeLogueado);
 
-
+// prueba modal
+router.get("/prueba", mainController.pruebaModal);
 
 let routesProductos = require("./productos.js");
 let routesUsers= require ("./users.js");

@@ -1,6 +1,8 @@
 <!--Head-->
 <%- include("../views/partials/head") %>
 
+    <!--Script validaciones Front-->
+  <!--  <script src="/js/editProductsValidations.js"></script> -->
 
 
     <body class="bodyCorto">
@@ -20,8 +22,8 @@
                 </a>
                 <h3>Editar producto</h3>
 
-                <form action="/productos/editar-producto/<%= producto.id %>?_method=PUT" method="POST" enctype="multipart/form-data"
-                    class="FormCarga">
+                <form action="/productos/editar-producto/<%= producto.id %>?_method=PUT" method="POST"
+                    enctype="multipart/form-data" class="FormCarga">
 
                     <div>
                         <label>Categoría:</label>
@@ -44,69 +46,131 @@
                         <label>Nombre del producto:</label>
                         <input type="text" name="name" id="name" placeholder="Nombre del producto..." class="imputForm"
                             value="<%= producto.name %>">
+                        <ul id="nameErrors"></ul>
+                        <% if(locals.errors && errors.name ){ %>
+                            <div class="feedback">
+                                <%= errors.name.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>Tamaño del producto:</label>
-                        <input type="text" name="size" placeholder="Tamaño del producto." class="imputForm"
+                        <input type="text" name="size" id="size" placeholder="Tamaño del producto." class="imputForm"
                             value="<%= producto.size %>">
+                        <ul id="sizeErrors"></ul>
+                        <% if(locals.errors && errors.size ){ %>
+                            <div class="feedback">
+                                <%= errors.size.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>Marca:</label>
-                        <input type="text" name="brand" placeholder="Marca del producto" class="imputForm">
+                        <input type="text" name="brand" id="brand" placeholder="Marca del producto" class="imputForm"
+                            value="<%= producto.brand %>">
+                        <ul id="brandErrors"></ul>
+                        <% if(locals.errors && errors.brand ){ %>
+                            <div class="feedback">
+                                <%= errors.brand.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>Cosecha:</label>
-                        <input type="number" name="years" placeholder="Año Cosecha..." class="imputForm"
+                        <input type="number" name="years" id="years" placeholder="Año Cosecha..." class="imputForm"
                             value="<%= producto.years %>">
+                        <ul id="yearsErrors"></ul>
+                        <% if(locals.errors && errors.years ){ %>
+                            <div class="feedback">
+                                <%= errors.years.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>Precio por unidad:</label>
-                        <input type="number" name="priceUnit" placeholder="Precio por unidad..." class="imputForm"
-                            value="<%= producto.priceUnit %>">
+                        <input type="number" name="priceUnit" id="priceUnit" placeholder="Precio por unidad..."
+                            class="imputForm" value="<%= producto.priceUnit %>">
+                        <ul id="priceUnitErrors"></ul>
+                        <% if(locals.errors && errors.priceUnit ){ %>
+                            <div class="feedback">
+                                <%= errors.priceUnit.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>Precio por cantidad:</label>
-                        <input type="number" name="priceCant" placeholder="Precio por cantidad..." class="imputForm"
-                            value="<%= producto.priceCant %>">
+                        <input type="number" name="priceCant" id="priceCant" placeholder="Precio por cantidad..."
+                            class="imputForm" value="<%= producto.priceCant %>">
+                        <ul id="priceCantErrors"></ul>
+                        <% if(locals.errors && errors.priceCant ){ %>
+                            <div class="feedback">
+                                <%= errors.priceCant.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>Unidades para descuento:</label>
-                        <input type="number" name="cantDisc" placeholder="Unidades para descuentos..." class="imputForm"
-                            value="<%= producto.cantDisc %>">
+                        <input type="number" name="cantDisc" id="cantDisc" placeholder="Unidades para descuentos..."
+                            class="imputForm" value="<%= producto.cantDisc %>">
+                        <ul id="cantDiscErrors"></ul>
+                        <% if(locals.errors && errors.cantDisc ){ %>
+                            <div class="feedback">
+                                <%= errors.cantDisc.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>En oferta</label>
                         <select name="offer" class="imputForm">
-                           
-                             <% if(producto.offer == false ){ %>
-                                <option value= false selected>No</option>
-                                <option value = true >Si</option>
+
+                            <% if(producto.offer==false ){ %>
+                                <option value=false selected>No</option>
+                                <option value=true>Si</option>
                                 <% }else{ %>
-                                    <option value = false >No</option>
-                                    <option value = true selected>Si</option>
+                                    <option value=false>No</option>
+                                    <option value=true selected>Si</option>
                                     <% } %>
                         </select>
 
                     </div>
                     <div>
                         <label>Graduación alcoholica:</label>
-                        <input type="text" name="graduation" placeholder="Graduacion alcoholica..." class="imputForm"
-                            value="<%= producto.graduation %>">
+                        <input type="text" name="graduation" id="graduation" placeholder="Graduacion alcoholica..."
+                            class="imputForm" value="<%= producto.graduation %>">
+                        <ul id="graduationErrors"></ul>
+                        <% if(locals.errors && errors.graduation ){ %>
+                            <div class="feedback">
+                                <%= errors.graduation.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>Stock actual: <palabra-celeste>
                                 <%= producto.stock %> Und.
                             </palabra-celeste></label>
                         <input type="number" name="stock" placeholder="Añadir stock..." class="imputForm">
+
                     </div>
                     <div>
                         <label>Descripción:</label>
-                        <textarea rows="5" name="description" placeholder="Describe tu producto..."
+                        <textarea rows="5" name="description" id="description" placeholder="Describe tu producto..."
                             class="imputForm"><%= producto.description %></textarea>
+                        <ul id="descriptionErrors"></ul>
+                        <% if(locals.errors && errors.description ){ %>
+                            <div class="feedback">
+                                <%= errors.description.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div>
                         <label>Fotos del producto:</label>
-                        <input type="file" name="image" accept=".jpg" class="imputForm" value="<%= producto.image %>">
+                        <input type="file" name="image" id="image" accept=".jpg" class="imputForm"
+                            value="<%= producto.image %>">
+                        <% if(locals.errors && errors.image ){ %>
+                            <div class="feedback">
+                                <%= errors.image.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="caja-fotos-producto">
                         <div class="foto-producto"> <i class="fa-solid fa-plus"></i> </div>

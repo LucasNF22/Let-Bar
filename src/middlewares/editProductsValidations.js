@@ -2,7 +2,7 @@ const { body } = require('express-validator');
 const path = require("path");
 
 
-const validacionesProductos = [
+const validacionesProductosEdit = [
     body("name")
         .notEmpty().withMessage("Debes introducir un producto")
         .isLength({min:5}).withMessage("Debes introducir un nombre mas largo"),
@@ -36,9 +36,6 @@ const validacionesProductos = [
     body("graduation")
         .notEmpty().withMessage("Debes introducir la graduacion del producto"),
 
-    body("stock")
-        .notEmpty().withMessage("Debes introducir un stock"),
-
     body("description")
         .notEmpty().withMessage("Debes introducir uns descripción")
         .isLength({min:20}).withMessage("Debes introducir una descripción mas larga"),
@@ -48,10 +45,7 @@ const validacionesProductos = [
             let file = req.file;
             let extensionesValidas = ['.jpg', '.png', '.gif'];
 
-            if (!file) {
-                throw new Error('Tenes que seleccionar una imagen');
-
-            } else if (file) {
+            if (file) {
                 let fileExtension = path.extname(file.originalname);
                 if (!extensionesValidas.includes(fileExtension)) {
                     throw new Error(`Las extensiones de imagen permitidas son: ${extensionesValidas.join(', ')}`);
@@ -71,4 +65,4 @@ const validacionesProductos = [
         })
 ]
 
-module.exports = validacionesProductos;
+module.exports = validacionesProductosEdit;

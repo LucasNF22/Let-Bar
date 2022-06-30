@@ -1,6 +1,8 @@
 <!--Head-->
 <%- include("../views/partials/head") %>
 
+<!--Script validaciones Front-->
+<!-- <script src="/js/productsValidations.js"></script> -->
 
 
     <body class="bodyCorto">
@@ -53,36 +55,66 @@
                         <input type="text" name="brand" id="brand" placeholder="Marca del producto" class="imputForm"
                             value="<%= locals.oldData ? oldData.brand : null %>">
                             <ul id="brandErrors"></ul>
+                            <% if(locals.errors && errors.brand ){ %>
+                                <div class="feedback">
+                                    <%= errors.brand.msg %>
+                                </div>
+                                <% } %>
                     </div>
                     <div>
                         <label>Tamaño del producto:</label>
                         <input type="text" name="size" id="size" placeholder="Tamaño del producto" class="imputForm"
                             value="<%= locals.oldData ? oldData.size : null %>">
                             <ul id="sizeErrors"></ul>
+                            <% if(locals.errors && errors.size ){ %>
+                                <div class="feedback">
+                                    <%= errors.size.msg %>
+                                </div>
+                                <% } %>
                     </div>
                     <div>
                         <label>Cosecha:</label>
                         <input type="number" name="years" id="years" placeholder="Año Cosecha..." class="imputForm"
                             value="<%= locals.oldData ? oldData.years : null %>">
                             <ul id="yearsErrors"></ul>
+                            <% if(locals.errors && errors.years ){ %>
+                                <div class="feedback">
+                                    <%= errors.years.msg %>
+                                </div>
+                                <% } %>
                     </div>
                     <div>
                         <label>Precio por unidad:</label>
                         <input type="number" name="priceUnit" id="priceUnit" placeholder="Precio por unidad..." class="imputForm"
                             value="<%= locals.oldData ? oldData.priceUnit : null %>">
                             <ul id="priceUnitErrors"></ul>
+                            <% if(locals.errors && errors.priceUnit ){ %>
+                                <div class="feedback">
+                                    <%= errors.priceUnit.msg %>
+                                </div>
+                                <% } %>
                     </div>
                     <div>
                         <label>Precio por cantidad:</label>
                         <input type="number" name="priceCant" id="priceCant" placeholder="Precio por cantidad..." class="imputForm"
                             value="<%= locals.oldData ? oldData.priceCant : null %>">
                             <ul id="priceCantErrors"></ul>
+                            <% if(locals.errors && errors.priceCant ){ %>
+                                <div class="feedback">
+                                    <%= errors.priceCant.msg %>
+                                </div>
+                                <% } %>
                     </div>
                     <div>
                         <label>Unidades para descuento:</label>
                         <input type="number" name="cantDisc" id="cantDisc" placeholder="Unidades para descuentos..." class="imputForm"
                             value="<%= locals.oldData ? oldData.cantDisc : null %>">
                             <ul id="cantDiscErrors"></ul>
+                            <% if(locals.errors && errors.cantDisc ){ %>
+                                <div class="feedback">
+                                    <%= errors.cantDisc.msg %>
+                                </div>
+                                <% } %>
                     </div>
                     <div>
                         <label>En oferta</label>
@@ -108,18 +140,33 @@
                         <input type="text" name="graduation" id="graduation" placeholder="Graduacion alcoholica..." class="imputForm"
                             value="<%= locals.oldData ? oldData.graduation : null %>">
                             <ul id="graduationErrors"></ul>
+                            <% if(locals.errors && errors.graduation ){ %>
+                                <div class="feedback">
+                                    <%= errors.graduation.msg %>
+                                </div>
+                                <% } %>
                     </div>
                     <div>
                         <label>Stock:</label>
                         <input type="number" name="stock" id="stock" placeholder="Stock en unidades..." class="imputForm"
                             value="<%= locals.oldData ? oldData.stock : null %>">
                             <ul id="stockErrors"></ul>
+                            <% if(locals.errors && errors.stock ){ %>
+                                <div class="feedback">
+                                    <%= errors.stock.msg %>
+                                </div>
+                                <% } %>
                     </div>
                     <div>
                         <label>Descripción:</label>
                         <textarea rows="5" name="description" id="description" placeholder="Describe tu producto..." class="imputForm"
                             value="<%= locals.oldData ? oldData.description : null %>"></textarea>
                             <ul id="descriptionErrors"></ul>
+                            <% if(locals.errors && errors.description ){ %>
+                                <div class="feedback">
+                                    <%= errors.description.msg %>
+                                </div>
+                                <% } %>
                     </div>
                     <div>
                         <label>Fotos del producto:</label>
