@@ -1,6 +1,10 @@
 
 
  <%- include("../views/partials/head") %>
+  
+
+  <!--Script validaciones Front-->
+  <script src="/js/registersValidations.js"></script>
 
 <body class="fondo">
   
@@ -18,12 +22,13 @@
 
                 
 
-                <form action="/users/register/process" method="POST" enctype="multipart/form-data">
+                <form action="/users/register/process" method="POST" enctype="multipart/form-data" id="formulario">
                     <div class="campo">
                         <label>Nombre:</label>
                         <input 
                             type="text" name="first_name" 
                             placeholder="Nombre" 
+                            id = "first_name"
                             class="control <%= locals.errors && errors.first_name ? 'control-error' : null %> " 
                             value="<%= locals.oldData ? oldData.first_name : null %>"
                             >
@@ -41,6 +46,7 @@
                         <input 
                             type="text" name="last_name" 
                             placeholder="Apellido" 
+                            id="last_name"
                             class="control <%= locals.errors && errors.last_name ? 'control-error' : null %> " 
                             value="<%= locals.oldData ? oldData.last_name : null %>"
                             >
@@ -59,6 +65,7 @@
                             type="text" 
                             name="email" 
                             placeholder='Email'
+                            id="email"
                             class="control <%= locals.errors && errors.email ? 'control-error' : null %>"
                             value="<%= locals.oldData ? oldData.email : null %>"
                             >
@@ -77,6 +84,7 @@
                             type="password" 
                             name="password" 
                             placeholder="Contraseña"
+                            id="password"
                             class="control <%= locals.errors && errors.password ? 'control-error' : null %>" 
                             >
                             <ul id="passwordsErrors"></ul>
@@ -91,9 +99,10 @@
                     <div class="campo">
                         <label>Repetir contraseña:</label>
                         <input 
-                            type="password", 
-                            name="pass_confirm", 
-                            placeholder="Repetir contraseña",
+                            type="password"
+                            name="pass_confirm"
+                            placeholder="Repetir contraseña"
+                            id="pass_confirm"
                             class="control <%= locals.errors && errors.pass_confirm ? 'control-error' : null %>" 
                             >
                             <ul id="passConfirmErrors"></ul>
@@ -111,6 +120,7 @@
                             type="tel" 
                             name="tel" 
                             placeholder="Número de teléfono"
+                            id="tel"
                             class="control <%= locals.errors && errors.tel ? 'control-error' : null %>" 
                             value="<%= locals.oldData ? oldData.tel : null %>"
                             >
@@ -128,6 +138,7 @@
                         <input 
                             type="date" 
                             name="birthday" 
+                            id="birthday"
                             class="control <%= locals.errors && errors.birthday ? 'control-error' : null %>" 
                             value="<%= locals.oldData ? oldData.birthday : null %>"
                             >
@@ -145,6 +156,7 @@
                         <input 
                             type="file" 
                             name="avatar"
+                            id="avatar"
                             class="control <%= locals.errors && errors.avatar ? 'control-error' : null %>" 
                             >
                             <ul id="avatarErrors"></ul>

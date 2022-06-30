@@ -5,14 +5,14 @@ window.onload = function () {
     let inputLastName = document.getElementById('last_name');
     let inputEmail = document.getElementById("email");
     let inputPassword = document.getElementById('password');
-    let inputPassConfirm = document.getElementById('passConfirm');
+    let inputPassConfirm = document.getElementById('pass_confirm');
     let inputTelefono = document.getElementById("tel");
     let inputFechaNacimiento = document.getElementById('birthday');
     let inputAvatar = document.getElementById('avatar');
     
 
-    // Se captura el formulario
-    let form = document.querySelector(".FormCarga");
+   // Se captura el formulario
+   let form = document.getElementById("formulario");
 
     // Se capturan los Ul de errores -------------
     let firstNameErrors = document.getElementById("firstNameErrors");
@@ -21,7 +21,7 @@ window.onload = function () {
     let passwordErrors = document.getElementById('passwordsErrors');
     let passConfirmErrors = document.getElementById("passConfirmErrors");
     let telefonoErrors = document.getElementById('telefonoErrors');
-    let fechaNaciminetoErrors = document.getElementById("fechaNacimientoErrors");
+    let fechaNacimientoErrors = document.getElementById("fechaNacimientoErrors");
     let avatarErrors = document.getElementById('avatarErrors');
 
     form.addEventListener("submit", (e) => {
@@ -43,17 +43,17 @@ window.onload = function () {
         // Validaciones de First Name
         if (inputFirstName.value === "") {
             firstNameErrors.innerHTML = "";
-            firstNamelErrors.innerHTML += '<li class="feedback">' + "Debes introducir un nombre " + '</li>';
+            firstNameErrors.innerHTML += '<li class="feedback">' + "Debes introducir un nombre " + '</li>';
             emailErrorsAcu++;
         } else {
-            firstNamelErrors.innerHTML = "";
+            firstNameErrors.innerHTML = "";
             firstNameErrorsAcu = 0;
         }
 
         // Validaciones de Last Name
-        if (inputLasttName.value === "") {
+        if (inputLastName.value === "") {
             lastNameErrors.innerHTML = "";
-            lastNamelErrors.innerHTML += '<li class="feedback">' + "Debes introducir un apellido " + '</li>';
+            lastNameErrors.innerHTML += '<li class="feedback">' + "Debes introducir un apellido " + '</li>';
             lastNameErrorsAcu++;
         } else {
             lastNameErrors.innerHTML = "";
@@ -71,28 +71,28 @@ window.onload = function () {
         }
 
         // Validaciones de Passwords
-        if (inputPasswordsvalue === "") {
+        if (inputPassword.value === "") {
             passwordErrors.innerHTML = "";
             passwordErrors.innerHTML += '<li class="feedback">' + "Debes introducir una contraseña" + '</li>';
             passwordErrorsAcu++;
         } else if (inputPassword.value.length < 3) {
-            passwordsErrors.innerHTML = ""
+            passwordErrors.innerHTML = ""
             passwordErrorsAcu++;
             passwordErrors.innerHTML += '<li class="feedback">' + "introducir una contraseña mas larga" + '</li>'
         } else {
-            passwordsErrors.innerHTML = "";
-            passwordsErrorsAcu = 0
+            passwordErrors.innerHTML = "";
+            passwordErrorsAcu = 0
         }
 
         // Validaciones de Pass Confirm
-        if (inputPassConfirmvalue === "") {
+        if (inputPassConfirm.value === "") {
             passConfirmErrors.innerHTML = "";
             passConfirmErrors.innerHTML += '<li class="feedback">' + "Debes introducir una contraseña" + '</li>';
             passConfirmErrorsAcu++;
-        } else if (inputPassConfirm.value.length < 3) {
+        } else if (inputPassConfirm.value.length < 8) {
             passConfirmErrors.innerHTML = ""
             passConfirmErrorsAcu++;
-            passConfimrErrors.innerHTML += '<li class="feedback">' + "introducir una contraseña mas larga" + '</li>'
+            passConfirmErrors.innerHTML += '<li class="feedback">' + "introducir una contraseña mas larga" + '</li>'
         } else {
             passConfirmErrors.innerHTML = "";
             passConfirmErrorsAcu = 0
@@ -103,7 +103,7 @@ window.onload = function () {
         if (inputTelefono.value === "") {
             telefonoErrors.innerHTML = "";
             telefonoErrors.innerHTML += '<li class="feedback">' + "Debes introducir una teléfono" + '</li>';
-            passwordsErrorsAcu++;
+            telefonoErrorsAcu++;
         } else if (inputTelefono.value.length < 3) {
             telefonoErrors.innerHTML = ""
             telefonoErrorsAcu++;
@@ -114,9 +114,9 @@ window.onload = function () {
         }
 
             // Validaciones de Fecha de Nacimiento
-            if ((inputFechaNacimiento.value.length =! 4) && (inputFechaNacimiento.value != "")) {
+            if (inputFechaNacimiento.value === "") {
                 fechaNacimientoErrors.innerHTML = "";
-                fechaNacimientoErrors.innerHTML += '<li class="feedback">' + "Debes introducir un año correcto Ej: 2003" + '</li>';
+                fechaNacimientoErrors.innerHTML += '<li class="feedback">' + "Debes introducir tu fecha de nacimiento" + '</li>';
                 fechaNacimientoErrorsAcu++;
             } else {
                 fechaNacimientoErrors.innerHTML = "";
@@ -125,9 +125,9 @@ window.onload = function () {
 
 
         // Validaciones de Avatar
-        let avatar = inputImagen.value;
+        let avatar = inputAvatar.value;
         let extensionesValidas = [".jpg", ".png", ".gif" ];
-        let fileExtension = imagen.substring(imagen.lastIndexOf('.'),imagen.length);
+        let fileExtension = avatar.substring(avatar.lastIndexOf('.'),avatar.length);
         console.log(fileExtension) 
         
         if (inputAvatar.value === "") {    
@@ -149,14 +149,14 @@ window.onload = function () {
          firstNameErrorsAcu +
          lastNameErrorsAcu +
          emailErrorsAcu +
-         passwordsErrorsAcu +
+         passwordErrorsAcu +
          passConfirmErrorsAcu +
          telefonoErrorsAcu +
          fechaNacimientoErrorsAcu + 
          avatarErrorsAcu +
 
 
-         console.log(inputImagen.value);
+         console.log(inputAvatar.value);
 
 
          // Si no hay errores se hace el submit del formulario
