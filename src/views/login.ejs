@@ -1,5 +1,8 @@
 <%- include("../views/partials/head") %>
 
+    <!--Script validaciones Front-->
+    <script src="/js/loginsValidations.js"></script>
+
     <body class="fondo">
 
         <%- include("../views/partials/headerGeneral") %>
@@ -21,18 +24,18 @@
 
                     <h4>Iniciar sesión</h4>
 
-                    <form action="/users/login/process" method="POST">
+                    <form action="/users/login/process" method="POST" id="form">
 
                         <div>
                             <label>Email:</label>
-                            <input type="text" name="email" placeholder="Email"
+                            <input type="text" name="email" id="email" placeholder="Email"
                                 class="control <%= locals.errors && errors.email ? 'control-error' : null %>"
                                 value="<%= locals.email %>">
-                                <ul id="emailErrors"></ul>
+                            <ul id="emailErrors"></ul>
 
-                               
-                            
-                                <% if(locals.errors && errors.email){ %>
+
+
+                            <% if(locals.errors && errors.email){ %>
                                 <div class="feedback">
                                     <%= errors.email.msg %>
                                 </div>
@@ -41,37 +44,27 @@
 
                         <div>
                             <label>Contraseña:</label>
-                            <input 
-                                type="password" 
-                                name="password" 
-                                placeholder="Contraseña"
-                                class="control <%= locals.errors && errors.password ? 'control-error' : null %>"
-                                >
-                                <ul id="passwordsErrors"></ul>
+                            <input type="password" name="password" id="password" placeholder="Contraseña"
+                                class="control <%= locals.errors && errors.password ? 'control-error' : null %>">
+                            <ul id="passwordErrors"></ul>
 
-                                
+
                             <% if(locals.errors && errors.password){ %>
                                 <div class="feedback">
                                     <%= errors.password.msg %>
                                 </div>
                                 <% } %>
                         </div>
-                                                                        
+
                         <label class="checkbox">
                             <div class="cntr">
-                                <input  
-                                type="checkbox" 
-                                id="cbx" 
-                                class="hidden-xs-up" 
-                                name="recordar"
-                                
-                                >
+                                <input type="checkbox" id="cbx" class="hidden-xs-up" name="recordar">
                                 <label for="cbx" class="cbx"></label>
-                              </div>
-                            <p>Recordarme</p> 
-                      
-                        </label> 
-                        
+                            </div>
+                            <p>Recordarme</p>
+
+                        </label>
+
                         <button type="submit" class="boton-formulario">Iniciar sesión</button>
                         </br>
                         <div class="passw">
