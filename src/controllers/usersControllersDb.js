@@ -136,8 +136,8 @@ const usersControllersDb = {
                 if (usuarioALoguearse == undefined) {
                     return res.render("login", {
                         errors: {
-                            email: {                                 /// aca si manda el mesaje si el usuario es undefined.
-                                msg: "Alguno de los datos no es válido"
+                            password: {                                 /// aca si manda el mesaje si el usuario es undefined.
+                                msg: "La contraseña no es válida"
                             }
                         },
                         email: req.body.email

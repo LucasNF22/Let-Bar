@@ -23,7 +23,7 @@ const validacionesRegister = [
                 where: {"email" : value}
             }).then(user => {
               if (user) {
-                return Promise.reject('E-mail already in use');
+                return Promise.reject('El email ya esta registrado.');
               }
             });
           }),
