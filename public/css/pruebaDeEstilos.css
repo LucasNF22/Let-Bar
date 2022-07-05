@@ -439,3 +439,113 @@ div.clasificacion input:checked~label {
 
 
 /*Fin de Menù lateral*/
+
+/* Formulario Direcciones */
+
+.subtitulo{
+    background-color: none;
+    text-shadow: 6px 6px 6px rgba(255, 255, 255, 0.4);
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.caja-formDirect{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    border: #41C1F0 2px dashed;
+    gap: 10px 10px
+}
+
+.container-forms{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 450px;
+    gap: 10px 10px
+}
+
+.input-form-Direct {
+    background-color: #bebebe;
+    color: white;
+    min-width: 20%;
+    height: 40px;
+    padding: 6px;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center; 
+    border: 2px solid white;
+    border-radius: 4px;
+    box-shadow: 3px 3px 2px rgb(255, 85, 246);
+  }
+  
+  .input-form-Direct:focus {
+    color: rgb(0, 255, 255);
+    background-color: #212121;
+    outline-color: rgb(0, 255, 255);
+    box-shadow: -3px -3px 15px rgb(0, 255, 255);
+    transition: .1s;
+    transition-property: box-shadow;
+  }
+
+  .button-form-Direct {
+    position: relative;
+    display: flex;
+    background-color: #bebebe;
+    color: white;
+    min-width: 20%;
+    width: 100%;
+    height: 40px;
+    font-family: 'Roboto Mono', monospace;
+    text-align: center; 
+    align-items: center;
+    justify-content: center;
+    border: 2px solid white;
+    border-radius: 4px;
+    box-shadow: 3px 3px 2px rgb(255, 85, 246);
+    transition: all .2s;
+  }
+
+  .button-form-Direct:active {
+    transform: scale(0.995);
+    outline-color: rgb(0, 255, 255);
+    box-shadow: 0px 0px 15px rgb(0, 255, 255);
+    transform: translate(2px, 2px);
+    
+
+  }
+
+  .button-form-Direct i {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -2PX;
+    border-radius: 4px;
+    border: 2px solid white;
+    background-color: #3A3A3A;
+    height: 40px;
+    width: 40px;
+    
+
+  }
+  .button-form-Direct img {  
+    height: 34px;
+    filter: drop-shadow(0px 0px 2px rgba(65, 193, 240, 1));
+
+  }
+  
+  .width75{
+    width: 70%;
+  }
+  .width50{
+    width: 45%;
+  }
+
+  .width25{
+    width: 25%;
+  }

@@ -24,6 +24,9 @@ const adminMiddleware = require("../middlewares/adminMiddleware");
 router.get("/register", [ guestMiddleware ], usersControllersDb.registro);  /* OK DB */
 router.post("/register/process", [ uploadFile.single('avatar'), validacionesRegister ], usersControllersDb.procesarRegistro,);  /* OK DB */
 
+//Ruta de address para storage
+
+router.post("/addressForStorage", usersControllersDb.adressStorage);
 
 // Rutas Login
 router.get("/login", [ guestMiddleware ], usersControllersDb.login);  /* OK DB */

@@ -1,6 +1,9 @@
 <!--Head-->
 <%- include("../views/partials/head") %>
 
+    <!--Script Inputs Address-->
+    <script src="/js/formularioDirecciones.js"></script>
+
     <body>
         <header class="encabezado">
 
@@ -29,20 +32,42 @@
                     </palabra-celeste>
                 </p>
             </div>
+            <form id="direcciones" action="/users/addressForStorage" class="caja-formDirect" method="POST">
 
+                <p class="subtitulo">Podés encontrarnos en:</p>
 
+                <div class="container-forms">
 
-            <div class="caja-barra">
-                <form class="busq" action="#" method="get">
-                    <input type="text" name="barra-busqueda" id="barra-busqueda"
-                        placeholder="Ingresá aqui tu dirección..." class="barra-input">
-                    <i><img src="/img/new-icons/icono-mapa.png" alt="Ver mapa"></i>
-                </form>
-                <input type="button" value="Buscar" class="boton-barra">
+                    <select name="province" id="province" class="input-form-Direct width50" placeholder="lalalal">
+                        <option value="Buenos Aires">
+                            Buenos Aires
+                        </option>
+                        <option value="Mendoza">
+                            Mendoza
+                        </option>
+                    </select>
 
-            </div>
+                    <select name="locality" id="locality" class="input-form-Direct width50">
+                    </select>
 
+                </div>
+                <div class="container-forms">
 
+                    <input type="text" name="street" id="street" class="input-form-Direct width75" placeholder="Calle">
+
+                    <input type="number" name="street-number" id="street_number" class="input-form-Direct width25" placeholder="Altura">
+
+                </div>
+                <div class="container-forms">
+
+                    <button type="submit" class="button-form-Direct">Buscar en tu dirección    : <i> <img src="/img/new-icons/icono-mapa.png" alt="Ver mapa"></i></button>
+
+                </div>
+                <div id="msgError">
+
+                </div>
+
+            </form>
 
         </header>
 
@@ -209,5 +234,3 @@
         <%- include("../views/partials/footer") %>
 
     </body>
-
-    

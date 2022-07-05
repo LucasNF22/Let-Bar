@@ -241,6 +241,19 @@ const usersControllersDb = {
 
                 res.redirect("/users/listadousuarios")
             })
+    },
+
+    adressStorage: (req, res)=>{
+
+       /* let data = {
+            province: req.body.province,
+            locality: req.body.locality,
+            street: req.body.street,
+            street_number: req.body.street_number
+        }
+
+        localStorage.setItem("adress", data);*/
+        res.redirect("/home");
     }
 }
 
