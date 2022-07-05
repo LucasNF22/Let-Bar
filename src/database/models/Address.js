@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
         comments: {
             type: dataTypes.STRING,
         },
-        alias: {
+        address_alias: {
             type: dataTypes.STRING,
         },
         user_id: {

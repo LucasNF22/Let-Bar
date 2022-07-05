@@ -3,9 +3,9 @@ const router = express.Router();
 const usersAPIController = require('../../controllers/api/usersAPIController');
 
 //Rutas
+router.get ('/' , usersAPIController.list)
 
-// armar las rutas de API-Users
 
-
+router.get ('/:id' , usersAPIController.detail)
 
 module.exports = router;

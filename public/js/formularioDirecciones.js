@@ -16,7 +16,8 @@ window.onload = function () {
 
     let mend = '<option value="Mendoza Capital">' + 'Mendoza Capital' + '</option>' +
         '<option value="Uspallata">' + 'Uspallata' + '</option>' +
-        '<option value="San Rafael">' + 'San Rafael' + '</option>'
+        '<option value="San Rafael">' + 'San Rafael' + '</option>' +
+        '<option value="Tupungato">' + 'Tupungato' + '</option>'
     
     cargaLocalidad();
 
