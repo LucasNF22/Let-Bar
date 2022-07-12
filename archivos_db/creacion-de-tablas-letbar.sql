@@ -139,3 +139,15 @@ alter table products  change graduation graduation DECIMAL(5,1);
 
 alter table products  change cantValoration cantValoration DECIMAL(5,1);
 
+ALTER TABLE shopping_carts 
+ADD cart_id INT ;
+
+ALTER TABLE shopping_carts 
+ADD price DECIMAL (6,2),
+ADD cant INT,
+ADD subTotal DECIMAL (6,2),
+ADD state INT,
+ADD user_id INT;
+
+ALTER TABLE purchases  
+ADD purchase_id INT ;

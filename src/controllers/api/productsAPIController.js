@@ -59,37 +59,7 @@ const productsAPIController = {
             })
     },
 
-    productosPorCategoria: (req, res) => {
-        let pedidoProductos = db.Product.findAll();
-        let pedidoCategorias = db.Product_category.findAll();
-        let cats = [];
-
-        Promise.all([pedidoProductos, pedidoCategorias])
-            .then(([productosDb, categoriasDb]) => {
-
-                let categoriaInfo = {};
-
-                categoriasDb.forEach(categoria => {
-                    categoriaInfo = {
-                        id: categoria.id,
-                        name: categoria.name,
-                        category: categoria.category,
-                        productCount: 0
-                    }
-
-                    productosDb.forEach(producto => {
-                        if (producto.category_id == categoria.id) {
-                            categoriaInfo.productCount++
-                        }
-                    })
-
-
-
-                    cats.push(categoriaInfo);
-                })
-                return cats
-            })
-    }
+ 
 
 }
 
