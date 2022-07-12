@@ -33,8 +33,8 @@ app.use(express.static(publicPath));
     console.log("Servidor listo en el puerto 3000...");
 }) ; */
 
-app.listen(process.env.PORT || 3000, () =>{
-    console.log("Servidor listo en el puerto 3000...");
+app.listen(process.env.PORT || 3001, () =>{
+    console.log("Servidor listo en el puerto 3001...");
 } );
 
 

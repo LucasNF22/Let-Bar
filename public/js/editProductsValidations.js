@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
     // Se capturan las variables -------------
     let inputName = document.getElementById("name");
@@ -172,4 +172,3 @@ window.onload = function () {
 
     })
 
-}
