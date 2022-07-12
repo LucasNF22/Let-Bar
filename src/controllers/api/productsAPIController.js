@@ -38,8 +38,9 @@ const productsAPIController = {
                         name: producto.name,
                         description: producto.description,
                         relations: {
-                            cetagory: producto.categories
+                            category: producto.categories
                         },
+                    
                         detail: "/api/products/" + producto.id
 
                     }
@@ -57,7 +58,39 @@ const productsAPIController = {
                 }
                 res.json(respuesta);
             })
-    },
+        },
+            detail: (req, res) => {
+                db.Product.findByPk(req.params.id, {
+                    include : ["categories"]
+
+        
+                }) 
+                    .then(producto => {
+                        //delete user.dataValues.password
+                        console.log(producto)
+                        let urlImageProducto = "http://localhost:3001/img/products/" + producto.image 
+                        let categoria = producto.categories
+                        delete producto.dataValues.categories
+
+                        let respuesta = {
+                            meta: {
+                                status: 200,
+                                url: "http://localhost:3001/api/products/detail/" + producto.id
+
+                            },
+                            relations: {
+                                category: categoria
+                            },
+
+
+                            data: {producto, urlImageProducto}
+                        }
+
+
+                        res.json(respuesta);
+                    })
+
+                }
 
  
 
