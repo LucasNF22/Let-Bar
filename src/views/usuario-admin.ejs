@@ -32,40 +32,41 @@
                 <div class="cont-producto-edit">
 
 
-                    
-                        <!--Tajeta para editar Usuario-->
-                        <div class="tarjeta-producto-edit">
+
+                    <!--Tajeta para editar Usuario-->
+                    <div class="tarjeta-producto-edit">
+                        <div>
+                            <img src="/img/users/avatar/<%= usuario.avatar %>" alt="" class="img-edit">
+                        </div>
+                        <div>
                             <div>
-                                <img src="/img/users/avatar/<%= usuario.avatar %>" alt="" class="img-edit">
+                                ID:
                             </div>
                             <div>
-                                <div>
-                                    ID:
-                                </div>
-                                <div>
-                                    Nombre:
-                                </div>
-                                <div>
-                                    categoria:
-                                </div>
+                                Nombre:
                             </div>
+                            <div>
+                                categoria:
+                            </div>
+                        </div>
 
-                            <div class="flex-wrap overflow">
+                        <div class="flex-wrap overflow">
+                            <div>
+
                                 <div>
-
-                                    <div>
-                                        <%= usuario.id %>
-                                    </div>
-
-
+                                    <%= usuario.id %>
                                 </div>
-                                <div class="user-edit">
-                                    <div>
-                                        <%= usuario.first_name + " " + usuario.last_name %>
-                                    </div>
 
-                                    <div>
-                                        <form action="/users/usuario-admin/<%=usuario.id%>/process?_method=PUT" method="POST">
+
+                            </div>
+                            <div class="user-edit">
+                                <div>
+                                    <%= usuario.first_name + " " + usuario.last_name %>
+                                </div>
+
+                                <div>
+                                    <form action="/users/usuario-admin/<%=usuario.id%>/process?_method=PUT"
+                                        method="POST">
                                         <select name="category" class="imputForm">
                                             <% categorias.forEach(categoria=> {
                                                 if(categoria.id == usuario.category_id){ %>
@@ -77,31 +78,23 @@
                                                         <%= categoria.user_type %>
                                                     </option>
                                                     <% } } ) %>
-                
+
                                         </select>
-                                   
-                                    </div>
 
                                 </div>
+
                             </div>
-                            
-                                <button type="submit" class="boton-editar-prod">Editar</button>
-                            </form>
-                            
                         </div>
 
-                       
+                        <button type="submit" class="boton-editar-prod">Editar</button>
+                        </form>
 
-
+                    </div>
 
 
                 </div>
 
             </section>
-
-
-
-
 
 
         </main>

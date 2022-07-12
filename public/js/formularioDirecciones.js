@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
     let form = document.getElementById("direcciones");
 
@@ -33,7 +33,6 @@ window.onload = function () {
     }   
 
     selectProvince.addEventListener("click", () => {
-        console.log("click");
 
         if (selectProvince.value === "Buenos Aires") {
 
@@ -72,7 +71,7 @@ window.onload = function () {
             localStorage.setItem("street", inputStreet.value);
             localStorage.setItem("street_number", inputStreet_number.value);
 
-           console.log(localStorage)
+           
            form.submit();
         }else{
             msgError.innerHTML = '<h4 class="feedback"> Introduce tu dirección</h4>'
@@ -81,4 +80,3 @@ window.onload = function () {
     })
 
 
-}

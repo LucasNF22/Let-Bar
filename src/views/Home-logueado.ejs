@@ -1,6 +1,7 @@
 <!--Head-->
 <%- include("../views/partials/head") %>
 
+
     <body>
         <%- include("../views/partials/headerGeneral") %>
             <main class="backgris">
@@ -43,9 +44,86 @@
                     </a>
 
 
-
                 </section>
 
+                <!-- inicio Pop Up de producto-->
+                <% let id = 0 %>
+                <% productos.forEach(ProMod=>{ if(ProMod.id == 30){ %>
+                <input type="checkbox" id="popUp">
+                <div class="fondo-popUp">
+                    <div class="cont-popUp">
+                        <div class="tarjeta-popUp">
+                            <label for="popUp" class="boton-cerrar-popUp"><i
+                                    class="fa-solid fa-xmark"></i></label>
+                            <div class="cont-img">
+                                <img src="/img/products/<%= ProMod.image %>" alt=""
+                                    class="img-popUp">
+                                <div>
+                                    <h4>
+                                        <%= ProMod.name %>
+                                    </h4>
+                                </div>
+                            </div>
+                            
+                            <div class="renglon-popUp">
+                                <div class="renglon-tit-popUp">Precio:</div>
+                                <div class="renglon-cont-popUp">$<%= ProMod.priceUnit %>
+                                </div>
+                            </div>
+
+                            <div class="renglon-popUp">
+                                <div class="renglon-tit-popUp">Tamaño:</div>
+                                <div class="renglon-cont-popUp">
+                                    <%= ProMod.size %>
+                                </div>
+                            </div>
+                            <div class="renglon-popUp">
+                                <div class="renglon-tit-popUp">Valoracion:</div>
+                                <div class="renglon-cont-popUp">
+                                    <%= ProMod.valoration %> <i class="fa-regular fa-star"></i>
+                                </div>
+                            </div>
+                            <div class="renglon-popUp">
+                                <div class="renglon-tit-popUp">Descripcion:</div>
+                            </div>
+                            
+                                <div class="renglon-cont-popUp desc-popUp">
+                                    <%= ProMod.description %>
+                                
+                            </div>
+                            <div class="renglon-popUp">
+                                <div class="renglon-tit-popUp-val">Valora este producto:</div>
+                                
+                            </div>
+                            <div class="renglon-cont-popUp-val">
+                                <form action="/productos/valorar/<%= ProMod.id %>?_method=PUT"
+                                    method="POST" class="valoracion-popUp">
+                                    <div class="clasificacion">
+                                        <input id="radio1" type="radio" name="estrellas" value="5">
+                                        <label for="radio1"><i class="fa-regular fa-star"></i></label>
+                                        <input id="radio2" type="radio" name="estrellas" value="4">
+                                        <label for="radio2"><i class="fa-regular fa-star"></i></label>
+                                        <input id="radio3" type="radio" name="estrellas" value="3">
+                                        <label for="radio3"><i class="fa-regular fa-star"></i></label>
+                                        <input id="radio4" type="radio" name="estrellas" value="2">
+                                        <label for="radio4"><i class="fa-regular fa-star"></i></label>
+                                        <input id="radio5" type="radio" name="estrellas" value="1">
+                                        <label for="radio5"><i class="fa-regular fa-star"></i></label>
+                                    </div>
+                                    <button type="submit" class="boton-valoracion correcion-boton">Valorar</button>
+                                </form>
+                            </div>
+
+                            <a href="/productos/detalle-producto/<%=ProMod.id%>" class="boton-verMas-popUp">Ver mas</a>
+                            
+                            
+
+                        </div>
+                    </div>
+                </div>
+                <% }}) %>
+                <!-- FIN Pop Up de producto-->
+                
                 <% categorias.forEach(categoria=>{ %>
                     <!--Tajeta de categoria-->
                     <section class="tarjeta-categoria ">
@@ -64,11 +142,11 @@
                                     <!--Tajeta de producto-->
                                     <article class="tarjeta-art-cat">
 
-                                        <label for="popUp" href="/productos/detalle-producto/<%= producto.id %>">
-                                            <div class="caja-art-cat-sup">
-                                                <img src="/img/products/<%= producto.image %>" alt="">
+                                        <div class="caja-art-cat-sup">
+                                                <label for="popUp" class="click-para-modal">
+                                                <img src="/img/products/<%= producto.image %>" alt="" id="<%= producto.id %>">
+                                            </label>
                                             </div>
-                                        </label>
                                         <div class="caja-art-inf-cat">
 
                                             <div class="caja-art-inf-izq">
@@ -85,80 +163,7 @@
                                         </div>
                                     </article>
 
-                                    <!-- inicio Pop Up de producto-->
-                                    <input type="checkbox" id="popUp">
-                                    <div class="fondo-popUp">
-                                        <div class="cont-popUp">
-                                            <div class="tarjeta-popUp">
-                                                <label for="popUp" class="boton-cerrar-popUp"><i
-                                                        class="fa-solid fa-xmark"></i></label>
-                                                <div class="cont-img">
-                                                    <img src="/img/products/<%= producto.image %>" alt=""
-                                                        class="img-popUp">
-                                                    <div>
-                                                        <h4>
-                                                            <%= producto.name %>
-                                                        </h4>
-                                                    </div>
-                                                </div>
-                                                
-                                                <div class="renglon-popUp">
-                                                    <div class="renglon-tit-popUp">Precio:</div>
-                                                    <div class="renglon-cont-popUp">$<%= producto.priceUnit %>
-                                                    </div>
-                                                </div>
-
-                                                <div class="renglon-popUp">
-                                                    <div class="renglon-tit-popUp">Tamaño:</div>
-                                                    <div class="renglon-cont-popUp">
-                                                        <%= producto.size %>
-                                                    </div>
-                                                </div>
-                                                <div class="renglon-popUp">
-                                                    <div class="renglon-tit-popUp">Valoracion:</div>
-                                                    <div class="renglon-cont-popUp">
-                                                        <%= producto.valoration %> <i class="fa-regular fa-star"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="renglon-popUp">
-                                                    <div class="renglon-tit-popUp">Descripcion:</div>
-                                                </div>
-                                                
-                                                    <div class="renglon-cont-popUp desc-popUp">
-                                                        <%= producto.description %>
-                                                    
-                                                </div>
-                                                <div class="renglon-popUp">
-                                                    <div class="renglon-tit-popUp-val">Valora este producto:</div>
-                                                    
-                                                </div>
-                                                <div class="renglon-cont-popUp-val">
-                                                    <form action="/productos/valorar/<%= producto.id %>?_method=PUT"
-                                                        method="POST" class="valoracion-popUp">
-                                                        <div class="clasificacion">
-                                                            <input id="radio1" type="radio" name="estrellas" value="5">
-                                                            <label for="radio1"><i class="fa-regular fa-star"></i></label>
-                                                            <input id="radio2" type="radio" name="estrellas" value="4">
-                                                            <label for="radio2"><i class="fa-regular fa-star"></i></label>
-                                                            <input id="radio3" type="radio" name="estrellas" value="3">
-                                                            <label for="radio3"><i class="fa-regular fa-star"></i></label>
-                                                            <input id="radio4" type="radio" name="estrellas" value="2">
-                                                            <label for="radio4"><i class="fa-regular fa-star"></i></label>
-                                                            <input id="radio5" type="radio" name="estrellas" value="1">
-                                                            <label for="radio5"><i class="fa-regular fa-star"></i></label>
-                                                        </div>
-                                                        <button type="submit" class="boton-valoracion correcion-boton">Valorar</button>
-                                                    </form>
-                                                </div>
-
-                                                <a href="/productos/detalle-producto/<%=producto.id%>" class="boton-verMas-popUp">Ver mas</a>
-                                                
-                                                
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- FIN Pop Up de producto-->
+                                    
 
                                     <% }}) %>
 
@@ -173,11 +178,10 @@
                     <!--Tajeta de categoria-->
                     <% }) %>
 
-
-
-
             </main>
 
+            <!--Script modal-->
+            <script src="/js/modalProducto.js"></script>
 
             <!--Footer-->
             <%- include("../views/partials/footer") %>

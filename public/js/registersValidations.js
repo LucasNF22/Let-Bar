@@ -1,4 +1,3 @@
-window.onload = function () {
 
     // Se capturan las variables -------------
     let inputFirstName = document.getElementById("first_name");
@@ -153,10 +152,7 @@ window.onload = function () {
          passConfirmErrorsAcu +
          telefonoErrorsAcu +
          fechaNacimientoErrorsAcu + 
-         avatarErrorsAcu +
-
-
-         console.log(inputAvatar.value);
+         avatarErrorsAcu; 
 
 
          // Si no hay errores se hace el submit del formulario
@@ -166,4 +162,3 @@ window.onload = function () {
  
      })
  
- }

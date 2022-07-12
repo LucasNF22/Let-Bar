@@ -1,4 +1,3 @@
-window.onload = function () {
 
     // Se capturan las variables -------------
     let inputName = document.getElementById("name");
@@ -195,11 +194,6 @@ window.onload = function () {
             descripcionErrorsAcu +
             imagenErrorsAcu;
 
-        
-        
-        console.log(inputImagen.value);
-
-
         // Si no hay errores se hace el submit del formulario
         if (AcuErrors === 0) {
             form.submit();
@@ -207,4 +201,3 @@ window.onload = function () {
 
     })
 
-}

@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
     // Se capturan las variables -------------
     let inputEmail = document.getElementById("email");
@@ -59,4 +59,3 @@ window.onload = function () {
 
     })
 
-}

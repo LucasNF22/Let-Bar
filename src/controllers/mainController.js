@@ -11,6 +11,7 @@ const mainController = {
         Promise.all([pedidoProductos, pedidoCategorias])
             .then(([productosDb, categoriasDb]) => {
 
+                
                 res.render("Home-logueado", { productos: productosDb, categorias: categoriasDb })
             })
     },

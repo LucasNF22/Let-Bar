@@ -1,4 +1,4 @@
-window.onload = function () {
+
 
     // Se capturan las variables -------------
     let inputName = document.getElementById("name");
@@ -137,7 +137,7 @@ window.onload = function () {
             descripcionErrors.innerHTML = "";
             descripcionErrors.innerHTML += '<li class="feedback">' + "Debes introducir una descripción" + '</li>';
             descripcionErrorsAcu++;
-        }else if(inputBrand.value.length < 20){
+        }else if(inputDescripcion.value.length < 20){
             descripcionErrors.innerHTML = "";
             descripcionErrors.innerHTML += '<li class="feedback">' + "Debes introducir una descripción más larga" + '</li>';
             descripcionErrorsAcu++;
@@ -172,4 +172,3 @@ window.onload = function () {
 
     })
 
-}
