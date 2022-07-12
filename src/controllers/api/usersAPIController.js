@@ -37,12 +37,13 @@ const usersAPIController = {
         }) 
             .then(user => {
                 delete user.dataValues.password
+                let urlImage = "http://localhost:300/img/users/avatar/" + user.avatar 
                 let respuesta = {
                     meta: {
                         status: 200,
                         url: "/api/users/" + user.id
                     },
-                    data: user
+                    data: {user, urlImage}
                 }
                 res.json(respuesta)
             })
