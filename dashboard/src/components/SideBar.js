@@ -1,15 +1,17 @@
 import React from 'react';
+import {Link, Route, Switch} from 'react-router-dom';
 import logo from '../assets/images/logo-letbar-sin-fondo.png';
+
+import TopBar from './TopBar';
 import ContentWrapper from './ContentWrapper';
 import CategoryList from './CategoryList';
 import ProductsList from "./ProductsList";
-import LastMovieInDb from './LastMovieInDb';
+import LastProduct from './LastProduct';
+import ProductDetail from './ProductDetail';
 
 import ContentRowMovies from './ContentRowMovies';
-import NotFound from './NotFound';
-import {Link, Route, Switch} from 'react-router-dom';
-import TopBar from './TopBar';
 import SearchMovies from './SearchMovies';
+import NotFound from './NotFound';
 
 function SideBar(){
     return(
@@ -43,23 +45,19 @@ function SideBar(){
                 {/*<!-- Nav Item - Pages -->*/}
                 <li className="nav-item luz">
                 <Link className="nav-link text-white" to="/CategoryList">
-                <i class="fa-solid fa-shop"></i>
+                <i className="fa-solid fa-shop"></i>
                         <span>Categorias</span>
                     </Link>
                 </li>
                 <li className="nav-item luz">
                 <Link className="nav-link text-white" to="/ProductsList">
-                <i class="fa-solid fa-tag"></i>
+                <i className="fa-solid fa-tag"></i>
                         <span>Productos</span>
                     </Link>
                 </li>
 
-                {/*<!-- Nav Item - Charts -->*/}
-                <li className="nav-item luz">
-                    <Link className="nav-link text-white" to="/LastMovieInDb">
-                        <i class="fa-solid fa-shop"></i>
-                        <span>Charts</span></Link>
-                </li>
+                
+                
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item luz">
@@ -105,18 +103,20 @@ function SideBar(){
                 <Route path="/CategoryList">
                     <CategoryList />
                 </Route>
-                <Route path="/ProductsList">
+                <Route exact path="/ProductsList">
                     <ProductsList />
                 </Route>
-                <Route path="/LastMovieInDb">
-                    <LastMovieInDb />
+                <Route exact path="/productsList/detail/:id">
+                    <ProductDetail />
                 </Route>
+                
                 <Route path="/ContentRowMovies">
                     <ContentRowMovies />
                 </Route>
                 <Route path="/SearchMovies">
                     <SearchMovies />
                 </Route>
+                
                 <Route component={NotFound} />
             </Switch>
                 </div>

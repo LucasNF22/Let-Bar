@@ -1,15 +1,34 @@
 import React from 'react';
-import imagenFondo from '../assets/images/404.png';
+import { Link } from 'react-router-dom';
+import imgError from '../assets/images/logo-error-404.png';
+import imgIzq from '../assets/images/fondo-variable-01.png';
+import imgDer from '../assets/images/fondo-variable-02.png';
 
-function NotFound(){
-    return(
-        <div className="text-center">
-            <h1>404 Not Found</h1>
-            <img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 30 +'rem'}} src={imagenFondo} alt=" Star Wars - Mandalorian "/>
-        </div>
-        
+function NotFound() {
+    return (
+        <>
+            <div className="body-error-404 " >
+
+                <img src={imgIzq} alt="" className="wall-izq" />
+                <img src={imgDer} alt="" className="wall-der" />
+
+                <div className="erorr-404 parpadea">
+                    <img src={imgError} alt="" />
+
+                </div>
+                <div>
+                    <Link to="/" >
+                        <button className="button-voler"> Volver a inicio </button>
+                    </Link>
+                </div>
+
+
+
+
+            </div>
+        </>
     )
-} 
+}
 
 
 export default NotFound;

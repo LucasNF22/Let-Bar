@@ -1,4 +1,5 @@
 const db = require('../../database/models');
+const { Sequelize } = require('sequelize');
 
 const productsAPIController = {
 
@@ -33,12 +34,12 @@ const productsAPIController = {
                 })
 
                 productosDb.forEach(producto => {
-                    
+
                     let urlImageProducto = "http://localhost:3001/img/products/" + producto.dataValues.image
                     let data = {
                         id: producto.id,
                         name: producto.name,
-                        image: urlImageProducto, 
+                        image: urlImageProducto,
                         description: producto.description,
                         relations: {
                             category: producto.categories
@@ -56,46 +57,80 @@ const productsAPIController = {
                         url: "api/products"
                     },
                     count: productosDb.length,
-                    countByCategory:  cats,
+                    countByCategory: cats,
                     data: productosArray
                 }
                 res.json(respuesta);
             })
-        },
-            detail: (req, res) => {
-                db.Product.findByPk(req.params.id, {
-                    include : ["categories"]
-
-        
-                }) 
-                    .then(producto => {
-                        //delete user.dataValues.password
-                        console.log(producto)
-                        let urlImageProducto = "http://localhost:3001/img/products/" + producto.image 
-                        let categoria = producto.categories
-                        delete producto.dataValues.categories
-
-                        let respuesta = {
-                            meta: {
-                                status: 200,
-                                url: "http://localhost:3001/api/products/detail/" + producto.id
-
-                            },
-                            relations: {
-                                category: categoria
-                            },
+    },
+    detail: (req, res) => {
+        db.Product.findByPk(req.params.id, {
+            include: ["categories"]
 
 
-                            data: {producto, urlImageProducto}
-                        }
+        })
+            .then(producto => {
+                //delete user.dataValues.password
+                let urlImageProducto = "http://localhost:3001/img/products/" + producto.image
+                let categoria = producto.categories
+                delete producto.dataValues.categories
 
+                let prod = producto.dataValues
+                let respuesta = {
+                    meta: {
+                        status: 200,
+                        url: "http://localhost:3001/api/products/detail/" + producto.id
 
-                        res.json(respuesta);
-                    })
+                    },
+                    relations: {
+                        category: categoria
+                    },
 
+                    data: { urlImageProducto, ...prod }
                 }
 
- 
+
+
+                res.json(respuesta);
+            })
+
+    },
+
+    last: (req, res) => {
+        db.Product.findAll({ 
+            order: [["id", 'DESC']]
+        })
+        .then(productosDB => {
+            //delete user.dataValues.password
+            
+           let producto = productosDB[0] 
+            
+            let urlImageProducto = "http://localhost:3001/img/products/" + producto.image
+            let categoria = producto.categories
+            delete producto.dataValues.categories
+
+            let prod = producto.dataValues
+            let respuesta = {
+                meta: {
+                    status: 200,
+                    url: "http://localhost:3001/api/products/detail/" + producto.id
+
+                },
+                relations: {
+                    category: categoria
+                },
+
+                data: { urlImageProducto, ...prod }
+            }
+
+
+
+            res.json(respuesta);
+        })
+        
+    }
+
+
 
 }
 

@@ -114,10 +114,7 @@ const usersControllersDb = {
                         if (req.body.recordar) {
                             res.cookie("emailUsuario", req.body.email, { maxAge: 1000 * 60 })
                         }
-                        console.log("////////////////////////");
-                        console.log(usuarioALoguearse.dataValues)
-                        console.log("////////////////////////");
-                        console.log(req.window.document);
+                        
 
                         res.redirect("/Home");
                         return;

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import { Link, Route, Switch } from 'react-router-dom';
 import ProductCard from "./ProductCard";
+import ProductDetail from './ProductDetail';
 
 function ProductsList() {
 
@@ -22,19 +23,20 @@ function ProductsList() {
             .catch(error => console.log(error))
     }, [])
 
-    console.log(productList);
+    
     return (
         <React.Fragment>
-            <main className="main-producto-edit">
-                <a href="/users/panel-control">
-                    <div className="boton-editar-prod"> Atras </div>
-                </a>
-
+            <main className="main-producto-edit ">
+                <Link className="nav-link text-white" to="/">
+                    <div className="boton-volver"> Atras </div>
+                </Link>
+            <div className="row">
+                
                 {
-                    listCategory.map((categoria, index) => {
+                    listCategory.map((categoria, index) => { 
 
                         return ( 
-
+<div className="col-lg-6 mb-4">
                             <section className="tarjeta-categoria-edit ">
                                 <div className="tarj-cat-sup padding20">
                                     <div>
@@ -45,8 +47,8 @@ function ProductsList() {
 
                                     {/*<!--Tajeta para editar producto-->*/}
                                     {
-                                        productList.map((product, index) => {
-                                           console.log(product)
+                                        productList.map((product, index) => { 
+                                            
                                             if (product.relations.category.id == categoria.id) {
                                                 return <ProductCard producto={product} key={product + index} />
                                             }
@@ -56,11 +58,13 @@ function ProductsList() {
 
                                 </div>
                             </section>
+                            </div>
                         )
                     })
                 }
 
                 {/*<!-- Fin Tajeta de categoria-->*/}
+                </div>
             </main>
         </React.Fragment>
     )

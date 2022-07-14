@@ -7,7 +7,7 @@ const productsAPIController = require('../../controllers/api/productsAPIControll
 //Listado de productos
 router.get("/", productsAPIController.list)
 router.get("/detail/:id", productsAPIController.detail)
-
+router.get("/lastInDB", productsAPIController.last)
 // para pruebas
 
 
