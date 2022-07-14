@@ -33,15 +33,18 @@ const productsAPIController = {
                 })
 
                 productosDb.forEach(producto => {
+                    
+                    let urlImageProducto = "http://localhost:3001/img/products/" + producto.dataValues.image
                     let data = {
                         id: producto.id,
                         name: producto.name,
+                        image: urlImageProducto, 
                         description: producto.description,
                         relations: {
                             category: producto.categories
                         },
-                    
-                        detail: "/api/products/" + producto.id
+                        stock: producto.stock,
+                        detail: "/api/products/detail/" + producto.id
 
                     }
                     productosArray.push(data)

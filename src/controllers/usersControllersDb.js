@@ -95,19 +95,6 @@ const usersControllersDb = {
 
         let usuarioALoguearse;
 
-        /*if (users == "") {
-
-            users = [];
-        } else {
-            users = JSON.parse(userJSON);
-        }
-        */
-
-        // !!!! de aca para abajo tenemos que separar la validacion del email, y la de el password
-        //      para poder mandar primero el mensaje de "el email no esta en la base de datos", 
-        //      y si lo encuentra y la password no coincide mostrar el mensaje de "credenciales invalidas" ¡¡¡¡¡
-
-
         db.User.findOne({
 
             where: {
@@ -122,11 +109,16 @@ const usersControllersDb = {
                     let usuarioDb = usuario
                     if (bcrypt.compareSync(req.body.password, usuarioDb.password)) {
                         usuarioALoguearse = usuarioDb;
-                        delete usuarioALoguearse.password;
+                        delete usuarioALoguearse.dataValues.password;
                         req.session.usuarioLogueado = usuarioALoguearse;
                         if (req.body.recordar) {
                             res.cookie("emailUsuario", req.body.email, { maxAge: 1000 * 60 })
                         }
+                        console.log("////////////////////////");
+                        console.log(usuarioALoguearse.dataValues)
+                        console.log("////////////////////////");
+                        console.log(req.window.document);
+
                         res.redirect("/Home");
                         return;
                     }
@@ -145,7 +137,6 @@ const usersControllersDb = {
 
                 }
             })
-
 
     },
 
@@ -178,14 +169,14 @@ const usersControllersDb = {
     listadoUsuarios: (req, res) => {
         let pedidoUsuarios = db.User.findAll();
         let pedidoCategorias = db.User_category.findAll();
-        
+
         Promise.all([pedidoUsuarios, pedidoCategorias])
             .then(([usuariosDb, categoriasDb]) => {
 
                 res.render("listadoDeUsuarios", { usuarios: usuariosDb, categorias: categoriasDb });
             })
-        
-        
+
+
     },
 
 
@@ -231,7 +222,7 @@ const usersControllersDb = {
     },
 
     eliminarUsuario: (req, res) => {
-        
+
         db.User.destroy({
             where: {
                 id: req.params.id
@@ -243,16 +234,16 @@ const usersControllersDb = {
             })
     },
 
-    adressStorage: (req, res)=>{
+    adressStorage: (req, res) => {
 
-       /* let data = {
-            province: req.body.province,
-            locality: req.body.locality,
-            street: req.body.street,
-            street_number: req.body.street_number
-        }
-
-        localStorage.setItem("adress", data);*/
+        /* let data = {
+             province: req.body.province,
+             locality: req.body.locality,
+             street: req.body.street,
+             street_number: req.body.street_number
+         }
+ 
+         localStorage.setItem("adress", data);*/
         res.redirect("/home");
     }
 }
