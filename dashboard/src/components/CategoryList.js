@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import Category from './Category';
 
-function GenresInDb() {
+function CategoryList() {
 
-    const [categoryList, setGenres] = useState([])
+    const [categoryList, setCategoryList] = useState([])
 
 
     useEffect(() => {
@@ -12,9 +12,9 @@ function GenresInDb() {
                 // console.log(respuesta)
                 return respuesta.json()
             })
-            .then(genres => {
-                //console.log(genres)
-                setGenres(genres.data)
+            .then(data => {
+                
+                setCategoryList(data.countByCategory)
             })
             .catch(error => console.log(error))
     }, [])
@@ -29,7 +29,7 @@ function GenresInDb() {
     return (
         <React.Fragment>
             {/*<!-- Categories in DB -->*/}
-            <div className="col-lg-6 mb-4">
+            <div className="col-lg-6 mb-4 ">
                 <div className="card shadow mb-4">
                     <div className="card-header py-3 ">
                         <h6 ref={h6} onMouseOver={cambioColor} onMouseOut={cambioColor} className="m-0 font-weight-bold text-gray-800 ">Genres in Data Base</h6>
@@ -37,8 +37,8 @@ function GenresInDb() {
                     <div className="card-body fondoCaja">
                         <div className="row">
                             {
-                                categoryList.map((genre, index) => {
-                                    return <Category generos={genre} key={genre + index} />
+                                categoryList.map((categoria, index) => {
+                                    return <Category categoria={categoria} key={categoria + index} />
                                 })
                             }
                         </div>
@@ -50,4 +50,4 @@ function GenresInDb() {
 }
 
 
-export default GenresInDb;
+export default CategoryList;

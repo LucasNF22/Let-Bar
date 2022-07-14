@@ -1,8 +1,10 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import logo from '../assets/images/logo-letbar-sin-fondo.png';
 import ContentWrapper from './ContentWrapper';
 import CategoryList from './CategoryList';
+import ProductsList from "./ProductsList";
 import LastMovieInDb from './LastMovieInDb';
+
 import ContentRowMovies from './ContentRowMovies';
 import NotFound from './NotFound';
 import {Link, Route, Switch} from 'react-router-dom';
@@ -13,12 +15,12 @@ function SideBar(){
     return(
         <React.Fragment>
             {/*<!-- Sidebar -->*/}
-            <ul className="navbar-nav bg-gradient-secondary sidebar sidebar-dark accordion" id="accordionSidebar">
+            <ul className="navbar-nav fondo-sideBar sidebar sidebar-dark accordion" id="accordionSidebar">
 
                 {/*<!-- Sidebar - Brand -->*/}
-                <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                    <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
+                <a className="sidebar-brand d-flex align-items-center justify-content-center " href="/">
+                    <div className="sidebar-brand-icon altura100">
+                        <img className="logo" src={logo} alt="Digital House"/>
                     </div>
                 </a>
 
@@ -27,40 +29,46 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
-                    <Link className="nav-link" to="/">
+                    <Link className="nav-link luz" to="/">
                         <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></Link>
+                        <span>Dashboard - Let-Bar</span></Link>
                 </li>
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider"/>
 
                 {/*<!-- Heading -->*/}
-                <div className="sidebar-heading">Actions</div>
+                <div className="sidebar-heading">Menu</div>
 
                 {/*<!-- Nav Item - Pages -->*/}
-                <li className="nav-item">
-                <Link className="nav-link" to="/CategoryList">
-                        <i className="fas fa-fw fa-folder"></i>
-                        <span>Pages</span>
+                <li className="nav-item luz">
+                <Link className="nav-link text-white" to="/CategoryList">
+                <i class="fa-solid fa-shop"></i>
+                        <span>Categorias</span>
+                    </Link>
+                </li>
+                <li className="nav-item luz">
+                <Link className="nav-link text-white" to="/ProductsList">
+                <i class="fa-solid fa-tag"></i>
+                        <span>Productos</span>
                     </Link>
                 </li>
 
                 {/*<!-- Nav Item - Charts -->*/}
-                <li className="nav-item">
-                    <Link className="nav-link" to="/LastMovieInDb">
-                        <i className="fas fa-fw fa-chart-area"></i>
+                <li className="nav-item luz">
+                    <Link className="nav-link text-white" to="/LastMovieInDb">
+                        <i class="fa-solid fa-shop"></i>
                         <span>Charts</span></Link>
                 </li>
 
                 {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/ContentRowMovies">
+                <li className="nav-item luz">
+                <Link className="nav-link text-white" to="/ContentRowMovies">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Tables</span></Link>
                 </li>
-                <li className="nav-item nav-link">
-                <Link className="nav-link" to="/SearchMovies">
+                <li className="nav-item luz">
+                <Link className="nav-link text-white" to="/SearchMovies">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Search Movies</span></Link>
                 </li>
@@ -94,8 +102,11 @@ function SideBar(){
                 <Route exact path="/">
                     <ContentWrapper />
                 </Route>
-                <Route path="/GenresInDb">
+                <Route path="/CategoryList">
                     <CategoryList />
+                </Route>
+                <Route path="/ProductsList">
+                    <ProductsList />
                 </Route>
                 <Route path="/LastMovieInDb">
                     <LastMovieInDb />
