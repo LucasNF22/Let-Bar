@@ -47,48 +47,46 @@
                 </section>
 
                 <!-- inicio Pop Up de producto-->
-                <% let id = 0 %>
-                <% productos.forEach(ProMod=>{ if(ProMod.id == 30){ %>
+                
                 <input type="checkbox" id="popUp">
                 <div class="fondo-popUp">
                     <div class="cont-popUp">
                         <div class="tarjeta-popUp">
                             <label for="popUp" class="boton-cerrar-popUp"><i
                                     class="fa-solid fa-xmark"></i></label>
-                            <div class="cont-img">
-                                <img src="/img/products/<%= ProMod.image %>" alt=""
-                                    class="img-popUp">
+                            <div class="cont-img" id="prod_image">
+                                
                                 <div>
-                                    <h4>
-                                        <%= ProMod.name %>
+                                    <h4 id="prod_name">
+                                        
                                     </h4>
                                 </div>
                             </div>
                             
                             <div class="renglon-popUp">
                                 <div class="renglon-tit-popUp">Precio:</div>
-                                <div class="renglon-cont-popUp">$<%= ProMod.priceUnit %>
+                                <div class="renglon-cont-popUp" id="prod_price">
                                 </div>
                             </div>
 
                             <div class="renglon-popUp">
                                 <div class="renglon-tit-popUp">Tamaño:</div>
-                                <div class="renglon-cont-popUp">
-                                    <%= ProMod.size %>
+                                <div class="renglon-cont-popUp" id="prod_size">
+                                    
                                 </div>
                             </div>
                             <div class="renglon-popUp">
                                 <div class="renglon-tit-popUp">Valoracion:</div>
-                                <div class="renglon-cont-popUp">
-                                    <%= ProMod.valoration %> <i class="fa-regular fa-star"></i>
+                                <div class="renglon-cont-popUp" id="prod_valoration">
+                                     
                                 </div>
                             </div>
                             <div class="renglon-popUp">
                                 <div class="renglon-tit-popUp">Descripcion:</div>
                             </div>
                             
-                                <div class="renglon-cont-popUp desc-popUp">
-                                    <%= ProMod.description %>
+                                <div class="renglon-cont-popUp desc-popUp" id="prod_description">
+                                    
                                 
                             </div>
                             <div class="renglon-popUp">
@@ -96,8 +94,8 @@
                                 
                             </div>
                             <div class="renglon-cont-popUp-val">
-                                <form action="/productos/valorar/<%= ProMod.id %>?_method=PUT"
-                                    method="POST" class="valoracion-popUp">
+                                <form action="/productos/valorar/?_method=PUT"
+                                    method="POST" class="valoracion-popUp" id="form-val-mod">
                                     <div class="clasificacion">
                                         <input id="radio1" type="radio" name="estrellas" value="5">
                                         <label for="radio1"><i class="fa-regular fa-star"></i></label>
@@ -114,14 +112,14 @@
                                 </form>
                             </div>
 
-                            <a href="/productos/detalle-producto/<%=ProMod.id%>" class="boton-verMas-popUp">Ver mas</a>
+                            <a href="/productos/detalle-producto/" class="boton-verMas-popUp" id="prod_detail">Ver mas</a>
                             
                             
 
                         </div>
                     </div>
                 </div>
-                <% }}) %>
+                
                 <!-- FIN Pop Up de producto-->
                 
                 <% categorias.forEach(categoria=>{ %>

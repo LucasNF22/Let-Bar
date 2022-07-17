@@ -323,6 +323,13 @@ div.clasificacion input:checked~label {
     
 }
 
+.tit-popUp{
+    display: inline-block;
+    font-size: 13px;
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+}
+
 .renglon-tit-popUp {
     align-self: flex-start;
     padding-left: 10px;
