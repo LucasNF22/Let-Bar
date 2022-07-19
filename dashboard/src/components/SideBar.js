@@ -9,7 +9,7 @@ import ProductsList from "./ProductsList";
 import LastProduct from './LastProduct';
 import ProductDetail from './ProductDetail';
 
-import ContentRowMovies from './ContentRowMovies';
+import ContentTotales from './ContentTotales';
 import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
 
@@ -61,7 +61,7 @@ function SideBar(){
 
                 {/*<!-- Nav Item - Tables -->*/}
                 <li className="nav-item luz">
-                <Link className="nav-link text-white" to="/ContentRowMovies">
+                <Link className="nav-link text-white" to="/ContentTotales">
                         <i className="fas fa-fw fa-table"></i>
                         <span>Tables</span></Link>
                 </li>
@@ -86,8 +86,8 @@ function SideBar(){
             <Route path="/LastMovieInDb">
                 <LastMovieInDb />
             </Route>
-            <Route path="/ContentRowMovies">
-                <ContentRowMovies />
+            <Route path="/ContentTotales">
+                <ContentTotales />
             </Route>*/}
             {/*<!-- End Microdesafio 1 -->*/}
 
@@ -110,8 +110,8 @@ function SideBar(){
                     <ProductDetail />
                 </Route>
                 
-                <Route path="/ContentRowMovies">
-                    <ContentRowMovies />
+                <Route path="/ContentTotales">
+                    <ContentTotales />
                 </Route>
                 <Route path="/SearchMovies">
                     <SearchMovies />
