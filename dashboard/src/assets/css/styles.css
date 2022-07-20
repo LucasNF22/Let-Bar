@@ -26,6 +26,7 @@
 }
 
 .tarjeta-categoria-edit {
+    color: #000057;
     display: flex;
     justify-content: flex-start;
     flex-direction: column;
@@ -39,7 +40,6 @@
         -10px -10px 15px #ffffff;
     max-width: 720px;
     font-family: 'Roboto Mono', monospace;
-    font-size: 16px;
     gap: 8px;
 }
 
@@ -543,4 +543,19 @@
     box-shadow: 0 0 1em .25em var(--glow-color),
         0 0 4em 1em var(--glow-spread-color),
         inset 0 0 .75em .25em var(--glow-color);
+}
+
+.texto-dash{
+    color:#000057;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 25px;
+    font-weight: bold;
+
+}
+
+.texto-titulo-categorias{
+    color: #000057;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 18px;
+    font-weight: bold;
 }

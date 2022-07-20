@@ -40,31 +40,31 @@ function ContentTotales() {
     console.log(totalCategorias);
     console.log(totalDeUsuarios);
 
-    /* <!-- Movies in DB --> */
+    /* <!-- Productos in DB --> */
 
     let productsInDb = {
         title: 'Total de productos',
         color: 'primary',
         cuantity: totalDeProductos,
-        icon: 'fa-clipboard-list'
+        icon: "fa-solid fa-tag"
     }
 
-    /* <!-- Total awards --> */
+    /* <!-- Total de categorías --> */       
 
     let totalDeCategorias = {
         title: ' Total de categorías',
         color: 'success',
         cuantity: totalCategorias,
-        icon: 'fa-award'
+        icon: "fa-solid fa-shop"
     }
 
-    /* <!-- Actors quantity --> */
+    /* <!-- Cantidad de usuarios --> */
 
     let cantidadDeUsuarios = {
         title: 'Total de usuarios',
         color: 'warning',
         cuantity: totalDeUsuarios,
-        icon: 'fa-user-check'
+        icon:  "fa-solid fa-users"
     }
 
     let cartProps = [productsInDb, totalDeCategorias, cantidadDeUsuarios];

@@ -32,7 +32,7 @@ function CategoryList() {
             <div className="col-lg-6 mb-4 ">
                 <div className="card shadow mb-4">
                     <div className="card-header py-3 ">
-                        <h6 ref={h6} onMouseOver={cambioColor} onMouseOut={cambioColor} className="m-0 font-weight-bold text-gray-800 ">Genres in Data Base</h6>
+                        <h6 ref={h6} onMouseOver={cambioColor} onMouseOut={cambioColor} className="m-0 texto-titulo-categorias ">Categorias en base de datos</h6>
                     </div>
                     <div className="card-body fondoCaja">
                         <div className="row">

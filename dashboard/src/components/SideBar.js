@@ -10,7 +10,6 @@ import LastProduct from './LastProduct';
 import ProductDetail from './ProductDetail';
 
 import ContentTotales from './ContentTotales';
-import SearchMovies from './SearchMovies';
 import NotFound from './NotFound';
 
 function SideBar(){
@@ -60,16 +59,8 @@ function SideBar(){
                 
 
                 {/*<!-- Nav Item - Tables -->*/}
-                <li className="nav-item luz">
-                <Link className="nav-link text-white" to="/ContentTotales">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Tables</span></Link>
-                </li>
-                <li className="nav-item luz">
-                <Link className="nav-link text-white" to="/SearchMovies">
-                        <i className="fas fa-fw fa-table"></i>
-                        <span>Search Movies</span></Link>
-                </li>
+               
+               
 
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider d-none d-md-block"/>
@@ -112,9 +103,6 @@ function SideBar(){
                 
                 <Route path="/ContentTotales">
                     <ContentTotales />
-                </Route>
-                <Route path="/SearchMovies">
-                    <SearchMovies />
                 </Route>
                 
                 <Route component={NotFound} />
