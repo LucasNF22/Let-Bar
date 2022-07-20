@@ -30,7 +30,7 @@ function ProductsList() {
                 <Link className="nav-link text-white" to="/">
                     <div className="boton-volver"> Atras </div>
                 </Link>
-            <div className="row">
+            <div className="cont-producto-edit">
                 
                 {
                     listCategory.map((categoria, index) => { 

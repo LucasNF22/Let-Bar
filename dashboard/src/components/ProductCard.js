@@ -14,9 +14,9 @@ const detalleProducto = useRef();
             
             <div className="tarjeta-producto-edit">
                 <div className="margin-LR">
-                    <a href="/productos/detalle-producto/<%=producto.id%>">
+                    <Link to={`/productsList/detail/${props.producto.id}`}>
                         <img src={props.producto.image} alt="" className="img-edit" />
-                    </a>
+                    </Link>
                 </div >
                 <div className="margin-LR">
                     <div>
@@ -54,8 +54,8 @@ const detalleProducto = useRef();
                         </div>
                 </Link>
                     
-                    <form action="/productos/eliminar/<%= producto.id %>?_method=DELETE" method="POST">
-                        <button type="submit" className="boton-editar-prod"><i className="fa-solid fa-trash"></i></button></form>
+                    <Link to={`/eliminar`} method="POST">
+                        <button type="submit" className="boton-editar-prod"><i className="fa-solid fa-trash"></i></button></Link>
                 </div>
             </div>
         </>

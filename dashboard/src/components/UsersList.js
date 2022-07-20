@@ -29,10 +29,15 @@ function UsersList() {
                 <Link className="nav-link text-white" to="/">
                     <div className="boton-volver"> Atras </div>
                 </Link>
-                <div className="row">
+                <div className="cont-producto-edit">
+                    
                     <div className="tarjeta-categoria-edit">
 
-
+                    <div className="tarj-cat-sup padding20">
+                                    <div>
+                                        Listado de usuarios
+                                    </div>
+                                </div>
 
                         {
                             usersList.map((user, index) => {
