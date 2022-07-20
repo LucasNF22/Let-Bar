@@ -36,6 +36,13 @@ function SideBar(){
                         <span>Dashboard - Let-Bar</span></Link>
                 </li>
 
+                <li className="nav-item active">
+                <a className="nav-link luz" href= "http://localhost:3001/">
+                <i className="fa-solid fa-globe"></i>
+                        <span>Let-Bar.com</span>
+                    </a>
+                </li>
+
                 {/*<!-- Divider -->*/}
                 <hr className="sidebar-divider"/>
 
@@ -61,6 +68,8 @@ function SideBar(){
                         <span>Usuarios</span>
                     </Link>
                 </li>
+
+             
 
                 
                 
