@@ -2,7 +2,7 @@ const db = require('../../database/models');
 
 const usersAPIController = {
     list: (req, res) => {
-        db.User.findAll()
+        db.User.findAll({include : ["categories", "addresses"]})
             .then(users => {
 
                 let usuariosArray = [];
@@ -10,8 +10,11 @@ const usersAPIController = {
                 users.forEach(users => {
                     let data = {
                         id: users.id,
-                        name: users.name,
+                        first_name: users.first_name,
+                        last_name: users.last_name,
                         email: users.email,
+                        category: users.categories,
+                        urlImage : "http://localhost:3001/img/users/avatar/" + users.avatar ,
                         detail: "/api/users/" + users.id
 
                     }

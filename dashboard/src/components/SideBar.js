@@ -8,6 +8,7 @@ import CategoryList from './CategoryList';
 import ProductsList from "./ProductsList";
 import LastProduct from './LastProduct';
 import ProductDetail from './ProductDetail';
+import UsersList from './UsersList';
 
 import ContentTotales from './ContentTotales';
 import NotFound from './NotFound';
@@ -52,6 +53,12 @@ function SideBar(){
                 <Link className="nav-link text-white" to="/ProductsList">
                 <i className="fa-solid fa-tag"></i>
                         <span>Productos</span>
+                    </Link>
+                </li>
+                <li className="nav-item luz">
+                <Link className="nav-link text-white" to="/UsersList">
+                <i className="fa-solid fa-users"></i>
+                        <span>Usuarios</span>
                     </Link>
                 </li>
 
@@ -105,6 +112,10 @@ function SideBar(){
                     <ContentTotales />
                 </Route>
                 
+                <Route path="/UsersList">
+                    <UsersList />
+                </Route>
+
                 <Route component={NotFound} />
             </Switch>
                 </div>
