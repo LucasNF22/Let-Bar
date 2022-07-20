@@ -1,6 +1,6 @@
 <!--Head-->
 <%- include("../views/partials/head") %>
- 
+
     <body>
         <header class="encabezado">
 
@@ -52,12 +52,14 @@
 
                     <input type="text" name="street" id="street" class="input-form-Direct width75" placeholder="Calle">
 
-                    <input type="number" name="street-number" id="street_number" class="input-form-Direct width25" placeholder="Altura">
+                    <input type="number" name="street-number" id="street_number" class="input-form-Direct width25"
+                        placeholder="Altura">
 
                 </div>
                 <div class="container-forms">
 
-                    <button type="submit" class="button-form-Direct">Buscar en tu dirección    : <i> <img src="/img/new-icons/icono-mapa.png" alt="Ver mapa"></i></button>
+                    <button type="submit" class="button-form-Direct">Buscar en tu dirección : <i> <img
+                                src="/img/new-icons/icono-mapa.png" alt="Ver mapa"></i></button>
 
                 </div>
                 <div id="msgError">
@@ -92,10 +94,10 @@
                             <div class="caja-art-inf-izq">
 
                                 <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
+                                    Fernet Branca
                                 </div>
                                 <div class="art-precio">
-                                    $$$$$$
+                                    $1250
                                 </div>
 
                             </div>
@@ -121,10 +123,10 @@
                             <div class="caja-art-inf-izq">
 
                                 <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
+                                    Coca-Cola
                                 </div>
                                 <div class="art-precio">
-                                    $$$$$$
+                                    $230
                                 </div>
 
                             </div>
@@ -150,10 +152,10 @@
                             <div class="caja-art-inf-izq">
 
                                 <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
+                                    Absolut Vodka
                                 </div>
                                 <div class="art-precio">
-                                    $$$$$$
+                                    $1500
                                 </div>
 
                             </div>
@@ -179,10 +181,10 @@
                             <div class="caja-art-inf-izq">
 
                                 <div class="art-nombre">
-                                    XXXXXXXXXX XX XX
+                                    Santa Julia
                                 </div>
                                 <div class="art-precio">
-                                    $$$$$$
+                                    $550
                                 </div>
 
                             </div>
@@ -197,9 +199,9 @@
             </div>
 
             <div>
-
-                <input type="button" value="Ver más" class="boton-ver-mas">
-
+                <a href="/home">
+                    <input type="button" value="Ver más" class="boton-ver-mas">
+                </a>
             </div>
 
         </section>
@@ -225,7 +227,7 @@
         <!--Footer-->
         <%- include("../views/partials/footer") %>
 
-        <!--Script Inputs Address-->
-        <script src="/js/formularioDirecciones.js"></script>
-        
+            <!--Script Inputs Address-->
+            <script src="/js/formularioDirecciones.js"></script>
+
     </body>

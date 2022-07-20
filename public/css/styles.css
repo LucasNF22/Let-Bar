@@ -1714,7 +1714,6 @@ input #file-upload-button {
     flex-wrap: wrap;
     align-items: center;
     padding-top: 20px;
-    border: #da2f2f 1px dashed;
 }
 
 .overflow {

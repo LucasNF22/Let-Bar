@@ -40,22 +40,21 @@
                                 Entregar en:
                             </div>
 
-                            <select name="address.alias" class="imputForm-pago">
+                            <select name="address.alias" class="imputForm-pago" id="alias">
 
-                                <option value="Mp"> Casa </option>
-                                <option value="tc"> Trabajo </option>
-                                <option value="td"> Casa novia </option>
-
+                                <option value="ca"> Casa </option>
+                                <option value="tr"> Trabajo </option>
+                                
                             </select>
 
                         </div>
-                        <div class="check-datos-cont">
+                        <div class="check-datos-cont" id="province">
                             Provincia: "address.province"
                         </div>
-                        <div class="check-datos-cont">
+                        <div class="check-datos-cont" id="locality">
                             Localidad: "address.locality"
                         </div>
-                        <div class="check-datos-cont">
+                        <div class="check-datos-cont" id="street">
                             Calle: "address.street address.street_number"
                         </div>
 
@@ -85,10 +84,10 @@
 
                             Resumen de compra
                         </div>
-                        /* un for each por cada producto en carrito */
+                        
                         <div class="tarjeta-producto-edit">
                             <div class="margin-LR">
-                                <img src="/img/products/andes-ipa.jpg" alt="" class="img-edit">
+                                <img src="/img/productos-20.jpg" alt="" class="img-edit">
                             </div>
 
                             <div class="margin-LR">
@@ -96,7 +95,7 @@
                                     Nombre:
                                 </div>
                                 <div>
-                                    Andes Ipa
+                                    Fernet Branca
                                 </div>
 
                             </div>
@@ -105,7 +104,7 @@
                                     precio:
                                 </div>
                                 <div>
-                                    $250
+                                    $1250
                                 </div>
 
                             </div>
@@ -120,7 +119,7 @@
 
                         <div class="tarjeta-producto-edit">
                             <div class="margin-LR">
-                                <img src="/img/products/andes-ipa.jpg" alt="" class="img-edit">
+                                <img src="/img/products/producto_cocacola_1655932489598.jpg" alt="" class="img-edit">
                             </div>
 
                             <div class="margin-LR">
@@ -128,7 +127,7 @@
                                     Nombre:
                                 </div>
                                 <div>
-                                    Andes Ipa
+                                    Coca-Cola
                                 </div>
 
                             </div>
@@ -137,7 +136,7 @@
                                     precio:
                                 </div>
                                 <div>
-                                    $250
+                                    $230
                                 </div>
 
                             </div>
@@ -152,7 +151,7 @@
 
                         <div class="tarjeta-producto-edit">
                             <div class="margin-LR">
-                                <img src="/img/products/andes-ipa.jpg" alt="" class="img-edit">
+                                <img src="/img/products/producto_pringles-01_1655935238764.jpg" alt="" class="img-edit">
                             </div>
 
                             <div class="margin-LR">
@@ -160,7 +159,7 @@
                                     Nombre:
                                 </div>
                                 <div>
-                                    Andes Ipa
+                                    Pringles Texas BBQ sauce
                                 </div>
 
                             </div>
@@ -169,7 +168,69 @@
                                     precio:
                                 </div>
                                 <div>
-                                    $250
+                                    $280
+                                </div>
+
+                            </div>
+
+                            <div class="box-icons">
+                                <form action="#" method="POST">
+                                    <button type="submit" class="boton-editar-prod"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tarjeta-producto-edit">
+                            <div class="margin-LR">
+                                <img src="/img/products/producto_andes-rubia21_1655931924062.jpg" alt="" class="img-edit">
+                            </div>
+
+                            <div class="margin-LR">
+                                <div>
+                                    Nombre:
+                                </div>
+                                <div>
+                                    Cerveza Andes Origen Rubia Lata
+                                </div>
+
+                            </div>
+                            <div class="margin-LR">
+                                <div>
+                                    precio:
+                                </div>
+                                <div>
+                                    $200
+                                </div>
+
+                            </div>
+
+                            <div class="box-icons">
+                                <form action="#" method="POST">
+                                    <button type="submit" class="boton-editar-prod"><i
+                                            class="fa-solid fa-trash"></i></button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tarjeta-producto-edit">
+                            <div class="margin-LR">
+                                <img src="/img/products/producto_andes-roja21_1655932111071.jpg" alt="" class="img-edit">
+                            </div>
+
+                            <div class="margin-LR">
+                                <div>
+                                    Nombre:
+                                </div>
+                                <div>
+                                    Cerveza Andes Origen Roja Lata
+                                </div>
+
+                            </div>
+                            <div class="margin-LR">
+                                <div>
+                                    precio:
+                                </div>
+                                <div>
+                                    $213
                                 </div>
 
                             </div>
@@ -194,7 +255,7 @@
                                     Envío:
                                 </div>
                                 <div>
-                                    $$$$
+                                    $300
                                 </div>
 
                             </div>
@@ -203,7 +264,7 @@
                                     productos:
                                 </div>
                                 <div>
-                                    $$$$
+                                    $2137
                                 </div>
 
                             </div>
@@ -212,7 +273,7 @@
                                     Total:
                                 </div>
                                 <div>
-                                    $$$$
+                                    $2437
                                 </div>
 
                             </div>
@@ -237,7 +298,8 @@
 
             </main>
 
-
+            <!--Script Inputs Address-->
+            <script src="/js/direccionesCheckOut.js"></script>
     </body>
 
     <!--Footer-->

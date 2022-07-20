@@ -463,7 +463,6 @@ div.clasificacion input:checked~label {
     justify-content: center;
     align-items: center;
     width: 90%;
-    border: #41C1F0 2px dashed;
     gap: 10px 10px
 }
 
