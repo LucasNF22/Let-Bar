@@ -15,27 +15,28 @@ function CategoryList() {
             .then(data => {
                 
                 setCategoryList(data.countByCategory)
+                
             })
             .catch(error => console.log(error))
     }, [])
 
-    const h6 = useRef();
+   console.log(categoryList);
 
-    const cambioColor = () => {
-        document.querySelector("div.card-body.fondoCaja").classList.toggle("bg-secondary")
-    }
-
-
+    
     return (
         <React.Fragment>
             {/*<!-- Categories in DB -->*/}
             <div className="col-lg-6 mb-4 ">
-                <div className="card shadow mb-4">
-                    <div className="card-header py-3 ">
-                        <h6 ref={h6} onMouseOver={cambioColor} onMouseOut={cambioColor} className="m-0 texto-titulo-categorias ">Categorias en base de datos</h6>
+                <div className="tarjeta-categoria-edit" >
+                <div className="tarj-cat-sup padding20">
+                    <div>
+                    Categorias en base de datos
                     </div>
-                    <div className="card-body fondoCaja">
-                        <div className="row">
+                </div>
+                        
+                <div className="tarjeta-popUp ">
+                    
+                        <div className="row gap">
                             {
                                 categoryList.map((categoria, index) => {
                                     return <Category categoria={categoria} key={categoria + index} />
